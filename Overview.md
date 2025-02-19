@@ -1,4 +1,4 @@
-Tao Learning Vision
+Curiosity Corporation Vision
 =======
 
 ## P-20 Education Initiative
