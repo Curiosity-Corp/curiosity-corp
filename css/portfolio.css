@@ -1,0 +1,256 @@
+
+/*--------------------------------------------------------------
+5.0 - Portfolio Styles BROUGHT FROM SUNNY BY KRASHNIK
+--------------------------------------------------------------*/
+/*
+Remove Background - Save for later.
+.portfolio-content{background-image:url(../images/hexagon1.png); background-repeat:no-repeat; background-size:contain; display:inline-block; width:381px; height:330px; position:relative; overflow:hidden; z-index:9;}  */
+
+.portfolio-content{background-repeat:no-repeat; background-size:contain; display:inline-block; width:381px; height:330px; position:relative; overflow:hidden; z-index:9;} 
+
+.portfolio-content1{margin:auto; display:block; right:0px; left:15px;}
+
+.portfolio-content2{margin:-168px 0 0 114px; float:left;}
+
+.portfolio-content3{margin:-168px 0px 0px 182px; float:left;}
+
+.portfolio-content4{margin:-6px 0px 0px 114px; float:left;}
+
+.portfolio-content5{margin:-168px 0px 0px -100px; float:left;}
+
+.portfolio-content6{margin:-6px 0px 0px -100px; float:left;}
+
+.portfolio-content7{margin:-168px 0px 0px 395px; float:left;}
+
+.front-portfolio{overflow:hidden; position:absolute; display:inline-block; height:318px; left:0; top:0; transform:rotate(120deg); -webkit-transform:rotate(120deg); -moz-transform:rotate(120deg); -ms-transform:rotate(120deg); right:0; bottom:0;
+margin:auto;}
+
+.portfolio-outer{overflow:hidden; width:100%; height:100%; transform:rotate(-60deg); -moz-transform:rotate(-60deg);  -ms-transform:rotate(-60deg); -webkit-transform:rotate(-60deg);}
+
+.front-portfolio .portfolio-thumb{overflow:hidden; width:100%; height:100%; transform:rotate(-60deg); -moz-transform:rotate(-60deg);  -ms-transform:rotate(-60deg); -webkit-transform:rotate(-60deg);}
+
+.front-portfolio .portfolio-thumb img{}
+	
+.front-portfolio .image-overlay{position:absolute; visibility:hidden; opacity:0; top:0px; left:0px; width:100%; height:100%; z-index:9999; background:rgba(181, 217, 226, 0.9);}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+		/* Safari only override */
+		::i-block-chrome,.front-portfolio .image-overlay{visibility:visible; opacity:1; display:none;}
+	}
+	
+	@media screen and (-webkit-min-device-pixel-ratio:0) { 
+		/* Safari only override */
+		::i-block-chrome,.front-portfolio:hover .image-overlay{display:block;}
+	}
+
+.portbg{background-image:url(../images/slides/stars2.jpg);}
+
+.portfolio-content1 .front-portfolio .image-overlay{background:#fff;}
+
+.portfolio-content2 .front-portfolio .image-overlay{background:#fff;}
+
+.portfolio-content3 .front-portfolio .image-overlay{background:#fff;}
+
+.portfolio-content4 .front-portfolio .image-overlay{background:#fff;}
+
+.portfolio-content5 .front-portfolio .image-overlay{background:rgb(156, 200, 218);}
+
+.portfolio-content6 .front-portfolio .image-overlay{background:#fff;}
+
+.portfolio-content7 .front-portfolio .image-overlay{background:#fff;}
+
+.portfolio-content .front-portfolio .image-overlay h5 a{color:inherit;}
+
+.portfolio-content1 .front-portfolio .image-overlay a{color:#fff;}
+
+.portfolio-content2 .front-portfolio .image-overlay a{color:#fff;}
+
+.portfolio-content3 .front-portfolio .image-overlay a{color:#fff;}
+
+.portfolio-content4 .front-portfolio .image-overlay a{color:#fff;}
+
+.portfolio-content5 .front-portfolio .image-overlay a{color:rgb(156, 200, 218);}
+
+.portfolio-content6 .front-portfolio .image-overlay a{color:#fff;}
+
+.portfolio-content7 .front-portfolio .image-overlay a{color:#fff;}
+
+.portfolio-content .front-portfolio .image-overlay a:hover{color:#333338;}
+				
+.portfolio-thumb:hover .image-overlay{visibility:visible; opacity:1;}
+
+.front-portfolio.even{margin-top:102px;}
+				
+.front-portfolio-container{float:left; clear:both; width:100%; margin:0px auto; padding:0px; position:relative;}
+
+.front-portfolio-container .front-portfolio.center.top{top:0px; left:0px; right:0px; margin:5px auto 0px;}
+
+.front-portfolio.top.left{top:105px; left:295px;}
+
+.front-portfolio.bottom.left{top:310px; left:295px;}
+
+.front-portfolio.center.center{top:205px; left:470px;}
+
+.front-portfolio.center.bottom{top:410px; left:475px;}
+
+.front-portfolio.top.right{top:100px; right:345px;}
+
+.front-portfolio.bottom.right{top:305px; right:340px;}
+
+.front-portfolio .image-overlay h5{top:35%; left:0px; right:0px; margin:auto; text-align:center; position:absolute; text-transform:uppercase; color:#FFF; font-weight:700; transform:scale(0); -webkit-transform:scale(0); -moz-transform:scale(0);}
+
+.front-portfolio .image-overlay h5 a{color:#FFFFFF;}
+
+.front-portfolio .image-overlay a.link, .front-portfolio .image-overlay a.zoom{background:#18385e; cursor:pointer; display:inline-block; font-size:18px; height:42px; line-height:42px; width:25px; text-align:center; position:absolute; z-index:9999;}
+
+.front-portfolio .image-overlay .link{top:85%; margin:-23px 0px 0px; left:0px;}
+
+.front-portfolio .image-overlay .zoom{top:55%; margin:-23px 0px 0px; right:0px;}
+
+.front-portfolio:hover .link{left:46%;}
+
+.front-portfolio:hover .zoom{right:35%;}
+
+.front-portfolio:hover .image-overlay h5{transform:scale(1); -webkit-transform:scale(1); -moz-transform:scale(1);}
+
+.front-portfolio a.link, .front-portfolio a.zoom{width:25px; height:42px; background:#18385e; position:absolute;}
+
+.front-portfolio a.link:before, .front-portfolio a.zoom:before{content:""; position:absolute; left:-14px; width:0px; height:0px; border-top:21px solid transparent; border-bottom:21px solid transparent; border-right:14px solid #18385e;}
+
+.front-portfolio a.link:after, .front-portfolio a.zoom:after{content:""; position:absolute; right:-14px; width:0px; height:0px; border-top:21px solid transparent; border-bottom:21px solid transparent; border-left:14px solid #18385e;}
+
+.front-portfolio-container .carousel-arrows{width:100%; display:inline-block; text-align:center; margin:50px auto 0;}
+
+.front-portfolio-container .carousel-arrows a{font-size:24px; color:#898b8c; width:50px; height:50px; line-height:44px; margin:0px 14px; display:inline-block; border:2px solid #898b8c; border-radius:100%; -moz-border-radius:100%; -webkit-border-radius:100%;}
+
+.front-portfolio-container .carousel-arrows a:hover{border:2px solid #000000;}
+
+.front-portfolio-container .carousel-arrows a.front-portfolio-prev span{margin-left:-1px;}
+
+.twothird-bg-right{
+	position:absolute;
+	right:0;
+	top:0;
+	width:60%;
+	height:100%;
+}
+
+@media only screen and (min-width:960px) and (max-width:1240px){
+
+	.container{width:900px;}
+
+	.portfolio-content{width:194px; height:168px;}
+
+    .front-portfolio{height:162px;}
+    
+    .portbg{background-image:url(../images/slides/stars2.jpg);}
+
+	.portfolio-content2{margin:-85px 0 0 209px;}
+
+	.portfolio-content3{margin:-85px 0px 0px 94px;}
+
+	.portfolio-content4{margin:-3px 0px 0px 210px;}
+
+	.portfolio-content5{margin:-86px 0px 0px -50px;}
+
+	.portfolio-content6{margin:-3px 0px 0px -50px;}
+
+	.portfolio-content7{margin:-86px 0px 0px 354px;}
+
+	.front-portfolio .image-overlay a.link, .front-portfolio .image-overlay a.zoom{font-size:12px; height:32px; line-height:32px; width:22px;}
+
+	.front-portfolio a.link:before, .front-portfolio a.zoom:before{left:-8px; border-top:16px solid transparent; border-bottom:16px solid transparent; border-right:8px solid #18385e;}
+
+	.front-portfolio a.link:after, .front-portfolio a.zoom:after{right:-8px; border-top:16px solid transparent; border-bottom:16px solid transparent; border-left:8px solid #18385e;}
+
+	.front-portfolio .image-overlay h5{font-size:inherit; top:30%;}
+
+	.front-portfolio .image-overlay .link{top:60%;}
+
+	.front-portfolio .image-overlay .zoom{top:60%;}
+
+	.front-portfolio:hover .link{left:46%;}
+
+	.front-portfolio:hover .zoom{right:28%;}
+}
+
+@media only screen and (min-width:768px) and (max-width:959px){
+
+    .portbg{background:#FFFFFF;}
+	
+	.container{width:710px;}
+		
+	.front-portfolio-container{text-align:center;}
+
+	.front-portfolio-container .portfolio-content{margin:0px auto 30px; float:none;}
+
+	.portfolio-single .dt-sc-two-third.column{width:100%;}
+
+	.portfolio-single .dt-sc-one-third.column{width:100%; margin:20px 0px 0px;}
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px){
+
+    .portbg{background:#FFFFFF;}
+
+	.container{width:420px;}
+	.front-portfolio-container{text-align:center;}
+
+	.front-portfolio-container .portfolio-content{margin:0px auto 30px; float:none;}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px){
+
+    .portbg{background-image:url(../images/slides/stars.jpg);}
+
+	.container{width:290px;}
+	
+	.wrapper .column{margin-bottom:20px; margin-left:0px;}
+
+	.front-portfolio-container{text-align:center;}
+
+	.front-portfolio-container .portfolio-content{margin:0px auto 30px; float:none;}
+	
+	.portfolio-content{width:254px; height:220px;}
+	
+	.front-portfolio{height:212px;}
+	
+	.front-portfolio .image-overlay .link{top:60%;}
+	
+	.front-portfolio .image-overlay .zoom{top:60%;}
+	
+	.front-portfolio:hover .link{left:30%;}
+	
+	.front-portfolio:hover .zoom{right:30%;}
+	
+
+}
+
+@media only screen and (max-width: 319px){
+
+    .portbg{background:#FFFFFF;}
+
+	.container{width:200px;}
+	
+	.wrapper .column{margin-bottom:20px; margin-left:0px;}
+
+	.front-portfolio-container{text-align:center;}
+
+	.front-portfolio-container .portfolio-content{margin:0px auto 30px; float:none;}
+
+	.portfolio-content{width:200px; height:172px;}
+
+	.front-portfolio{height:166px;}
+
+	.front-portfolio .image-overlay h5{font-size:inherit;}
+
+	.front-portfolio .image-overlay .link{top:65%;}
+
+	.front-portfolio .image-overlay .zoom{top:65%;}
+
+	.front-portfolio:hover .link{left:28%;}
+
+	.front-portfolio:hover .zoom{right:28%;}
+
+}

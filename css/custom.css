@@ -1,0 +1,79 @@
+
+/* KRASHNIK */ 
+object{
+	pointer-events: none;
+	
+}
+#loadOverlay{display: none;}
+
+.btn-ghost.btn-light{
+  text-transform: uppercase;
+}
+
+#stories-slider .story-slider-cell{
+	/* vertical-align:top; */
+	height: auto;	
+}
+
+/* ADDED THESE TO FIX STAFF SECTION */
+.grid-staff-item-compact .grid-item-content h3{
+	font-size: 14px;
+}
+.grid-item h3{
+	letter-spacing:0px;
+}
+
+.content2{
+	padding:75px 0 0;
+	min-height:400px;
+}
+
+.content3{
+	padding:35px 0 0;
+	min-height:400px;
+}
+
+.cta2{
+	border:1px solid #E6E6E6;
+	padding:25px;
+	margin:15px 0;
+	background:#F6F6F6;
+}
+.cta2 p{
+	font-size:20px;
+	line-height:35px;
+	margin-bottom:0;
+	text-transform:uppercase;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+}
+
+.cta3{
+	border:1px solid #E6E6E6;
+	padding:25px;
+	margin:0 0 15px 0;
+	background:#F6F6F6;
+}
+.cta3 p{
+	font-size:20px;
+	line-height:35px;
+	margin-bottom:0;
+	text-transform:uppercase;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+}
+
+.responsive-width {
+    font-size: .65vw;
+}
+
+h4a{
+	font-size:16px;
+	text-transform:uppercase;
+	letter-spacing:2px;
+	margin:0 0 15px 0;
+	color:#333;
+	font-weight:400;
+	line-height:1.5em;
+	font-family: 'Playfair Display', serif;
+}

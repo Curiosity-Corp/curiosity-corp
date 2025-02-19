@@ -1,0 +1,1105 @@
+<!DOCTYPE HTML>
+<html class="no-js">
+<head>
+<!-- Basic Page Needs
+  ================================================== -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Curiosity Corporation</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<!-- Mobile Specific Metas
+  ================================================== -->
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<!-- CSS
+  ================================================== -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="vendor/magnific/magnific-popup.css" rel="stylesheet" type="text/css">
+<link href="vendor/owl-carousel/css/owl.carousel.css" rel="stylesheet" type="text/css">
+<link href="vendor/owl-carousel/css/owl.theme.css" rel="stylesheet" type="text/css">
+<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" media="all" />   
+<link href="css/portfolio.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/components/bs-switches.css" type="text/css" />
+<link rel="stylesheet" href="css/components/radio-checkbox.css" type="text/css" />
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" /><![endif]-->
+<link href="css/custom.css" rel="stylesheet" type="text/css"><!-- CUSTOM STYLESHEET FOR STYLING -->
+<!-- Color Style -->
+<link href="colors/color1.css" rel="stylesheet" type="text/css">
+<!-- SCRIPTS
+  ================================================== -->
+<script src="js/modernizr.js"></script><!-- Modernizr -->
+<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+<link rel="manifest" href="images/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body class="home">
+<!--[if lt IE 7]>
+	<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
+<div class="body">
+	<!-- Site Header Wrapper -->
+    <div class="site-header-wrapper">
+        <!-- Site Header -->
+        <header class="site-header">
+            <div class="container">
+                <div class="site-logo">
+                    <a href="index.html"><object data="images/logo_white.svg" width="200px"  height="60px" type="image/svg+xml" class="default-logo">
+                        <img src="images/logo.png" />
+                    </object></a>
+                   <a href="index.html"> <object data="images/logo_white.svg" width="140px"  height="40px" type="image/svg+xml" class="default-retina-logo">
+                        <img src="images/logo.png" />
+                    </object></a>
+                    <a href="index.html"><a href="index.html"><object data="images/logo.svg" width="200px"  height="60px" type="image/svg+xml" class="sticky-logo">
+                        <img src="images/logo.png" />
+                    </object></a>
+                    <a href="index.html"><object data="images/logo.svg" width="140px"  height="40px" type="image/svg+xml" class="sticky-retina-logo">
+                        <img src="images/logo.png" />
+                    </object></a>
+                </div>
+             	<a href="#" class="visible-sm visible-xs" id="menu-toggle"><i class="fa fa-bars"></i></a>
+                <div class="header-info-col"><a href="get-involved/advocate.html" class="btn btn-primary">Become a Partner</a></div>
+                <ul class="sf-menu dd-menu pull-right" role="menu">
+                    <li class="megamenu"><a href="javascrip:void(0)">What We Do</a>
+                        <ul class="dropdown">
+                            <li>
+                                <div class="megamenu-container container">
+                                    <div class="row">
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="fas fa-chalkboard-teacher"></i> Education</span>
+                                            <ul class="sub-menu">
+                                                <!-- <li><a href="refund-policy.html">Ignite Curiosity</a></li> -->
+                                                <li><a href="about/future.html">We Teach the Future</a></li>
+                                                <li><a href="about/literacy.html">Literacy Advocacy</a></li>
+                                                <li><a href="about/dreams.html">We Teach Dream Building</a></li>
+                                                <li><a href="consortium/">Curiosity Consortium</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="far fa-address-card"></i> Who We Are</span>
+                                        	<div class="widget recent_posts">
+                                            	<ul>
+                                                	<li>
+                                                    	<a href="single-post.html" class="media-box">
+                                                            <img src="images/600/books.jpg" alt="">
+                                                        </a>
+                                                		<h5><a href="about/pedagogy.html">Our Pedagogy</a></h5>
+                                                		<span class="meta-data grid-item-meta">The Tao Philosophy</span>
+                                                    </li>
+                                                	<li>
+                                                    	<a href="single-post.html" class="media-box">
+                                                            <img src="images/600/mrraza.jpg" alt="">
+                                                        </a>
+                                                		<h5><a href="about/team.html">Our Team</a></h5>
+                                                		<span class="meta-data grid-item-meta">About Us</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="far fa-building"></i> Empower Society</span>
+                                            <ul class="widget_recent_causes">
+                                                <li>
+                                                    <a href="#" class="cause-thumb">
+                                                       <img src="images/600/silkwomen3.jpg" alt="" class="img-thumbnail">
+                                                        <div data-color="42b8d4">
+                                                            <strong></strong>
+                                                        </div>
+                                                    </a>
+                                                    <h5><a href="cause/silk-women.html">The Silk Women&trade;</a></h5>
+                                                    <span class="meta-data">Career Advancement</span>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="cause-thumb">
+                                                        <img src="images/blossom_square.png" alt="" class="img-thumbnail">
+                                                        <div data-color="42b8d4">
+                                                            <strong></strong>
+                                                        </div>
+                                                    </a>
+                                                    <h5><a href="cause/iblossom.html">iBlossom&trade;</a></h5>
+                                                    <span class="meta-data">Sprouting Good Habits</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><a href="https://ignitecuriosity.org" target="_blank"><object data="images/ignite.svg" width="278px"  height="32px" type="image/svg+xml" >
+                                                <img src="images/logo.png" />
+                                            </object></a></span> 
+                                            <div class="fw-video"><iframe width="560" height="315" src="https://www.youtube.com/embed/q50FmaUXSjw?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&fs=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                      	</ul>
+                  	</li>
+                    <li class="megamenu"><a href="javascrip:void(0)">Partners</a>
+                        <ul class="dropdown">
+                            <li>
+                                <div class="megamenu-container container">
+                                    <div class="row">
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><object data="images/tli_hive.svg" width="29px"  height="20px" type="image/svg+xml" >
+                                                <a href="get-involved/chapter.html"><img src="images/logo.png" /></a>
+                                            </object> TLI Chapters</span>
+                                            <div class="text-center">
+                                                <a href="get-involved/chapter.html"><img src="images/taocottage3.jpg"><br><span class="meta-data">Our Chapters Around the World</h5></a>
+                                            </div>
+                                        </div>
+                                         <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="fas fa-school"></i> Schools</span>
+                                            <ul class="sub-menu">
+                                                <li><a href="partner/preschool.html">Preschool</a></li>
+                                                <li><a href="partner/k12.html">K-12</a></li>
+                                                <li><a href="partner/homeschool.html">Home School &amp; After School</a></li>
+                                                <li><a href="partner/higher-education.html">Higher Education Institutes</a></li>
+                                                <li><a href="partner/research.html">Research Facilities</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                            <span class="megamenu-sub-title"><i class="fa fa-university"></i> Government</span>
+                                        	<div class="widget recent_posts">
+                                            	<ul>
+                                                	<li>
+                                                    	<a href="partner/mope.html" class="media-box">
+                                                            <img src="images/post1.jpg" alt="">
+                                                        </a>
+                                                		<h5><a href="partner/mope.html">Ministers of Education</a></h5>
+                                                		<span class="meta-data grid-item-meta">National Partnerships</span>
+                                                    </li>
+                                                	<li>
+                                                    	<a href="partner/municipal.html" class="media-box">
+                                                            <img src="images/post3.jpg" alt="">
+                                                        </a>
+                                                		<h5><a href="partner/municipal.html">Local Education Solutions</a></h5>
+                                                		<span class="meta-data grid-item-meta">Municipality Strategy</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="fa fa-suitcase"></i> Businesses</span>
+                                            <ul class="sub-menu">
+                                                <li><a href="partner/small-business.html">Small Business</a></li>
+                                                <li><a href="partner/ngo.html">Non-Governmental Organizations</a></li>
+                                                <li><a href="partner/igo.html"> Intergovernmental Organizations</a></li>
+                                                <li><a href="partner/sme.html">Small & Medium Enterprises</a></li>
+                                                <li><a href="partner/corporation.html">Corporations</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                      	</ul>
+                  	</li>
+                    <li class="megamenu"><a href="javascrip:void(0)">Impact</a>
+                        <ul class="dropdown">
+                            <li>
+                                <div class="megamenu-container container">
+                                    <div class="row">
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title text-center"><i class="fa fa-star"></i> Award</span> 
+                                            <div class="text-center">
+                                                <a href="https://www.guidestar.org/Profile/9759491" target="_blank"><object data="images/GuideStar_platinum.svg" width="175px" type="image/svg+xml">
+                                                    <img src="images/put-platinum2019-seal.png" />
+                                                </object></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="fas fa-info-circle"></i> Information</span>
+                                            <ul class="sub-menu">
+                                                <li><a href="impact/briefs.html">Technical Briefs</a></li>
+                                                <li><a href="impact/data.html">Statistics &amp; Data</a></li>
+                                                <li><a href="impact/innovation.html">Innovations in the Field</a></li>
+                                                <li><a href="impact/strategy.html">5-Year Strategy</a></li>
+                                                <li><a href="impact/mission.html">Our Mission</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="fa fa-puzzle-piece"></i> Our Causes</span>
+                                        	<div class="widget recent_posts">
+                                            	<ul>
+                                                	<li>
+                                                    	<a href="cause/themov.html" class="media-box">
+                                                            <img src="images/post1.jpg" alt="">
+                                                        </a>
+                                                		<h5><a href="cause/themov.html">20 Years on TheMOV </a></h5>
+                                                		<span class="meta-data grid-item-meta">Health &amp; Wellness</span>
+                                                    </li>
+                                                    <li>
+                                                    	<a href="cause/curiosity.html" class="media-box">
+                                                            <img src="images/post3.jpg" alt="">
+                                                        </a>
+                                                		<h5><a href="cause/curiosity.html">Ignite Curiosity</a></h5>
+                                                		<span class="meta-data grid-item-meta">Hi-Tech Edutainment</span>
+                                                    </li>
+                                                    <div class="text-center"><a href="causes.html" class="btn btn-primary">Browse Causes</a></div>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="fas fa-file-invoice-dollar"></i> Annual Reports</span>
+                                            <div class="text-center">
+                                                <a href="impact/annual-report.html"><img src="images/600/areport2.jpg"><br><span class="meta-data">Fiscal Analysis Visualized</h5></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                      	</ul>
+                  	</li>
+                    <li class="megamenu"><a href="javascrip:void(0)">Get Involved</a>
+                        <ul class="dropdown">
+                            <li>
+                                <div class="megamenu-container container">
+                                    <div class="row">
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="fas fa-hands-helping"></i> Ways to Help</span>
+                                            <ul class="sub-menu">
+                                                <li><a href="get-involved/volunteer.html">Volunteer</a></li>
+                                                <li><a href="get-involved/give.html">Give to a Cause</a></li>
+                                                <li><a href="get-involved/chapter.html">Join a Chapter</a></li>
+                                                <li><a href="get-involved/advocate.html">Be an Advocate</a></li>
+                                                <li><a href="get-involved/fundraise.html">Fundraise with Us</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="fas fa-users"></i> Join a Community</span>
+                                        	<div class="widget recent_posts">
+                                            	<ul>
+                                                	<li>
+                                                    	<a href="https://silkwomen.org" target="_blank" class="media-box">
+                                                            <img src="images/causeg1.jpg" alt="">
+                                                        </a>
+                                                		<h5><a href="https://silkwomen.org" target="_blank">The Silk Women&trade;</a></h5>
+                                                		<span class="meta-data grid-item-meta">Career Advancement</span>
+                                                    </li>
+                                                	<li>
+                                                    	<a href="https://jivva.com" target="_blank" class="media-box">
+                                                            <img src="images/post2.jpg" alt="">
+                                                        </a>
+                                                		<h5><a href="https://jivva.com" target="_blank">Jivva&trade;</a></h5>
+                                                		<span class="meta-data grid-item-meta">Tech &amp; Futurism</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="fas fa-donate"></i> Donate to a Cause</span>
+                                            <ul class="widget_recent_causes">
+                                                <li>
+                                                    <a href="#" class="cause-thumb">
+                                                       <img src="images/blossom_square.png" alt="" class="img-thumbnail">
+                                                        <div data-color="42b8d4">
+                                                            <strong></strong>
+                                                        </div>
+                                                    </a>
+                                                    <h5><a href="https://iblossom.org" target="_blank" data-toggle="modal" data-target="#DonateModal">iBlossom</a></h5>
+                                                    <span class="meta-data">Women Empowerment</span>
+                                                </li>
+                                                <li>
+                                                    <a href="https://ignitecuriosity.org" class="cause-thumb" target="_blank">
+                                                        <img src="images/cause1.jpg" alt="" class="img-thumbnail">
+                                                        <div  data-color="42b8d4">
+                                                            <strong></strong>
+                                                        </div>
+                                                    </a>
+                                                    <h5><a href="https://ignitecuriosity.org" target="_blank" data-toggle="modal" data-target="#DonateModal">Ignite Curiosity</a></h5>
+                                                    <span class="meta-data">Alternative Learning</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="fas fa-drafting-compass"></i> Find An Opportunity</span>
+                                            <ul class="sub-menu">
+                                                <li><a href="get-involved/job-shadow.html">Job Shadowing</a></li>
+                                                <li><a href="get-involved/internship.html">Internships</a></li>
+                                                <li><a href="get-involved/mentorship.html">Mentorship</a></li>
+                                                <li><a href="get-involved/ngo-training.html">NGO Training</a></li>
+                                                <li><a href="get-involved/careers.html">Careers</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                      	</ul>
+                  	</li>
+                      <li class="megamenu"><a href="javascrip:void(0)">Media</a>
+                        <ul class="dropdown">
+                            <li>
+                                <div class="megamenu-container container">
+                                    <div class="row">
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="fa fa-map"></i> Media Channels</span>
+                                            <ul class="sub-menu">
+                                                <li><a href="shortcodes.html">The Miss Lyra Show</a></li>
+                                                <li><a href="typography.html">Jivva TV</a></li>
+                                                <li><a href="privacy-policy.html">iBlossom TV</a></li>
+                                                <li><a href="payment-terms.html">MOVDance</a></li>
+                                                <li><a href="refund-policy.html">Airikai</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="fa fa-book"></i> Publications</span>
+                                            <div class="widget recent_posts">
+                                                    <ul>
+                                                        <li>
+                                                            <a href="single-post.html" class="media-box">
+                                                                <img src="images/600/focuschef.jpg" alt="">
+                                                            </a>
+                                                            <h5><a href="single-post.html">The Focus Chef</a></h5>
+                                                            <span class="meta-data grid-item-meta">Organizational Strategy</span>
+                                                        </li>
+                                                        <li>
+                                                            <a href="single-post.html" class="media-box">
+                                                                <img src="images/post3.jpg" alt="">
+                                                            </a>
+                                                            <h5><a href="single-post.html">7 Steps to Perfection</a></h5>
+                                                            <span class="meta-data grid-item-meta">Learning Technique</span>
+                                                        </li>
+                                                        <li>
+                                                            <a href="single-post.html" class="media-box">
+                                                                <img src="images/post3.jpg" alt="">
+                                                            </a>
+                                                            <h5><a href="single-post.html">The Fire Within</a></h5>
+                                                            <span class="meta-data grid-item-meta">Weight Loss Guide</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="far fa-newspaper"></i> Latest News</span>
+                                            <ul class="widget_recent_causes">
+                                                <li>
+                                                    <a href="news/shinrin-yoku.html" class="cause-thumb">
+                                                       <img src="images/200/forest.jpg" alt="" class="img-thumbnail">
+                                                        <div data-color="42b8d4">
+                                                            <strong></strong>
+                                                        </div>
+                                                    </a>
+                                                    <h5><a href="news/shinrin-yoku.html">Hi Tech Outdoors</a></h5>
+                                                    <span class="meta-data">Shinrin-Yoku</span>
+                                                </li>
+                                                <li>
+                                                    <a href="news/business-integration.html" class="cause-thumb">
+                                                        <img src="images/200/meeting.jpg" alt="" class="img-thumbnail">
+                                                        <div  data-color="42b8d4">
+                                                            <strong></strong>
+                                                        </div>
+                                                    </a>
+                                                    <h5><a href="news/business-integration.html">Business Integration</a></h5>
+                                                    <span class="meta-data">Enterprise Partnerships</span>
+                                                </li>
+                                                <div class="text-center"><a href="news/" class="btn btn-primary">More News</a></div>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-3 megamenu-col">
+                                        	<span class="megamenu-sub-title"><i class="far fa-play-circle"></i> Tao Playlists</span> 
+                                            <div class="fw-video"><iframe width="560" height="315" src="https://www.youtube.com/embed/yebTb-tlPnM?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&fs=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media;" allowfullscreen></iframe></div>
+                                            <div class="spacer-20"></div>
+                                            <div class="text-center"><a href="https://www.youtube.com/channel/UCTb_8kGbwqhri3TQL6TW5vQ/featured?view_as=subscriber" class="btn btn-primary">More Videos</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                      	</ul>
+                  	</li>
+              	</ul>
+            </div>
+        </header>
+    </div>
+    <!-- Hero Area -->
+    <div class="hero-area">
+    	<!-- Start Hero Slider -->
+      	<div class="flexslider heroflex hero-slider" data-autoplay="yes" data-pagination="no" data-arrows="yes" data-style="fade" data-pause="yes">
+            <ul class="slides">
+                 <li class="parallax" style="background-image:url(images/slides/silk.jpg)">
+                	<div class="flex-caption">
+                    	<div class="container">
+                        	<div class="flex-caption-table">
+                            	<div class="flex-caption-cell">
+                                	<div class="flex-caption-text">
+                                        <h2>We Educate &amp; Inspire<br>with Modern Pedagogy</h2>
+                                        <p>We are P-20+ Literacy Program<br> where we push the boundaries of education<br>and ignite curiosity in students worldwide.</p>
+                                        <a href="causes.html" class="btn btn-primary">Help Us Make a Difference</a>
+                                    </div>
+                               	</div>
+                          	</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="parallax" style="background-image:url(images/slides/athens.jpg)">
+                	<div class="flex-caption">
+                    	<div class="container">
+                        	<div class="flex-caption-table">
+                            	<div class="flex-caption-cell">
+                                	<div class="flex-caption-text text-align-center">
+                                        <h2>Our Learning Solutions<br>Empower Societies</h2>
+                                        <a href="causes.html" class="btn btn-primary">Learn More</a>
+                                    </div>
+                               	</div>
+                          	</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="parallax" style="background-image:url(images/slides/chalkboard2.jpg)">
+                	<div class="flex-caption">
+                    	<div class="container">
+                        	<div class="flex-caption-table">
+                            	<div class="flex-caption-cell text-align-center">
+                        			<div class="flex-caption-cause">
+                            			<h3><a href="https://donorbox.org/taolearning" target="_blank">Literacy Matters</a></h3>
+                    					<p>Reading and writing empowers individuals to participate in society, achieve their dreams and to experience the joy of a good book.</p>
+                                        	<!-- <span class="meta-data">Donated $26400 / <span class="cause-target">$30000</span></span> -->
+                                    		<a href="#" class="btn btn-primary btn-lg" target="_blank" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                          			</div>
+                        		</div>
+                    		</div>
+                        </div>
+                    </div>
+                </li>
+          	</ul>
+       	</div>
+        <!-- End Hero Slider -->
+    </div>
+    <div class="featured-links row">
+    	<a href="#" class="featured-link col-md-4 col-sm-4">
+        	<span>Volunteer to Help</span>
+        	<strong>Join Us</strong>
+        </a>
+        <a href="#" class="featured-link col-md-4 col-sm-4" data-toggle="modal" data-target="#DonateModal">
+        	<span>Give to a Cause</span>
+        	<strong>Make a Donation</strong>
+        </a>
+    	<a href="#" class="featured-link col-md-4 col-sm-4">
+        	<span>Get Involved</span>
+        	<strong>Become a Partner</a></div></strong>
+        </a>
+    </div>
+    <!-- Main Content -->
+    <div id="main-container">
+    	<div class="content">
+        	<div class="lgray-bg padding-tb75">
+            	<div class="container">
+                	<div class="row">
+                    	<div class="col-md-5 col-sm-5">
+                        		<h2 class="block-title">Over 25 Years of<br>Advancing Education</h2>
+                        		<div class="spacer-30"></div>
+                        </div>
+                        <div class="col-md-7 col-sm-7">
+                        	<div class="spacer-10"></div>
+                        	<p>We have a purpose to advance education in a P-20+ Initiative using STEAM subjects deemed necessary for individuals to join the workforce.  We forecast the enterprise market over the next century and provide resources &amp; strategy in the advancement of education to the market.  Curiosity Corporation increases literacy across multiple languages, including written, spoken, unspoken, digital, and other languages used by society or projected to be used in the forecasted future.</p>
+                        </div>
+                  	</div>
+                    <div class="carousel-wrapper">
+                        <div class="row">
+                            <ul class="owl-carousel carousel-fw" id="causes-slider" data-columns="4" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="4" data-items-desktop-small="3" data-items-tablet="2" data-items-mobile="1">
+                                <li class="item">
+                                    <div class="grid-item cause-grid-item small-business format-standard">
+                                        <div class="grid-item-inner">
+                                            <a href="cause/silk-women.html" class="media-box">
+                                                <img src="images/600/silkwomen2.jpg" alt="">
+                                            </a>
+                                            <div class="grid-item-content">
+                                                <!-- <a class="cProgress" data-complete="88" data-color="F23827" data-toggle="tooltip" data-original-title="10 days left"><strong></strong></a> -->
+                                                <h3 class="post-title"><a href="cause/silk-women.html">The Silk Women&trade; Community</a></h3>
+                                                <div class="meta-data">Career Advancement</div>
+                                            </div>
+                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div class="grid-item cause-grid-item small-business format-standard">
+                                        <div class="grid-item-inner">
+                                            <a href="cause/devdojo.html" class="media-box">
+                                                <img src="images/600/devdojo.jpg" alt="">
+                                            </a>
+                                            <div class="grid-item-content">
+                                                <!-- <a class="cProgress" data-complete="75" data-color="8CC152" data-toggle="tooltip" data-original-title="65 days left"><strong></strong></a> -->
+                                                <h3 class="post-title"><a href="cause/devdojo.html">Developer Dojo<br>Mindful Programming</a></h3>
+                                                <div class="meta-data">IT Training Academy</div>
+                                            </div>
+                                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div class="grid-item cause-grid-item small-business format-standard">
+                                        <div class="grid-item-inner">
+                                            <a href="cause/instarlab.html" class="media-box">
+                                                <img src="images/600/marsrover.jpg" alt="">
+                                            </a>
+                                            <div class="grid-item-content">
+                                                <!-- <a class="cProgress" data-complete="52" data-color="F6BB42" data-toggle="tooltip" data-original-title="25 days left"><strong></strong></a> -->
+                                                <h3 class="post-title"><a href="cause/instarlab.html">INSTAR<br>Laboratory</a></h3>
+                                                <div class="meta-data">Research Group</div>
+                                            </div>
+                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div class="grid-item cause-grid-item small-business format-standard">
+                                        <div class="grid-item-inner">
+                                            <a href="cause/themov.html" class="media-box">
+                                                <img src="images/600/themov3.jpg" alt="">
+                                            </a>
+                                            <div class="grid-item-content">
+                                                <!-- <a class="cProgress" data-complete="75" data-color="8CC152" data-toggle="tooltip" data-original-title="65 days left"><strong></strong></a> -->
+                                                <h3 class="post-title"><a href="cause/themov.html">TheMOV&trade;<br>Fitness Network</a></h3>
+                                                <div class="meta-data">Health &amp; Wellness</div>
+                                            </div>
+                                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                
+                                <li class="item">
+                                    <div class="grid-item cause-grid-item small-business format-standard">
+                                        <div class="grid-item-inner">
+                                            <a href="cause/movdance.html" class="media-box">
+                                                <img src="images/600/gala.jpg" alt="">
+                                            </a>
+                                            <div class="grid-item-content">
+                                                <!-- <a class="cProgress" data-complete="50" data-color="8CC152" data-toggle="tooltip" data-original-title="105 days left"><strong></strong></a> -->
+                                                <h3 class="post-title"><a href="cause/movdance.html">MOVDance&trade;<br>Social Club</a></h3>
+                                                <div class="meta-data">Ballroom Dancing</div>
+                                            </div>
+                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div class="grid-item cause-grid-item small-business format-standard">
+                                        <div class="grid-item-inner">
+                                            <a href="cause/miss-lyra.html" class="media-box">
+                                                <img src="images/600/lyra2.jpg" alt="">
+                                            </a>
+                                            <div class="grid-item-content">
+                                                <!-- <a class="cProgress" data-complete="20" data-color="8CC152" data-toggle="tooltip" data-original-title="102 days left"><strong></strong></a> -->
+                                                <h3 class="post-title"><a href="cause/miss-lyra.html">The Miss Lyra<br>Show&trade;</a></h3>
+                                                <div class="meta-data">TV Series for Kids</div>
+                                            </div>
+                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div class="grid-item cause-grid-item small-business format-standard">
+                                        <div class="grid-item-inner">
+                                            <a href="cause/airikai.html" class="media-box">
+                                                <img src="images/600/airikai2.jpg" alt="">
+                                            </a>
+                                            <div class="grid-item-content">
+                                                <!-- <a class="cProgress" data-complete="75" data-color="8CC152" data-toggle="tooltip" data-original-title="65 days left"><strong></strong></a> -->
+                                                <h3 class="post-title"><a href="cause/airikai.html">Airikai&trade;<br>Health &amp; Wellness</a></h3>
+                                                <div class="meta-data">Movement Coaching</div>
+                                            </div>
+                                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="item">
+                                    <div class="grid-item cause-grid-item small-business format-standard">
+                                        <div class="grid-item-inner">
+                                            <a href="cause/pedadida.html" class="media-box">
+                                                <img src="images/600/pedadida.jpg" alt="">
+                                            </a>
+                                            <div class="grid-item-content">
+                                                <!-- <a class="cProgress" data-complete="88" data-color="8CC152" data-toggle="tooltip" data-original-title="70 days left"><strong></strong></a> -->
+                                                <h3 class="post-title"><a href="cause/pedadida.html">Pedadida&trade;<br>Learning Platform </a></h3>
+                                                <div class="meta-data">Open-Source LMS</div>
+                                            </div>
+                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+               	</div>
+            </div>
+            <div class="padding-tb45 position-absolute parallax parallax3 portbg">
+                <div class="container">
+                    <!--portfolio-content starts visible-md-block visible-lg-block -->
+                    <div class="front-portfolio-container">
+                       <div class="portfolio-content portfolio-content1">
+                           <div class="front-portfolio">
+                              <div class="portfolio-outer">
+                                  <div class="portfolio-thumb">
+                                  	  <img src="images/hex/ignite3.jpg" alt="" title="">
+                                      <div class="image-overlay">
+                                        <object data="images/hex/consortium_hives-02.svg" fill="white" type="image/svg+xml" class="default-retina-logo">
+                                            <img src="images/logo.png" />
+                                        </object>
+                                        <a href="https://ignitecuriosity.org" target="_blank" class="link"><span class="fa fa-link"></span></a>
+                                        <!-- <a href="images/image1.jpg" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-search"></span></a> -->
+                                    </div>
+                                  </div>
+                              </div>
+                           </div>
+                       </div>
+                       <div class="portfolio-content portfolio-content2">
+                           <div class="front-portfolio">
+                              <div class="portfolio-outer">
+                                  <div class="portfolio-thumb">
+                                  	  <img src="images/image1.jpg" alt="" title="">	
+                                      <div class="image-overlay">
+                                        <object data="images/hex/consortium_hives-07.svg" fill="white" type="image/svg+xml" class="default-retina-logo">
+                                            <img src="images/logo.png" />
+                                        </object>
+                                        <a href="https://sunnyhive.com" target="_blank" class="link"><span class="fa fa-link"></span></a>
+                                        <!-- <a href="images/image1.jpg" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-search"></span></a> -->
+                                    </div>
+                                  </div>
+                              </div>
+                           </div>
+                       </div>
+                      
+                       <div class="portfolio-content portfolio-content3">
+                           <div class="front-portfolio">
+                              <div class="portfolio-outer">
+                                  <div class="portfolio-thumb">
+                                      <img src="images/hex/steam.jpg" alt="" title="">
+                                      <div class="image-overlay">
+                                        <object data="images/hex/consortium_hives-04.svg" fill="white" type="image/svg+xml" class="default-retina-logo">
+                                            <img src="images/logo.png" />
+                                        </object>
+                                        <a href="https://steamhive.com" target="_blank" class="link"><span class="fa fa-link"></span></a>
+                                        <!-- <a href="images/image1.jpg" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-search"></span></a> -->
+                                    </div>
+                                  </div>
+                              </div>
+                           </div>
+                       </div>
+                       <div class="portfolio-content portfolio-content4">
+                           <div class="front-portfolio">
+                              <div class="portfolio-outer">
+                                  <div class="portfolio-thumb">
+                                      <img src="images/hex/themov4.jpg" alt="" title="">
+                                      <div class="image-overlay">
+                                        <object data="images/hex/consortium_hives-05.svg" fill="white" type="image/svg+xml" class="default-retina-logo">
+                                            <img src="images/logo.png" />
+                                        </object>
+                                        <a href="https://themov.org" target="_blank" class="link"><span class="fa fa-link"></span></a>
+                                        <!-- <a href="images/image1.jpg" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-search"></span></a> -->
+                                    </div>
+                                  </div>
+                              </div>
+                           </div>
+                       </div>
+                       <div class="portfolio-content portfolio-content5">
+                           <div class="front-portfolio">
+                              <div class="portfolio-outer">
+                                  <div class="portfolio-thumb">
+                                    <object data="images/consortium_square3.svg" fill="white" type="image/svg+xml" class="default-retina-logo">
+                                        <img src="images/logo.png" />
+                                    </object>
+                                      <div class="image-overlay">
+                                        <object data="images/consortium_square3.svg" fill="white" type="image/svg+xml" class="default-retina-logo">
+                                            <img src="images/logo.png" />
+                                        </object>
+                                    </div>
+                                  </div>
+                              </div>
+                           </div>
+                       </div>
+                       <div class="portfolio-content portfolio-content6">
+                           <div class="front-portfolio">
+                              <div class="portfolio-outer">
+                                  <div class="portfolio-thumb">
+                                      <img src="images/hex/focus.jpg" alt="" title="">
+                                      <div class="image-overlay">
+                                        <object data="images/hex/consortium_hives-03.svg" fill="white" type="image/svg+xml" class="default-retina-logo">
+                                            <img src="images/logo.png" />
+                                        </object>
+                                        <a href="https://thefocushive.com" target="_blank" class="link"><span class="fa fa-link"></span></a>
+                                        <!-- <a href="images/image1.jpg" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-search"></span></a> -->
+                                    </div>
+                                  </div>
+                              </div>
+                           </div>
+                       </div>
+                       <div class="portfolio-content portfolio-content7">
+                           <div class="front-portfolio">
+                              <div class="portfolio-outer">
+                                  <div class="portfolio-thumb">
+                                      <img src="images/hex/blossom3.jpg" alt="" title=""> 		
+                                      <div class="image-overlay">
+                                        <object data="images/hex/consortium_hives-06.svg" fill="white" type="image/svg+xml" class="default-retina-logo">
+                                            <img src="images/logo.png" />
+                                        </object>
+                                        <a href="https://iblossom.org" target="_blank" class="link"><span class="fa fa-link"></span></a>
+                                        <!-- <a href="images/image1.jpg" data-gal="prettyPhoto[gallery]" class="zoom"><span class="fa fa-search"></span></a> -->
+                                    </div>
+                                  </div>
+                              </div>
+                           </div>
+                       </div>
+                    <div class="spacer-20"></div>
+                    <div class="aligncenter text-center">
+                        <!-- <button type="button" class="btn btn-primary">View Consortium</button>       -->
+                    </div>
+                    </div>
+                    <!--front-portfolio-container ends-->
+                </div>
+                <!--container ends-->
+            </div>
+            <div class="featured-texts row">
+            	<div class="featured-text col-md-3 col-sm-3">
+                	<span>Successful projects</span>
+                    <strong>25</strong>
+                </div>
+            	<div class="featured-text col-md-3 col-sm-3">
+                	<span>People Impacted</span>
+                    <strong>6 Million</strong>
+                </div>
+            	<div class="featured-text col-md-3 col-sm-3">
+                	<span>Total amount raised</span>
+                    <strong>$18 million</strong>
+                </div>
+            	<div class="featured-text col-md-3 col-sm-3">
+                	<span>Total Volunteers</span>
+                    <strong>280</strong>
+                </div>
+            </div>
+            <div class="parallax parallax6 padding-tb100" style="background-image:url(images/slides/chitral.jpg)">
+            	<div class="container">
+                    <div class="parallax-text-block pull-right">
+                        <h3>Help us empower the Chitral Community</h3>
+                        <p>Located halfway up the Himalayas, this peaceful community is part of the original Indus Valley where much culture is yet to be discovered. We are helping the locals learn about their heritage, increasing literacy, and teaching family values to empower life on the mountain.</p>
+                        <a href="https://donorbox.org/taolearning" target="_blank" class="btn btn-primary">Donate to Chitral</a>
+                    </div>
+               	</div>
+            </div>
+            <div class="padding-tb75 padding-b0">
+                <div class="container">
+                	<div class="text-align-center">
+                       	<h2 class="block-title block-title-center">More Community Developments</h2>
+                    </div>
+                </div>
+                <div class="carousel-wrapper">
+                    <div class="row">
+                        <ul class="owl-carousel carousel-fw" id="stories-slider" data-columns="1" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="1" data-items-desktop-small="2" data-items-tablet="1" data-items-mobile="1">
+                            <li class="item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="images/slides/platanillo.jpg" alt="" class="img-responsive">
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                    	<div class="story-slider-content">
+                                    		<div class="story-slider-table">
+                                    			<div class="story-slider-cell">
+                                                    <blockquote>
+                                                        <h3>Perez Zeledon Development in Costa Rica</h3>
+                                                        <p>In a small village as the transportation hub of Southern Costa Rica, we have spent many years developing connections with locals, farmers' markets, and teaching health &amp; education to the local population through agriculture, irrigation, dance, design, and English classes. Our impact has had lasting effects and has lifted the local economy to new heights.</p>
+                                                    </blockquote>
+                                                    <a href="#" class="btn btn-primary">View full story</a>
+                                              	</div>
+                                           	</div>
+                                      	</div>
+                                    </div>
+                                </div>
+                           	</li>
+                            <li class="item">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img src="images/marietta_landscape.jpg" alt="" class="img-responsive">
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                    	<div class="story-slider-content">
+                                    		<div class="story-slider-table">
+                                    			<div class="story-slider-cell">
+                                                    <blockquote>
+                                                        <h3>Mid-Ohio Valley: Empowering HubZones</h3>
+                                                        <p>We provide training in micro-business operations in HubZones as we focus on tried &amp; true methods while sharing innovative strategies for locals to thrive. The Mid-Ohio Valley is a key place we have been involved in for the past 20 years where we continue to teach the children, inspire businesses, and contribute resources for continued development.</p>
+                                                    </blockquote>
+                                                    <a href="#" class="btn btn-primary">View full story</a>
+                                              	</div>
+                                           	</div>
+                                      	</div>
+                                    </div>
+                                </div>
+                           	</li>
+                      	</ul>
+                  	</div>
+               	</div>
+          	</div>
+            <!-- Partner Carousel -->
+            <div class="partner-carousel">
+            	<div class="container">
+                	<div class="row">
+                    	<div class="col-md-3 col-sm-3">
+                        	<h4 class="push-top">Our Amazing Supporting Partners</h4>
+                        </div>
+                        <div class="col-md-9 col-sm-9">
+                            <div class="carousel-wrapper">
+                                <div class="row">
+                                    <ul class="owl-carousel carousel-fw" id="partners-slider" data-columns="5" data-autoplay="5000" data-pagination="no" data-arrows="no" data-single-item="no" data-items-desktop="4" data-items-desktop-small="3" data-items-tablet="3" data-items-mobile="2">
+                                        <li class="item"><a href="https://google.com" target="_blank"><img src="images/partners/google-logo.jpg" alt=""></a></li>
+                                        <li class="item"><a href="https://taomgt.com" target="_blank"><img src="images/partners/taomgt.png" alt=""></a></li>
+                                        <li class="item"><a href="https://www.usa.canon.com/" target="_blank"><img src="images/partners/canon.png" alt=""></a></li>
+                                        <li class="item"><a href="https://microsoft.com" target="_blank"><img src="images/partners/microsoft_small.png" alt=""></a></li>
+                                        <li class="item"><a href="https://adobe.com" target="_blank"><img src="images/partners/adobe.png" alt=""></a></li>
+                                        <li class="item"><a href="https://unrealengine.com" target="_blank"><img src="images/partners/unreal.png" alt=""></a></li>
+                                        <li class="item"><a href="https://salesforce.com" target="_blank"><img src="images/partners/salesforce2.png" alt=""></a></li>
+                                        <li class="item"><a href="https://geekspod.com" target="_blank"><img src="images/partners/geekspod.png" alt=""></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                   	</div>
+                </div>
+           	</div>
+            
+            <div class="parallax parallax5 parallax-light text-align-center padding-tb100" style="background-image:url(images/parallax6.jpg)">
+            	<h2>“You may have tangible wealth untold. Caskets of jewels and coffers of gold.<br> Richer than I you can never be — I had a mother who read to me.” – Strickland Gillilan</h2>
+                <a href="#" class="parallax-icon-link"><i class="fa fa-5x fa-play-circle-o"></i></a>
+            </div>
+            <div class="padding-tb75 lgray-bg">
+            	<div class="container">
+                	<div class="row">
+                    	<div class="col-md-4 col-sm-4">
+                       		<h2 class="block-title">Our Latest News</h2>
+                            <p>Read about our progress and partnerships where we increase literacy and create innovative learning solutions with our unique SMILE Method&trade;.</p>
+                            <p>From micro-businesses with Russia to family-oriented development in Pakistan, we create lasting relationships around the world.</p>
+                        </div>
+                        <div class="col-md-8 col-sm-8">
+                            <div class="carousel-wrapper">
+                                <div class="row">
+                                    <ul class="owl-carousel carousel-fw" id="news-slider" data-columns="2" data-autoplay="" data-pagination="yes" data-arrows="no" data-single-item="no" data-items-desktop="2" data-items-desktop-small="1" data-items-tablet="1" data-items-mobile="1">
+                                        <li class="item">
+                                            <div class="grid-item blog-grid-item format-standard">
+                                                <div class="grid-item-inner">
+                                                    <a href="news/shinrin-yoku.html" class="media-box">
+                                                        <img src="images/600/grasslearn.jpg" alt="">
+                                                    </a>
+                                                    <div class="grid-item-content">
+                                                        <h3 class="post-title"><a href="news/shinrin-yoku.html">Learn High-Tech while Outdoors</a></h3>
+                                                        <span class="meta-data">July 17th, 2019</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="grid-item blog-grid-item format-standard">
+                                                <div class="grid-item-inner">
+                                                    <a href="news/business-integration.html" class="media-box">
+                                                        <img src="images/600/skyscrape.jpg" alt="">
+                                                    </a>
+                                                    <div class="grid-item-content">
+                                                        <h3 class="post-title"><a href="news/business-integration.html">Integration with Enterprise</a></h3>
+                                                        <span class="meta-data">June 11th, 2019</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="grid-item blog-grid-item format-standard">
+                                                <div class="grid-item-inner">
+                                                    <a href="news/microbusiness.html" class="media-box">
+                                                        <img src="images/600/silkwomen.jpg" alt="">
+                                                    </a>
+                                                    <div class="grid-item-content">
+                                                        <h3 class="post-title"><a href="news/microbusiness.html">Micro-Business with Silk Women&trade;</a></h3>
+                                                        <span class="meta-data">Dec 18th, 2018</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="grid-item blog-grid-item format-standard">
+                                                <div class="grid-item-inner">
+                                                    <a href="news/smalltown.html" class="media-box">
+                                                        <img src="images/600/gala.jpg" alt="">
+                                                    </a>
+                                                    <div class="grid-item-content">
+                                                        <h3 class="post-title"><a href="news/smalltown.html">Bringing Elegance to Small Towns</a></h3>
+                                                        <span class="meta-data">Dec 7th, 2018</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accent-bg padding-tb20 cta-fw">
+    			<div class="container">
+                    <a href="#" class="btn btn-default btn-ghost btn-light btn-rounded pull-right " >Become a Volunteer</a>
+                    <h4>Make a Difference with Us. Help change lives through education.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Site Footer -->
+    <div class="site-footer parallax parallax3" style="background-image:url(images/parallax3.jpg)">
+    	<div class="container">
+        	<div class="row">
+            	<div class="col-md-4 col-sm-4">
+                	<div class="widget footer_widget">
+                    	<!-- <h4 class="widgettitle">About Tao Learning</h4> -->
+                        <p class="default-retina-logo"><a href="index.html"><object data="images/logo_white.svg" width="140px" height="40px" type="image/svg+xml" class="default-retina-logo">
+                            <img src="images/logo.png" />
+                        </object></a></p>
+                        <p>We have a purpose to advance education in a P-20+ Initiative. We are a 501c3 Non-Profit Organization headquartered in USA. Tax ID: 33-3478603</p>
+                        <p>+1 929-229-2917</p>
+                        <p>125 Frederick St<br>Marietta, OH 45750</p>
+                        
+                        <ul class="social-icons-rounded social-icons-colored">
+                            <li class="facebook"><a href="https://facebook.com/taolearninginstitute"><i class="fab fa-facebook fa-2x"></i></a></li>
+                            <li class="twitter"><a href="https://twitter.com/taolearning"><i class="fab fa-twitter fa-2x"></i></a></li>
+                            <li class="youtube"><a href="https://www.youtube.com/channel/UCTb_8kGbwqhri3TQL6TW5vQ"><i class="fab fa-youtube fa-2x"></i></a></li>
+                            <li class="instagram"><a href="https://www.instagram.com/taolearning/"><i class="fab fa-instagram fa-2x"></i></a></li>
+                            <li class="linkedin"><a href="https://www.linkedin.com/company/taolearning/"><i class="fab fa-linkedin-in fa-2x"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            	<div class="col-md-4 col-sm-4">
+                	<div class="widget footer_widget widget_links">
+                    	<h4 class="widgettitle"> Ways to Help</h4>
+                        <ul>
+                            <li><a href="get-involved/volunteer.html">Volunteer</a></li>
+                            <li><a href="get-involved/give.html">Give to a Cause</a></li>
+                            <li><a href="get-involved/chapter.html">Join a Chapter</a></li>
+                            <li><a href="get-involved/advocate.html">Be an Advocate</a></li>
+                            <li><a href="get-involved/fundraise.html">Fundraise with Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            	<div class="col-md-4 col-sm-4">
+                	<a class="twitter-timeline" data-theme="dark" href="https://twitter.com/TaoLearning?ref_src=twsrc%5Etfw">Tweets by TaoLearning</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Site Footer -->
+    <div class="site-footer-bottom">
+    	<div class="container">
+        	<div class="row">
+            	<div class="col-md-6 col-sm-6">
+                	<div class="copyrights-col-left">
+                    	<p>&copy; 2019 Tao Learning. All Rights Reserved</p>
+                    </div>
+                </div>
+            	<div class="col-md-6 col-sm-6"></div>
+                	<div class="copyrights-col-right">
+                    	<ul class="footer-menu">
+                        	<li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        	<li><a href="payment-terms.html">Payment Terms</a></li>
+                        	<li><a href="refund-policy.html">Refund Policy</a></li>
+                        </ul>
+                    </div>
+           	</div>
+      	</div>
+  	</div>
+  	<a id="back-to-top"><i class="fa fa-angle-double-up"></i></a> 
+</div>
+
+<!-- Donate Form Modal -->
+<div class="modal fade" id="DonateModal" tabindex="-1" role="dialog" data-backdrop="static">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content">
+            <form action="#" method="post" id="payment-form">
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        		<div class="row">
+                    <div class="col-md-6 col-sm-6 total-amount-option">
+                        <h4>Choose an amount</h4>
+                        <ul class="predefined-amount">
+                            <li><label><input type="radio" name="total-amount" onclick="updateForm(this);" value="500">$5</label></li>
+                            <li><label><input type="radio" name="total-amount" onclick="updateForm(this);" value="2500" checked="checked">$25</label></li>
+                            <li><label><input type="radio" name="total-amount" onclick="updateForm(this);" value="9900">$99</label></li>
+                            <li><label><input type="radio" name="total-amount" onclick="updateForm(this);" value="50000">$500</label></li>
+                            <li><label><input type="radio" name="total-amount" onclick="updateForm(this);" value="200000">$2000</label></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 col-sm-6 total-amount-option">
+                        <h4>Frequency</h4>
+                        <ul class="predefined-amount2 predefined-amount">
+                            <input class="bt-switch" type="checkbox" data-inverse="true" data-on-text="Monthly" data-off-text="One-Time" data-on-color="info" data-off-color="info" name="subscription" id="subscription" onchange="updateForm(this);">
+                        </ul>
+                    </div>
+               	</div>
+            </div>
+      		<div class="modal-body">
+       			<div class="row">
+                    <div class="col-md-6 col-sm-6 donation-form-infocol">
+                        <h4>Personal info</h4>
+                        <input type="text" class="form-control" placeholder="Full Name" name="name" id="cardholder-name">
+                        <input type="email" class="form-control" placeholder="Email Address" name="email" id="email">
+                        <input type="tel" class="form-control" placeholder="Phone Number" name="tel" id="tel">
+                        <div>
+                            <input id="membership" class="checkbox-style" name="membership" onchange="updateForm(this);" type="checkbox">
+                            <label for="membership" class="checkbox-style-1-label checkbox-small" style="font-weight:normal;">Register as a Member</label>
+                            </div>
+                    </div>
+                	<div class="col-md-6 col-sm-6 donation-form-infocol">
+                        <h4>Billing Details</h4>
+                        <div class="form-control"  id="card-element"></div>
+                        <input type="text" class="form-control" placeholder="Address" name="Address" id="address">
+       					<div class="row">
+                			<div class="col-md-8 col-sm-8 col-xs-8">
+                        		<input type="text" class="form-control" placeholder="City" name="city" id="city">
+                            </div>
+                			<div class="col-md-4 col-sm-4 col-xs-4">
+                        		<input type="text" class="form-control" placeholder="State" name="state" id="state">
+                            </div>
+                    	</div>
+                    </div>
+                 </div>
+      		</div>
+      		<div class="modal-footer text-align-center">
+                <button type="button" class="btn btn-primary" id="card-button">Make your donation now</button>
+                <div class="spacer-10"></div>
+                <div id="card-errors" role="alert" class="text-center alert-error"></div>
+                <div class="spacer-10"></div>
+                <p class="small">
+                <br>Curiosity Corporation is a Section 501(c)3 charitable organization, EIN 33-3478603.<br>All donation are deemed tax-deductible absent any limitations on deductibility applicable to a particular taxpayer.<br>No goods or services were provided in exchange for your contribution.</p>
+              </div>
+            </form>
+            <script src="https://js.stripe.com/v3/"></script>
+    	</div>
+  	</div>
+</div>
+
+<script src="js/jquery-2.1.3.min.js"></script> <!-- Jquery Library Call -->
+<script src="vendor/magnific/jquery.magnific-popup.min.js"></script> <!-- PrettyPhoto Plugin -->
+<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>  
+<script src="js/ui-plugins.js"></script> <!-- UI Plugins -->
+<script src="js/helper-plugins.js"></script> <!-- Helper Plugins -->
+<script src="vendor/owl-carousel/js/owl.carousel.min.js"></script> <!-- Owl Carousel -->
+<script src="js/bootstrap.js"></script> <!-- UI -->
+<script src="js/init.js"></script> <!-- All Scripts -->
+<script src="vendor/flexslider/js/jquery.flexslider.js"></script> <!-- FlexSlider -->
+<script src="js/circle-progress.js"></script> <!-- Circle Progress Bars -->
+<!-- Krashnik Stripe Integration -->
+<script src="js/client.js"></script> 
+<script src="js/components/bs-switches.js"></script>
+<script>jQuery(".bt-switch").bootstrapSwitch();</script>
+<!-- End Krashnik Stripe Integration -->
+
+
+</body>
+</html>
