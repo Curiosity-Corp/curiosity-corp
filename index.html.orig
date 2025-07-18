@@ -430,7 +430,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="parallax" style="background-image:url(images/slides/athens.jpg)">
+                <li class="parallax" style="background-image:url(images/slides/athens.webp)">
                 	<div class="flex-caption">
                     	<div class="container">
                         	<div class="flex-caption-table">
@@ -444,7 +444,7 @@
                         </div>
                     </div>
                 </li>
-                <li class="parallax" style="background-image:url(images/slides/chalkboard2.jpg)">
+                <li class="parallax" style="background-image:url(images/slides/chalkboard2.webp)">
                 	<div class="flex-caption">
                     	<div class="container">
                         	<div class="flex-caption-table">
@@ -787,7 +787,7 @@
                             <li class="item">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <img src="images/slides/platanillo.jpg" alt="" class="img-responsive">
+                                        <img src="images/slides/platanillo.webp" alt="" class="img-responsive">
                                     </div>
                                     
                                     <div class="col-md-6">
