@@ -183,6 +183,7 @@ For every paragraph of existing copy:
 - **Grant/government-facing CTAs:** "Request Our Program Brief," "Review Our Outcomes," "Partner on Policy" — these should route to or imply a credibility-first resource (briefs, data, strategy), not a generic contact form.
 - **Partner-facing CTAs:** "Become a Partner," "Co-Build the Curriculum," "Join the Consortium" — emphasize collaboration framing over transaction framing.
 - General rule: every CTA should make explicit *what kind of relationship* the visitor is starting, matched to their audience segment from Section 4.
+- Reminder: no CTA on any page should route to or reference social media (see Section 5, "No social media presence"), and no donation CTA should name a specific payment/donation provider (see Section 5, "Donation platform language").
 
 ### Step 4 — Before/After examples
 
