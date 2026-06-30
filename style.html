@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curiosity Corp — Brand Style Guide</title>
+<style>
+  /* ── Design tokens ── */
+  :root {
+    --bg:        #07232b;
+    --bg-card:   #0d2f39;
+    --bg-card2:  #123c48;
+    --teal:      #42b8d4;
+    --cyan:      #6fdcf0;
+    --teal-deep: #2a93ab;
+    --teal-soft: #8fd9e8;
+    --white:     #f2fbfd;
+    --muted:     #9ec3cd;
+    --border:    rgba(66,184,212,0.20);
+    --glow:      rgba(66,184,212,0.10);
+    --radius:    12px;
+    --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Cascadia Code', 'Fira Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── Site header ── */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(7,35,43,0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .site-header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.01em;
+    flex-shrink: 0;
+  }
+  .wordmark svg { flex-shrink: 0; }
+  .wordmark .wm-accent { color: var(--teal); }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 0.82rem;
+    font-weight: 500;
+  }
+  .site-nav a { color: var(--muted); text-decoration: none; transition: color 0.15s; }
+  .site-nav a:hover  { color: var(--teal); }
+  .site-nav a.active { color: var(--teal); }
+
+  /* ── Layout ── */
+  .page { max-width: 1280px; margin: 0 auto; padding: 0 32px 80px; }
+
+  .page-hero {
+    border-bottom: 1px solid var(--border);
+    padding: 48px 0 40px;
+  }
+  .header-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 12px;
+  }
+  .page-hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .page-hero h1 span { color: var(--teal); }
+  .page-hero p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 600px;
+  }
+
+  /* ── Sections ── */
+  .sg-section { margin-top: 72px; }
+  .sg-section-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 8px;
+  }
+  .sg-section h2 {
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .sg-section-desc {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 32px;
+    max-width: 640px;
+  }
+
+  .sg-rule {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ── Logo section ── */
+  .logo-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .logo-variant {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .logo-variant.on-dark  { background: var(--bg-card); }
+  .logo-variant.on-light { background: #e8f4f7; }
+  .logo-variant.on-teal  { background: var(--teal); }
+  .logo-wordmark-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+  }
+  .logo-variant.on-light .logo-wordmark-display { color: #07232b; }
+  .logo-variant.on-light .logo-wordmark-display .wm-color { color: var(--teal-deep); }
+  .logo-variant.on-teal  .logo-wordmark-display { color: #07232b; }
+  .logo-variant.on-teal  .logo-wordmark-display .wm-color { color: #07232b; }
+  .logo-variant-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+  }
+  .logo-variant.on-light .logo-variant-label { color: #5a8a9a; }
+  .logo-variant.on-teal  .logo-variant-label { color: rgba(7,35,43,0.6); }
+
+  /* clear-space rule */
+  .clearspace-note {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .clearspace-note strong { color: var(--white); }
+
+  /* ── Color palette ── */
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .swatch {
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .swatch-color {
+    height: 80px;
+    width: 100%;
+  }
+  .swatch-info {
+    background: var(--bg-card);
+    padding: 12px 14px;
+  }
+  .swatch-name {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+  .swatch-token {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    margin-bottom: 2px;
+  }
+  .swatch-hex {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+  }
+  .swatch.primary .swatch-info { border-top: 2px solid var(--teal); }
+  .swatch.primary .swatch-name::after {
+    content: ' — Primary';
+    font-weight: 400;
+    color: var(--teal);
+    font-size: 0.72rem;
+  }
+
+  /* ── Typography ── */
+  .type-scale {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .type-meta {
+    width: 140px;
+    flex-shrink: 0;
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-family: var(--font-mono);
+    line-height: 1.5;
+  }
+  .type-sample { flex: 1; }
+
+  .font-stack-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+    font-family: var(--font-mono);
+  }
+
+  /* ── Voice & taglines ── */
+  .tagline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .tagline-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+  }
+  .tagline-card .tl-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .tagline-card .tl-text {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--teal);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+
+  .voice-box {
+    background: var(--bg-card2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+  }
+  .voice-box h4 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .voice-box p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+  .voice-box p:last-child { margin-bottom: 0; }
+  .voice-box strong { color: var(--white); }
+
+  /* ── Sub-brands ── */
+  .subbrand-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+  }
+  .subbrand-chip {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .subbrand-chip .sb-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--teal);
+  }
+  .subbrand-chip .sb-desc {
+    font-size: 0.76rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ── Components ── */
+  .component-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    margin-bottom: 40px;
+    align-items: flex-start;
+  }
+  .component-col { flex: 1; min-width: 240px; }
+  .component-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    text-decoration: none;
+    transition: all 0.15s;
+    border: 1px solid transparent;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .btn-primary {
+    background: var(--teal);
+    color: #07232b;
+    border-color: var(--teal);
+  }
+  .btn-primary:hover { background: var(--cyan); border-color: var(--cyan); }
+  .btn-secondary {
+    background: rgba(66,184,212,0.12);
+    color: var(--teal);
+    border-color: rgba(66,184,212,0.35);
+  }
+  .btn-secondary:hover { background: rgba(66,184,212,0.20); border-color: rgba(66,184,212,0.55); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--muted);
+    border-color: var(--border);
+  }
+  .btn-ghost:hover { color: var(--teal); border-color: rgba(66,184,212,0.4); }
+
+  /* Cards */
+  .ex-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px;
+    transition: border-color 0.15s, background 0.15s;
+    max-width: 340px;
+  }
+  .ex-card:hover { border-color: rgba(66,184,212,0.4); background: var(--bg-card2); }
+  .ex-card-icon { font-size: 1.6rem; margin-bottom: 10px; }
+  .ex-card-title { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+  .ex-card-body  { font-size: 0.84rem; color: var(--muted); line-height: 1.65; }
+
+  /* Tags / badges */
+  .tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(66,184,212,0.12);
+    color: var(--teal);
+    border: 1px solid rgba(66,184,212,0.30);
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+  .tag.physical  { background: rgba(100,200,140,0.1); color: #64c88c; border-color: rgba(100,200,140,0.3); }
+  .tag.community { background: rgba(100,160,255,0.1); color: #6aaeff; border-color: rgba(100,160,255,0.3); }
+  .tag.people    { background: rgba(200,130,255,0.1); color: #c882ff; border-color: rgba(200,130,255,0.3); }
+
+  /* ── Site footer ── */
+  .site-footer { background: var(--bg-card); border-top: 1px solid var(--border); }
+  .site-footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 28px 32px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .site-footer-inner a { color: var(--teal); text-decoration: none; }
+  .site-footer-inner a:hover { text-decoration: underline; }
+  .site-footer-copy { font-weight: 600; color: var(--teal); }
+
+  .page-inner-note {
+    margin-top: 32px;
+    padding: 16px 0;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    text-align: right;
+  }
+
+  @media (max-width: 700px) {
+    .page { padding: 0 16px 48px; }
+    .site-header-inner { padding: 0 16px; }
+    .site-nav { gap: 14px; }
+    .site-footer-inner { padding: 20px 16px; }
+    .palette-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════ SITE HEADER ══════════ -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="wordmark" href="overview.html" aria-label="Curiosity Corp home">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <polygon points="15,2 27,9 27,21 15,28 3,21 3,9" fill="rgba(66,184,212,0.12)" stroke="#42b8d4" stroke-width="1.5"/>
+        <line x1="15" y1="2"  x2="15" y2="28" stroke="#42b8d4" stroke-width="0.7" opacity="0.25"/>
+        <line x1="3"  y1="9"  x2="27" y2="21" stroke="#42b8d4" stroke-width="0.7" opacity="0.25"/>
+        <line x1="27" y1="9"  x2="3"  y2="21" stroke="#42b8d4" stroke-width="0.7" opacity="0.25"/>
+        <circle cx="15" cy="15" r="3.8" fill="#42b8d4"/>
+        <line x1="15" y1="8.5" x2="15" y2="6"   stroke="#6fdcf0" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="15" y1="21.5" x2="15" y2="24" stroke="#6fdcf0" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="9.5" y1="11.5" x2="7.8" y2="10.2" stroke="#6fdcf0" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="20.5" y1="18.5" x2="22.2" y2="19.8" stroke="#6fdcf0" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="20.5" y1="11.5" x2="22.2" y2="10.2" stroke="#6fdcf0" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="9.5" y1="18.5" x2="7.8" y2="19.8" stroke="#6fdcf0" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      Curiosity <span class="wm-accent">Corp</span>
+    </a>
+    <nav class="site-nav" aria-label="Site navigation">
+      <a href="overview.html">Ecosystem Overview</a>
+      <a href="style.html" class="active">Style Guide</a>
+      <a href="https://curiositycorp.org" target="_blank" rel="noopener">curiositycorp.org</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- ══════════ PAGE HERO ══════════ -->
+  <div class="page-hero">
+    <div class="header-eyebrow">Brand Identity &amp; Design System</div>
+    <h1>Curiosity Corp <span>Style Guide</span></h1>
+    <p>The canonical reference for Curiosity Corp brand identity — color, type, logo, voice, and UI components. Every sub-brand and web property shares this foundation.</p>
+  </div>
+
+  <!-- ══════════ 1. LOGO / WORDMARK ══════════ -->
+  <section class="sg-section">
+    <div class="sg-section-label">Section 01</div>
+    <h2>Logo &amp; Wordmark</h2>
+    <p class="sg-section-desc">The Curiosity Corp mark is a teal hexagon with internal lattice lines and a six-ray spark at its center, representing the hive, discovery, and the spark of curiosity. The wordmark pairs it with the name set in a bold, condensed sans-serif.</p>
+
+    <div class="logo-showcase">
+      <!-- On dark (default) -->
+      <div class="logo-variant on-dark">
+        <div class="logo-wordmark-display">
+          <svg width="36" height="36" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="15,2 27,9 27,21 15,28 3,21 3,9" fill="rgba(66,184,212,0.12)" stroke="#42b8d4" stroke-width="1.5"/>
+            <line x1="15" y1="2"  x2="15" y2="28" stroke="#42b8d4" stroke-width="0.7" opacity="0.25"/>
+            <line x1="3"  y1="9"  x2="27" y2="21" stroke="#42b8d4" stroke-width="0.7" opacity="0.25"/>
+            <line x1="27" y1="9"  x2="3"  y2="21" stroke="#42b8d4" stroke-width="0.7" opacity="0.25"/>
+            <circle cx="15" cy="15" r="3.8" fill="#42b8d4"/>
+            <line x1="15" y1="8.5" x2="15" y2="6"   stroke="#6fdcf0" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="15" y1="21.5" x2="15" y2="24" stroke="#6fdcf0" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="9.5" y1="11.5" x2="7.8" y2="10.2" stroke="#6fdcf0" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="20.5" y1="18.5" x2="22.2" y2="19.8" stroke="#6fdcf0" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="20.5" y1="11.5" x2="22.2" y2="10.2" stroke="#6fdcf0" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="9.5" y1="18.5" x2="7.8" y2="19.8" stroke="#6fdcf0" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span>Curiosity <span class="wm-accent" style="color:var(--teal);">Corp</span></span>
+        </div>
+        <div class="logo-variant-label">On dark background (default)</div>
+      </div>
+
+      <!-- On light -->
+      <div class="logo-variant on-light">
+        <div class="logo-wordmark-display">
+          <svg width="36" height="36" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="15,2 27,9 27,21 15,28 3,21 3,9" fill="rgba(42,147,171,0.12)" stroke="#2a93ab" stroke-width="1.5"/>
+            <line x1="15" y1="2"  x2="15" y2="28" stroke="#2a93ab" stroke-width="0.7" opacity="0.3"/>
+            <line x1="3"  y1="9"  x2="27" y2="21" stroke="#2a93ab" stroke-width="0.7" opacity="0.3"/>
+            <line x1="27" y1="9"  x2="3"  y2="21" stroke="#2a93ab" stroke-width="0.7" opacity="0.3"/>
+            <circle cx="15" cy="15" r="3.8" fill="#2a93ab"/>
+            <line x1="15" y1="8.5" x2="15" y2="6"   stroke="#42b8d4" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="15" y1="21.5" x2="15" y2="24" stroke="#42b8d4" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="9.5" y1="11.5" x2="7.8" y2="10.2" stroke="#42b8d4" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="20.5" y1="18.5" x2="22.2" y2="19.8" stroke="#42b8d4" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="20.5" y1="11.5" x2="22.2" y2="10.2" stroke="#42b8d4" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="9.5" y1="18.5" x2="7.8" y2="19.8" stroke="#42b8d4" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span>Curiosity <span class="wm-color" style="color:#2a93ab;">Corp</span></span>
+        </div>
+        <div class="logo-variant-label" style="color:#5a8a9a;">On light background</div>
+      </div>
+
+      <!-- On teal -->
+      <div class="logo-variant on-teal">
+        <div class="logo-wordmark-display">
+          <svg width="36" height="36" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="15,2 27,9 27,21 15,28 3,21 3,9" fill="rgba(7,35,43,0.15)" stroke="rgba(7,35,43,0.6)" stroke-width="1.5"/>
+            <line x1="15" y1="2"  x2="15" y2="28" stroke="rgba(7,35,43,0.3)" stroke-width="0.7"/>
+            <line x1="3"  y1="9"  x2="27" y2="21" stroke="rgba(7,35,43,0.3)" stroke-width="0.7"/>
+            <line x1="27" y1="9"  x2="3"  y2="21" stroke="rgba(7,35,43,0.3)" stroke-width="0.7"/>
+            <circle cx="15" cy="15" r="3.8" fill="#07232b"/>
+            <line x1="15" y1="8.5" x2="15" y2="6"   stroke="#07232b" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="15" y1="21.5" x2="15" y2="24" stroke="#07232b" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="9.5" y1="11.5" x2="7.8" y2="10.2" stroke="#07232b" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="20.5" y1="18.5" x2="22.2" y2="19.8" stroke="#07232b" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="20.5" y1="11.5" x2="22.2" y2="10.2" stroke="#07232b" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="9.5" y1="18.5" x2="7.8" y2="19.8" stroke="#07232b" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span>Curiosity Corp</span>
+        </div>
+        <div class="logo-variant-label" style="color:rgba(7,35,43,0.6);">On teal background</div>
+      </div>
+    </div>
+
+    <div class="clearspace-note">
+      <strong>Clear space:</strong> Maintain a minimum clear space equal to the height of the "C" in "Corp" on all sides of the wordmark. Never place the mark on a busy photographic background without a semi-transparent teal overlay. Never recolor the spark rays or hexagon to any color outside the approved palette. Never stretch, skew, or add drop shadows to the mark.
+    </div>
+  </section>
+
+  <!-- ══════════ 2. COLOR PALETTE ══════════ -->
+  <section class="sg-section">
+    <div class="sg-section-label">Section 02</div>
+    <h2>Color Palette</h2>
+    <p class="sg-section-desc">Every Curiosity Corp surface uses this teal/cyan palette. <strong style="color:var(--teal);">#42b8d4 is the official primary brand color.</strong> No orange, amber, or warm-neutral primaries.</p>
+
+    <div class="palette-grid">
+      <div class="swatch primary">
+        <div class="swatch-color" style="background:#42b8d4;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Teal</div>
+          <div class="swatch-token">--teal</div>
+          <div class="swatch-hex">#42b8d4</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#6fdcf0;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Cyan</div>
+          <div class="swatch-token">--cyan</div>
+          <div class="swatch-hex">#6fdcf0</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#8fd9e8;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Teal Soft</div>
+          <div class="swatch-token">--teal-soft</div>
+          <div class="swatch-hex">#8fd9e8</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2a93ab;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Teal Deep</div>
+          <div class="swatch-token">--teal-deep</div>
+          <div class="swatch-hex">#2a93ab</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#07232b;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Deep Ink</div>
+          <div class="swatch-token">--bg</div>
+          <div class="swatch-hex">#07232b</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0d2f39;border:1px solid rgba(66,184,212,0.15);"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Card</div>
+          <div class="swatch-token">--bg-card</div>
+          <div class="swatch-hex">#0d2f39</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#123c48;border:1px solid rgba(66,184,212,0.15);"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Card Alt</div>
+          <div class="swatch-token">--bg-card2</div>
+          <div class="swatch-hex">#123c48</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#f2fbfd;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">White</div>
+          <div class="swatch-token">--white</div>
+          <div class="swatch-hex">#f2fbfd</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#9ec3cd;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Muted</div>
+          <div class="swatch-token">--muted</div>
+          <div class="swatch-hex">#9ec3cd</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;font-size:0.84rem;color:var(--muted);line-height:1.7;">
+      <strong style="color:var(--white);">Accent colors</strong> (for per-layer differentiation in the ecosystem map and tags only — not general UI):<br>
+      Community layer: <code style="color:#6aaeff;">#6aaeff</code> &nbsp;|&nbsp;
+      People layer: <code style="color:#c882ff;">#c882ff</code> &nbsp;|&nbsp;
+      Physical layer: <code style="color:#64c88c;">#64c88c</code>
+    </div>
+  </section>
+
+  <!-- ══════════ 3. TYPOGRAPHY ══════════ -->
+  <section class="sg-section">
+    <div class="sg-section-label">Section 03</div>
+    <h2>Typography</h2>
+    <p class="sg-section-desc">System font stack — no external font loading. Clean, legible, and fast on every device.</p>
+
+    <div class="font-stack-box" style="margin-bottom:28px;">
+      --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif<br>
+      --font-mono: 'Cascadia Code', 'Fira Mono', monospace
+    </div>
+
+    <div class="type-scale">
+      <div class="type-row">
+        <div class="type-meta">H1 / Display<br>clamp(2rem–3.2rem)<br>weight 800<br>ls -0.02em</div>
+        <div class="type-sample" style="font-size:clamp(2rem,5vw,3.2rem);font-weight:800;letter-spacing:-0.02em;line-height:1.1;">Ignite Curiosity</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">H2 / Section<br>clamp(1.4rem–2rem)<br>weight 700<br>ls -0.01em</div>
+        <div class="type-sample" style="font-size:clamp(1.4rem,3vw,2rem);font-weight:700;letter-spacing:-0.01em;">Dream Quest &amp; S.P.A.R.K.</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">H3 / Card<br>1.05rem<br>weight 700<br>ls -0.01em</div>
+        <div class="type-sample" style="font-size:1.05rem;font-weight:700;letter-spacing:-0.01em;">Curiosity Hive</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Body<br>0.88rem–1rem<br>weight 400<br>lh 1.7</div>
+        <div class="type-sample" style="font-size:0.92rem;line-height:1.7;color:var(--muted);">Dreamers cross-pollinate ideas, share the buzz of discovery, and turn individual effort into shared honey — "you take what you need and pay it forward."</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Label / Tag<br>0.68rem<br>weight 700<br>ls 0.08em, uppercase</div>
+        <div class="type-sample" style="font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--teal);">Digital Content Program</div>
+      </div>
+      <div class="type-row">
+        <div class="type-meta">Mono / Code<br>0.82rem<br>weight 400</div>
+        <div class="type-sample" style="font-size:0.82rem;font-family:var(--font-mono);color:var(--muted);">curiosity-corp/spark-sessions</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 4. TAGLINES & VOICE ══════════ -->
+  <section class="sg-section">
+    <div class="sg-section-label">Section 04</div>
+    <h2>Taglines &amp; Brand Voice</h2>
+    <p class="sg-section-desc">Every touchpoint — from hero headlines to button copy — should feel energetic, curiosity-driven, and genuinely welcoming.</p>
+
+    <div class="tagline-grid">
+      <div class="tagline-card">
+        <div class="tl-label">Org tagline</div>
+        <div class="tl-text">Ignite Curiosity.</div>
+      </div>
+      <div class="tagline-card">
+        <div class="tl-label">Spark Sessions CTA</div>
+        <div class="tl-text">Spark Your Curiosity.</div>
+      </div>
+      <div class="tagline-card">
+        <div class="tl-label">Ignite Curiosity CTA</div>
+        <div class="tl-text">Ignite Curiosity.</div>
+      </div>
+      <div class="tagline-card">
+        <div class="tl-label">Curiosity Hive CTA</div>
+        <div class="tl-text">Join the Hive. Find your swarm.</div>
+      </div>
+      <div class="tagline-card">
+        <div class="tl-label">Framework</div>
+        <div class="tl-text">S.P.A.R.K.</div>
+      </div>
+      <div class="tagline-card">
+        <div class="tl-label">Learning journey</div>
+        <div class="tl-text">Dream Quest</div>
+      </div>
+      <div class="tagline-card">
+        <div class="tl-label">Dreamer ethos</div>
+        <div class="tl-text">"You take what you need and pay it forward."</div>
+      </div>
+      <div class="tagline-card">
+        <div class="tl-label">S.P.A.R.K. expanded</div>
+        <div class="tl-text">Seek. Play. Apply. Research. Know.</div>
+      </div>
+    </div>
+
+    <div class="voice-box" style="margin-top:20px;">
+      <h4>Brand Voice</h4>
+      <p><strong>Energetic, not hype.</strong> We don't overpromise. We communicate with genuine enthusiasm about real learning — the kind that sticks because it started with a real question.</p>
+      <p><strong>Curiosity-driven.</strong> Headlines should spark a question, not answer one. Pull the reader forward. "What if homework was replaced by exploration?" beats "We offer project-based learning."</p>
+      <p><strong>Wholesome and inclusive.</strong> Our Dreamers are kids, teens, and adult learners. All copy must be appropriate for any age. Hive/bee metaphors are welcome — keep them about pollination of ideas and shared discovery, never anything suggestive.</p>
+      <p><strong>Bottom-up, never condescending.</strong> We believe every person has a dream worth pursuing. Copy never talks down. It invites.</p>
+      <p><strong>No trademark symbols in digital copy.</strong> Write S.P.A.R.K., Dream Quest, Curiosity Hive — without (TM) or (R) glyphs that render poorly across platforms.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ 5. SUB-BRAND CONSISTENCY ══════════ -->
+  <section class="sg-section">
+    <div class="sg-section-label">Section 05</div>
+    <h2>Sub-Brand Consistency</h2>
+    <p class="sg-section-desc">Every Curiosity Corp sub-brand inherits this teal/cyan palette and these typographic styles. No sub-brand introduces its own primary color.</p>
+
+    <div class="subbrand-grid">
+      <div class="subbrand-chip">
+        <div class="sb-name">Spark Sessions</div>
+        <div class="sb-desc">Microlearning on-ramp. Self-paced, drip-fed sparks with quizzes and points.</div>
+      </div>
+      <div class="subbrand-chip">
+        <div class="sb-name">Ignite Curiosity</div>
+        <div class="sb-desc">Student-facing front door. Discovery, mid-length content, program directory.</div>
+      </div>
+      <div class="subbrand-chip">
+        <div class="sb-name">Curiosity Hive</div>
+        <div class="sb-desc">Online hive and community. Swarm agile teams, forums, peer collaboration.</div>
+      </div>
+      <div class="subbrand-chip">
+        <div class="sb-name">Curiosity Camps</div>
+        <div class="sb-desc">Bootcamp-style immersive programs. Cohorts, sprints, certifications.</div>
+      </div>
+      <div class="subbrand-chip">
+        <div class="sb-name">Curiosity Coaches</div>
+        <div class="sb-desc">AI-driven agentic guides. 1:1 coaching, adaptive curriculum, mistake-positive.</div>
+      </div>
+      <div class="subbrand-chip">
+        <div class="sb-name">Curiosity Cottages</div>
+        <div class="sb-desc">Physical curiosity spaces — houses designed for exploration.</div>
+      </div>
+      <div class="subbrand-chip">
+        <div class="sb-name">Curiosity Corners</div>
+        <div class="sb-desc">Cottage concept scaled to a single room or nook, for home use.</div>
+      </div>
+      <div class="subbrand-chip">
+        <div class="sb-name">Dream Quest</div>
+        <div class="sb-desc">The full 9-stage learning journey framework. Dream → Capstone.</div>
+      </div>
+      <div class="subbrand-chip">
+        <div class="sb-name">DreamTrack</div>
+        <div class="sb-desc">Dreamer portfolio and progress tracker. Evidence culture made tangible.</div>
+      </div>
+      <div class="subbrand-chip">
+        <div class="sb-name">Curiosity Guide / Catalog</div>
+        <div class="sb-desc">Curriculum and subject discovery resources for Dreamers and partners.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:18px 22px;font-size:0.84rem;color:var(--muted);line-height:1.7;">
+      <strong style="color:var(--white);">Rule:</strong> Each sub-brand may use the accent colors (community blue, people purple, physical green) as a secondary color for its category tag or diagram node. The primary UI color on every sub-brand surface is always <strong style="color:var(--teal);">--teal (#42b8d4)</strong>.
+    </div>
+  </section>
+
+  <!-- ══════════ 6. UI COMPONENTS ══════════ -->
+  <section class="sg-section">
+    <div class="sg-section-label">Section 06</div>
+    <h2>UI Components</h2>
+    <p class="sg-section-desc">Reference implementations for buttons, cards, and tags. Copy these patterns for new surfaces.</p>
+
+    <!-- Buttons -->
+    <div class="component-row">
+      <div class="component-col">
+        <div class="component-label">Buttons</div>
+        <div>
+          <button class="btn btn-primary">Ignite Curiosity</button>
+          <button class="btn btn-secondary">Learn More</button>
+          <button class="btn btn-ghost">View Docs</button>
+        </div>
+        <div style="margin-top:14px;font-size:0.8rem;color:var(--muted);line-height:1.6;">
+          <strong style="color:var(--white);">Primary</strong> — <code style="font-family:var(--font-mono);">bg:var(--teal), color:#07232b</code><br>
+          <strong style="color:var(--white);">Secondary</strong> — <code style="font-family:var(--font-mono);">bg:rgba(66,184,212,0.12), color:var(--teal)</code><br>
+          <strong style="color:var(--white);">Ghost</strong> — <code style="font-family:var(--font-mono);">bg:transparent, border:var(--border)</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card -->
+    <div class="component-row">
+      <div class="component-col">
+        <div class="component-label">Card</div>
+        <div class="ex-card">
+          <div class="ex-card-icon">⚡</div>
+          <div class="ex-card-title">Spark Sessions</div>
+          <div class="ex-card-body">Learning, lit one spark at a time. Self-paced, drip-fed, built to actually stick.</div>
+        </div>
+        <div style="margin-top:14px;font-size:0.8rem;color:var(--muted);line-height:1.6;">
+          <code style="font-family:var(--font-mono);">bg:var(--bg-card), border:var(--border)</code><br>
+          Hover: <code style="font-family:var(--font-mono);">border-color rgba(66,184,212,0.4), bg:var(--bg-card2)</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tags -->
+    <div class="component-row">
+      <div class="component-col">
+        <div class="component-label">Tags &amp; Badges</div>
+        <div>
+          <span class="tag">Digital</span>
+          <span class="tag physical">Physical</span>
+          <span class="tag community">Community</span>
+          <span class="tag people">People</span>
+        </div>
+        <div style="margin-top:14px;font-size:0.8rem;color:var(--muted);line-height:1.6;">
+          Default (teal) for digital/content programs.<br>
+          Use <strong style="color:#64c88c;">physical</strong>, <strong style="color:#6aaeff;">community</strong>, <strong style="color:#c882ff;">people</strong> only for their respective ecosystem layers.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-inner-note">Curiosity Corp Brand Style Guide — v1.0 — 2026-06-30</div>
+
+</div><!-- /.page -->
+
+<!-- ══════════ SITE FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <span><span class="site-footer-copy">© 2026 Curiosity Corp</span> — Igniting self-motivated Dreamers, one spark at a time.</span>
+    <span>
+      <a href="https://curiositycorp.org" target="_blank" rel="noopener">curiositycorp.org</a>
+      &nbsp;·&nbsp;
+      <a href="overview.html">Ecosystem Overview</a>
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
