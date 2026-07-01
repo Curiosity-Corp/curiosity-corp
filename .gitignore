@@ -7,3 +7,7 @@
 
 # local review scratch notes
 NOTES.md
+
+# SOTA framework-upgrade staging/audit artifacts (not site source)
+vendor/_sota_staging/
+.sota-audit/
