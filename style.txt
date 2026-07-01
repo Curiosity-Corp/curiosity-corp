@@ -33,7 +33,11 @@ sparing warm amber accent light, directional dramatic lighting, high dynamic ran
 editorial photography, horizontal composition, no CGI look, near-future photographic realism.
 
 [NEGATIVE_SUFFIX]
-Avoid: visible human faces looking at camera, recognizable individual portraits, glowing holographic
-brain graphics, generic stock-photo "diverse team high-fiving" clichés, any legible text/words/letters/
-UI-panel-with-readable-labels anywhere in frame, watermarks, logos, sci-fi HUD interfaces, washed-out
-low-contrast "soft NGO" lighting, CGI rendering look, cartoon or illustration style.
+Absolutely no brain-shaped or head-shaped iconography of any kind (glowing, wireframe, anatomical, or
+otherwise) — this is a hard rule regardless of what the main prompt describes. Absolutely no legible
+text, words, letters, captions, or readable UI labels rendered anywhere in the image — if a screen or
+sign appears, it must show only abstract blurred light with no readable characters. No visible human
+faces looking at camera and no recognizable individual portraits — use silhouettes, backs, hands, or
+out-of-focus figures only. No generic stock-photo "diverse team high-fiving" clichés, no watermarks, no
+logos, no sci-fi HUD interfaces, no washed-out low-contrast "soft NGO" lighting, no CGI rendering look,
+no cartoon or illustration style.
