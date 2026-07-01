@@ -128,6 +128,10 @@ h4a {
   position: relative;
   z-index: 2;
 }
+.hero-slider.flexslider .flex-prev,
+.hero-slider.flexslider .flex-next {
+  z-index: 3;
+}
 .flex-caption-text h1,
 .flex-caption-text h2,
 .flex-caption-text h3,
