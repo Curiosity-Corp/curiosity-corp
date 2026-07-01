@@ -73,7 +73,44 @@
 2026-06-30T21:28:21 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/post1.jpg (600x400)
 2026-06-30T21:28:21 [INFO] Row P0-15 DONE. Session: done=10 failed=0. Total: 10/110 done.
 2026-06-30T21:28:21 [INFO] Git checkpoint: staging 20 files
-ion: done=9 failed=0. Total: 9/110 done.
-2026-06-30T21:28:21 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/post1.jpg (600x400)
-2026-06-30T21:28:21 [INFO] Row P0-15 DONE. Session: done=10 failed=0. Total: 10/110 done.
-2026-06-30T21:28:21 [INFO] Git checkpoint: staging 20 files
+2026-06-30T21:28:21 [INFO] Git checkpoint committed: feat(images): runner checkpoint (10/110) [local]
+2026-06-30T21:28:57 [INFO] Row P0-17: generation success — PNG at /tmp/site-image-regen/P0-17.png. Encoding to ['jpg'].
+2026-06-30T21:28:57 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/cause1.jpg
+2026-06-30T21:28:58 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/cause1.jpg (200x200)
+2026-06-30T21:28:58 [INFO] Row P0-17 DONE. Session: done=11 failed=0. Total: 11/110 done.
+2026-06-30T21:28:58 [INFO] Row P0-16: generation success — PNG at /tmp/site-image-regen/P0-16.png. Encoding to ['jpg'].
+2026-06-30T21:28:58 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/post3.jpg
+2026-06-30T21:28:58 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/post3.jpg (600x400)
+2026-06-30T21:28:58 [INFO] Row P0-16 DONE. Session: done=12 failed=0. Total: 12/110 done.
+2026-06-30T21:28:58 [INFO] Row P0-22: gen_size=1200x800, target=601x398, formats=['jpg'], engine=hm
+2026-06-30T21:28:58 [INFO] Row P0-23: gen_size=1200x800, target=600x400, formats=['jpg'], engine=hm
+2026-06-30T21:28:58 [INFO] Row P0-24: gen_size=1200x800, target=600x400, formats=['jpg'], engine=hm
+2026-06-30T21:28:58 [INFO] Row P0-21: gen_size=1200x800, target=600x400, formats=['jpg'], engine=hm
+2026-06-30T21:28:58 [INFO] Running hm image generate (timeout=300s, 1200x800)
+2026-06-30T21:28:58 [INFO] Running hm image generate (timeout=300s, 1200x800)
+2026-06-30T21:28:58 [INFO] Running hm image generate (timeout=300s, 1200x800)
+2026-06-30T21:28:58 [INFO] Running hm image generate (timeout=300s, 1200x800)
+2026-06-30T21:29:23 [WARNING] Signal 15 received — will exit after current row completes.
+2026-06-30T21:31:06 [INFO] Row P0-21: generation success — PNG at /tmp/site-image-regen/P0-21.png. Encoding to ['jpg'].
+2026-06-30T21:31:06 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/devdojo.jpg
+2026-06-30T21:31:06 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/devdojo.jpg (600x400)
+2026-06-30T21:31:06 [INFO] Row P0-21 DONE. Session: done=13 failed=0. Total: 13/110 done.
+2026-06-30T21:32:34 [INFO] Row P0-23: generation success — PNG at /tmp/site-image-regen/P0-23.png. Encoding to ['jpg'].
+2026-06-30T21:32:34 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/themov3.jpg
+2026-06-30T21:32:34 [INFO] Row P0-22: generation success — PNG at /tmp/site-image-regen/P0-22.png. Encoding to ['jpg'].
+2026-06-30T21:32:34 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/marsrover.jpg
+2026-06-30T21:32:35 [INFO] Row P0-24: generation success — PNG at /tmp/site-image-regen/P0-24.png. Encoding to ['jpg'].
+2026-06-30T21:32:35 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/gala.jpg
+2026-06-30T21:32:35 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/themov3.jpg (600x400)
+2026-06-30T21:32:35 [INFO] Row P0-23 DONE. Session: done=14 failed=0. Total: 14/110 done.
+2026-06-30T21:32:35 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/marsrover.jpg (601x398)
+2026-06-30T21:32:35 [INFO] Row P0-22 DONE. Session: done=15 failed=0. Total: 15/110 done.
+2026-06-30T21:32:35 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/gala.jpg (600x400)
+2026-06-30T21:32:35 [INFO] Row P0-24 DONE. Session: done=16 failed=0. Total: 16/110 done.
+2026-06-30T21:32:35 [INFO] Shutdown requested — draining pool.
+2026-06-30T21:32:35 [INFO] === Runner loop exited. done=16, failed=0, pending=94, total=110 ===
+2026-06-30T21:32:35 [INFO] Git checkpoint: staging 12 files
+30T21:32:35 [INFO] Row P0-24 DONE. Session: done=16 failed=0. Total: 16/110 done.
+2026-06-30T21:32:35 [INFO] Shutdown requested — draining pool.
+2026-06-30T21:32:35 [INFO] === Runner loop exited. done=16, failed=0, pending=94, total=110 ===
+2026-06-30T21:32:35 [INFO] Git checkpoint: staging 12 files
