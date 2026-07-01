@@ -7,6 +7,8 @@ Author:	imithemes
 -------------------------------------------------------------------*/
 /* Stylesheets and Google fonts import */
 @import url("awesome/css/all.css");
+@import url("awesome/css/v4-shims.css");
+@import url("awesome/css/v4-font-face.css");
 @import url("line-icons.css");
 @import url("animations.css");
 @import url(https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic);
