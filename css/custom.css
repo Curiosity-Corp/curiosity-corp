@@ -1,79 +1,136 @@
-
-/* KRASHNIK */ 
-object{
-	pointer-events: none;
-	
+/* KRASHNIK */
+object {
+  pointer-events: none;
 }
-#loadOverlay{display: none;}
+#loadOverlay {
+  display: none;
+}
 
-.btn-ghost.btn-light{
+.btn-ghost.btn-light {
   text-transform: uppercase;
 }
 
-#stories-slider .story-slider-cell{
-	/* vertical-align:top; */
-	height: auto;	
+#stories-slider .story-slider-cell {
+  /* vertical-align:top; */
+  height: auto;
 }
 
 /* ADDED THESE TO FIX STAFF SECTION */
-.grid-staff-item-compact .grid-item-content h3{
-	font-size: 14px;
+.grid-staff-item-compact .grid-item-content h3 {
+  font-size: 14px;
 }
-.grid-item h3{
-	letter-spacing:0px;
-}
-
-.content2{
-	padding:75px 0 0;
-	min-height:400px;
+.grid-item h3 {
+  letter-spacing: 0px;
 }
 
-.content3{
-	padding:35px 0 0;
-	min-height:400px;
+.content2 {
+  padding: 75px 0 0;
+  min-height: 400px;
 }
 
-.cta2{
-	border:1px solid #E6E6E6;
-	padding:25px;
-	margin:15px 0;
-	background:#F6F6F6;
-}
-.cta2 p{
-	font-size:20px;
-	line-height:35px;
-	margin-bottom:0;
-	text-transform:uppercase;
-	font-weight: 700;
-	letter-spacing: 0.5px;
+.content3 {
+  padding: 35px 0 0;
+  min-height: 400px;
 }
 
-.cta3{
-	border:1px solid #E6E6E6;
-	padding:25px;
-	margin:0 0 15px 0;
-	background:#F6F6F6;
+.cta2 {
+  border: 1px solid #e6e6e6;
+  padding: 25px;
+  margin: 15px 0;
+  background: #f6f6f6;
 }
-.cta3 p{
-	font-size:20px;
-	line-height:35px;
-	margin-bottom:0;
-	text-transform:uppercase;
-	font-weight: 700;
-	letter-spacing: 0.5px;
+.cta2 p {
+  font-size: 20px;
+  line-height: 35px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.cta3 {
+  border: 1px solid #e6e6e6;
+  padding: 25px;
+  margin: 0 0 15px 0;
+  background: #f6f6f6;
+}
+.cta3 p {
+  font-size: 20px;
+  line-height: 35px;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .responsive-width {
-    font-size: .65vw;
+  font-size: 0.65vw;
 }
 
-h4a{
-	font-size:16px;
-	text-transform:uppercase;
-	letter-spacing:2px;
-	margin:0 0 15px 0;
-	color:#333;
-	font-weight:400;
-	line-height:1.5em;
-	font-family: 'Playfair Display', serif;
+h4a {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 15px 0;
+  color: #333;
+  font-weight: 400;
+  line-height: 1.5em;
+  font-family: "Playfair Display", serif;
+}
+
+/* ==================================================
+   Accessibility: contrast scrim for white text over
+   photo backgrounds (WCAG AA / Section 508).
+   Do NOT apply this to .parallax-text-block sections
+   — those already sit on a solid white card.
+================================================== */
+
+/* Interior page hero banners (.page-banner.parallax): text
+   (.page-banner-text) is pinned to the bottom, so weight the
+   scrim darkest there and let it fade going up. .page-banner
+   is already position:relative, so the ::before just needs to
+   cover it and sit behind the text. */
+.page-banner.parallax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.35) 45%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+.page-banner-text {
+  z-index: 1;
+}
+.page-banner h1.block-title {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* Homepage hero slider (.hero-slider .flexslider): captions are
+   vertically centered and can sit anywhere across the slide, so
+   use a flat overlay instead of a directional gradient. Slides
+   that already use a solid white .flex-caption-cause card are
+   unaffected — that card sits above the scrim with its own
+   dark-on-white text. */
+.hero-slider.flexslider ul.slides li.parallax::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-slider.flexslider ul.slides li .flex-caption {
+  position: relative;
+  z-index: 2;
+}
+.flex-caption-text h1,
+.flex-caption-text h2,
+.flex-caption-text h3,
+.flex-caption-text p {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
