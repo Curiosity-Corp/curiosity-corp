@@ -237,26 +237,13 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 		});
 	}
 /* ==================================================
-   Magnific Popup
+   GLightbox
 ================================================== */
-	BORNTOGIVE.Magnific = function() {
-		jQuery('.format-gallery').each(function(){
-			$(this).magnificPopup({
-				delegate: 'a.popup-image', // child items selector, by clicking on it popup will open
-				type: 'image',
-				gallery:{enabled:true}
-				// other options
-			});
-		});
-		jQuery('.magnific-image').magnificPopup({ 
-			type: 'image',
-			gallery:{enabled:false}
-			// other options
-		});
-		jQuery('.magnific-video').magnificPopup({ 
-			type: 'iframe',
-			gallery:{enabled:false}
-			// other options
+	BORNTOGIVE.GLightbox = function() {
+		GLightbox({
+			selector: '.glightbox',
+			touchNavigation: true,
+			loop: false
 		});
 	}
 /* ==================================================
@@ -428,7 +415,7 @@ $(document).ready(function(){
 	BORNTOGIVE.toolTip();
 	BORNTOGIVE.TwitterWidget();
 	BORNTOGIVE.SwiperCarousel();
-	BORNTOGIVE.Magnific();
+	BORNTOGIVE.GLightbox();
 	BORNTOGIVE.SuperFish();
 	BORNTOGIVE.Counters();
 	BORNTOGIVE.IsoTope();
