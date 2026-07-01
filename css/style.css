@@ -559,10 +559,10 @@ label {
 	background:rgba(255,255,255,.99);
 }
 .checkers-overlay{
-	background:url(../images/checkers.png) repeat;
+	background:url(../images/checkers.avif) repeat;
 }
 .pattern-overlay{
-	background:url(../images/pattern.png) repeat;
+	background:url(../images/pattern.avif) repeat;
 }
 .overlay-cover{
 	position:absolute;
