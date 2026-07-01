@@ -929,3 +929,57 @@ Network request failed: unknown certificate verification error
 2026-06-30T22:31:51 [INFO] Git checkpoint: staging 18 files
 2026-06-30T22:31:51 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-legal-privacy-policy.jpg (1280x451)
 2026-06-30T22:31:51 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-impact-strategy.jpg (1280x450)
+2026-06-30T22:31:51 [INFO] Git checkpoint committed: feat(images): runner checkpoint (70/110) [local]
+2026-06-30T22:31:51 [INFO] Row P1-B046 DONE. Session: done=11 failed=0. Total: 72/110 done.
+2026-06-30T22:31:51 [INFO] Row P1-B044 DONE. Session: done=12 failed=0. Total: 72/110 done.
+2026-06-30T22:31:51 [INFO] Row P1-B047: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:31:51 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:31:51 [INFO] Row P1-B049: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:31:51 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:31:51 [INFO] Row P1-B048: gen_size=2048x720, target=1280x450, formats=['jpg'], engine=hm
+2026-06-30T22:31:51 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:33:42 [INFO] Row P1-B048: generation success — PNG at /tmp/site-image-regen/P1-B048.png. Encoding to ['jpg'].
+2026-06-30T22:33:42 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-legal-shortcodes.jpg
+2026-06-30T22:33:42 [INFO] Row P1-B047: generation success — PNG at /tmp/site-image-regen/P1-B047.png. Encoding to ['jpg'].
+2026-06-30T22:33:42 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-legal-refund-policy.jpg
+2026-06-30T22:33:42 [INFO] Row P1-B049: generation success — PNG at /tmp/site-image-regen/P1-B049.png. Encoding to ['jpg'].
+2026-06-30T22:33:42 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-legal-tos.jpg
+2026-06-30T22:33:43 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-legal-refund-policy.jpg (1280x451)
+2026-06-30T22:33:43 [INFO] Row P1-B047 DONE. Session: done=13 failed=0. Total: 73/110 done.
+2026-06-30T22:33:43 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-legal-shortcodes.jpg (1280x450)
+2026-06-30T22:33:43 [INFO] Row P1-B048 DONE. Session: done=14 failed=0. Total: 74/110 done.
+2026-06-30T22:33:44 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-legal-tos.jpg (1280x451)
+2026-06-30T22:33:44 [INFO] Row P1-B049 DONE. Session: done=15 failed=0. Total: 75/110 done.
+2026-06-30T22:33:44 [INFO] Row P1-B051: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:33:44 [INFO] Row P1-B050: gen_size=2048x720, target=1280x450, formats=['jpg'], engine=hm
+2026-06-30T22:33:44 [INFO] Row P1-B052: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:33:44 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:33:44 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:33:44 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:35:53 [INFO] Row P1-B050: generation success — PNG at /tmp/site-image-regen/P1-B050.png. Encoding to ['jpg'].
+2026-06-30T22:35:53 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-legal-typography.jpg
+2026-06-30T22:35:53 [INFO] Row P1-B051: generation success — PNG at /tmp/site-image-regen/P1-B051.png. Encoding to ['jpg'].
+2026-06-30T22:35:53 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-media-gallery-2cols.jpg
+2026-06-30T22:35:53 [INFO] Row P1-B052: generation success — PNG at /tmp/site-image-regen/P1-B052.png. Encoding to ['jpg'].
+2026-06-30T22:35:53 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-media-gallery-3cols.jpg
+2026-06-30T22:35:54 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-media-gallery-2cols.jpg (1280x451)
+2026-06-30T22:35:54 [INFO] Row P1-B051 DONE. Session: done=16 failed=0. Total: 76/110 done.
+2026-06-30T22:35:54 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-legal-typography.jpg (1280x450)
+2026-06-30T22:35:54 [INFO] Row P1-B050 DONE. Session: done=17 failed=0. Total: 77/110 done.
+2026-06-30T22:35:54 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-media-gallery-3cols.jpg (1280x451)
+2026-06-30T22:35:54 [INFO] Row P1-B052 DONE. Session: done=18 failed=0. Total: 78/110 done.
+2026-06-30T22:35:54 [INFO] Row P1-B054: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:35:54 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:35:54 [INFO] Row P1-B055: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:35:54 [INFO] Row P1-B053: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:35:54 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:35:54 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:37:40 [INFO] Row P1-B055: generation success — PNG at /tmp/site-image-regen/P1-B055.png. Encoding to ['jpg'].
+2026-06-30T22:37:40 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-media-gallery-caption-3cols.jpg
+2026-06-30T22:37:41 [INFO] Row P1-B053: generation success — PNG at /tmp/site-image-regen/P1-B053.png. Encoding to ['jpg'].
+2026-06-30T22:37:41 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-media-gallery-4cols.jpg
+2026-06-30T22:37:41 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-media-gallery-caption-3cols.jpg (1280x451)
+2026-06-30T22:37:41 [INFO] Row P1-B055 DONE. Session: done=19 failed=0. Total: 79/110 done.
+2026-06-30T22:37:41 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-media-gallery-4cols.jpg (1280x451)
+2026-06-30T22:37:41 [INFO] Row P1-B053 DONE. Session: done=20 failed=0. Total: 80/110 done.
+2026-06-30T22:37:41 [INFO] Git checkpoint: staging 20 files
