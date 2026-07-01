@@ -263,6 +263,56 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 		});
 	}
 /* ==================================================
+   Swiper Carousel (generic, reads the same data-* attrs as OwlCarousel)
+================================================== */
+	BORNTOGIVE.SwiperCarousel = function() {
+		$('.swiper.carousel-fw').each(function(){
+				var carouselInstance = $(this);
+				var carouselColumns = carouselInstance.attr("data-columns") ? carouselInstance.attr("data-columns") : "1"
+				var carouselitemsDesktop = carouselInstance.attr("data-items-desktop") ? carouselInstance.attr("data-items-desktop") : "4"
+				var carouselitemsDesktopSmall = carouselInstance.attr("data-items-desktop-small") ? carouselInstance.attr("data-items-desktop-small") : "3"
+				var carouselitemsTablet = carouselInstance.attr("data-items-tablet") ? carouselInstance.attr("data-items-tablet") : "2"
+				var carouselitemsMobile = carouselInstance.attr("data-items-mobile") ? carouselInstance.attr("data-items-mobile") : "1"
+				var carouselPagination = carouselInstance.attr("data-pagination") == 'yes' ? true : false
+				var carouselArrows = carouselInstance.attr("data-arrows") == 'yes' ? true : false
+				var carouselSingle = carouselInstance.attr("data-single-item") == 'yes' ? true : false
+
+				var autoplayAttr = carouselInstance.attr("data-autoplay");
+				var autoplayDelay = 0;
+				if(autoplayAttr){
+					var parsedDelay = parseInt(autoplayAttr, 10);
+					autoplayDelay = (parsedDelay > 0) ? parsedDelay : 5000;
+				}
+
+				var swiperConfig = {
+					slidesPerView: carouselSingle ? 1 : parseInt(carouselitemsMobile, 10),
+					spaceBetween: 30,
+					breakpoints: {
+						768:  { slidesPerView: carouselSingle ? 1 : parseInt(carouselitemsTablet, 10) },
+						992:  { slidesPerView: carouselSingle ? 1 : parseInt(carouselitemsDesktopSmall, 10) },
+						1200: { slidesPerView: carouselSingle ? 1 : parseInt(carouselitemsDesktop, 10) },
+						1400: { slidesPerView: carouselSingle ? 1 : parseInt(carouselColumns, 10) }
+					}
+				};
+
+				if(autoplayDelay > 0){
+					swiperConfig.loop = true;
+					swiperConfig.autoplay = { delay: autoplayDelay, disableOnInteraction: false };
+				}
+				if(carouselPagination && carouselInstance.find('.swiper-pagination').length){
+					swiperConfig.pagination = { el: carouselInstance.find('.swiper-pagination').get(0), clickable: true };
+				}
+				if(carouselArrows && carouselInstance.find('.swiper-button-next').length){
+					swiperConfig.navigation = {
+						nextEl: carouselInstance.find('.swiper-button-next').get(0),
+						prevEl: carouselInstance.find('.swiper-button-prev').get(0)
+					};
+				}
+
+				new Swiper(this, swiperConfig);
+		});
+	}
+/* ==================================================
    Magnific Popup
 ================================================== */
 	BORNTOGIVE.Magnific = function() {
@@ -454,6 +504,7 @@ $(document).ready(function(){
 	BORNTOGIVE.toolTip();
 	BORNTOGIVE.TwitterWidget();
 	BORNTOGIVE.OwlCarousel();
+	BORNTOGIVE.SwiperCarousel();
 	BORNTOGIVE.Magnific();
 	BORNTOGIVE.SuperFish();
 	BORNTOGIVE.Counters();
@@ -469,7 +520,7 @@ $(document).ready(function(){
 	WWHGetter();
 	// apply matchHeight to each item container's items
 	$('.content').each(function() {
-		$(this).find('.owl-carousel .grid-item').find('.grid-item-content').matchHeight({
+		$(this).find('.carousel-fw .grid-item').find('.grid-item-content').matchHeight({
 			//property: 'min-height'
 		});
 		$(this).find('.featured-texts').find('.featured-text').matchHeight({
