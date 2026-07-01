@@ -18,8 +18,7 @@
 <link href="../css/bootstrap-theme.css" rel="stylesheet" type="text/css">
 <link href="../css/style.css" rel="stylesheet" type="text/css">
 <link href="../vendor/glightbox/glightbox.min.css" rel="stylesheet" type="text/css">
-<script src="../js/sweetalert2/dist/sweetalert2.all.min.js"></script>
-<link rel="stylesheet" href="../css/components/bs-switches.css" type="text/css" />
+<script src="../vendor/sweetalert2/sweetalert2.all.min.js"></script>
 <link rel="stylesheet" href="../css/components/radio-checkbox.css" type="text/css" />
 <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="../css/ie.css" media="screen" /><![endif]-->
 <link href="../css/custom.css" rel="stylesheet" type="text/css"><!-- CUSTOM STYLESHEET FOR STYLING -->
@@ -644,7 +643,13 @@
                     <div class="col-md-6 col-sm-6 total-amount-option">
                         <h4>Frequency</h4>
                         <ul class="predefined-amount2 predefined-amount">
-                            <input class="bt-switch" type="checkbox" data-inverse="true" data-on-text="Monthly" data-off-text="One-Time" data-on-color="info" data-off-color="info" name="subscription" id="subscription">
+                            <div class="d-flex align-items-center gap-2 bt-switch-group">
+                                <span class="small text-muted">One-Time</span>
+                                <div class="form-check form-switch mb-0">
+                                    <input class="form-check-input" type="checkbox" role="switch" name="subscription" id="subscription">
+                                </div>
+                                <span class="small text-muted">Monthly</span>
+                            </div>
                         </ul>
                     </div>
                	</div>
@@ -702,7 +707,5 @@
 <script src="../js/init.js"></script> <!-- All Scripts -->
 <script src="../js/circle-progress.js"></script> <!-- Circle Progress Bars -->
 <script src="../js/client.js"></script> <!-- Krashnik Stripe Integration -->
-<script src="../js/components/bs-switches.js"></script>
-<script>jQuery(".bt-switch").bootstrapSwitch();</script>
 </body>
 </html>
