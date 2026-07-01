@@ -752,3 +752,103 @@ no decodable image asset found in /tmp/site-image-regen/P1-31_hmdir (files: ['/t
 2026-06-30T22:07:18 [INFO] Row P1-B033 DONE. Session: done=40 failed=0. Total: 59/110 done.
 2026-06-30T22:07:18 [INFO] Git checkpoint: staging 20 files
 2026-06-30T22:07:18 [INFO] Git checkpoint: staging 20 files
+2026-06-30T22:07:19 [INFO] Git checkpoint committed: feat(images): runner checkpoint (59/110) [local]
+2026-06-30T22:07:19 [INFO] Git checkpoint committed: feat(images): runner checkpoint (59/110) [local]
+2026-06-30T22:07:19 [INFO] Row P1-B035: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:07:19 [INFO] Row P1-B035: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:07:19 [INFO] Row P1-B037: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:07:19 [INFO] Row P1-B034: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:07:19 [INFO] Row P1-B037: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:07:19 [INFO] Row P1-B036: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:07:19 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:07:19 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:07:19 [INFO] Row P1-B036: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:07:19 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:07:19 [INFO] Row P1-B034: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:07:19 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:07:19 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:07:19 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:07:19 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:07:19 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:10:07 [INFO] Row P1-B034: generation success — PNG at /tmp/site-image-regen/P1-B034.png. Encoding to ['jpg'].
+2026-06-30T22:10:07 [INFO] Row P1-B034: generation success — PNG at /tmp/site-image-regen/P1-B034.png. Encoding to ['jpg'].
+2026-06-30T22:10:07 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-get-involved-ngo-training.jpg
+2026-06-30T22:10:07 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-get-involved-ngo-training.jpg
+2026-06-30T22:10:08 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-get-involved-ngo-training.jpg (1280x451)
+2026-06-30T22:10:08 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-get-involved-ngo-training.jpg (1280x451)
+2026-06-30T22:10:08 [INFO] Row P1-B034 DONE. Session: done=41 failed=0. Total: 60/110 done.
+2026-06-30T22:10:08 [INFO] Row P1-B034 DONE. Session: done=41 failed=0. Total: 60/110 done.
+2026-06-30T22:10:56 [ERROR] Row P1-B036: hm FAILED (no rate-limit signal). Output: 
+Waiting for image job 1fd15b45-28ee-4768-a7c3-a575b277334f...
+Job: 1fd15b45-28ee-4768-a7c3-a575b277334f
+Status: completed
+Meta: provider=volcano
+Network request failed: unknown certificate verification error
+
+2026-06-30T22:10:56 [ERROR] Row P1-B036: hm FAILED (no rate-limit signal). Output: 
+Waiting for image job 1fd15b45-28ee-4768-a7c3-a575b277334f...
+Job: 1fd15b45-28ee-4768-a7c3-a575b277334f
+Status: completed
+Meta: provider=volcano
+Network request failed: unknown certificate verification error
+
+2026-06-30T22:10:56 [ERROR] Row P1-B037: hm FAILED (no rate-limit signal). Output: 
+Waiting for image job e753a611-b512-4a79-b103-fb00fb38da0e...
+Job: e753a611-b512-4a79-b103-fb00fb38da0e
+Status: completed
+Meta: provider=volcano
+Network request failed: unknown certificate verification error
+
+2026-06-30T22:10:56 [ERROR] Row P1-B037: hm FAILED (no rate-limit signal). Output: 
+Waiting for image job e753a611-b512-4a79-b103-fb00fb38da0e...
+Job: e753a611-b512-4a79-b103-fb00fb38da0e
+Status: completed
+Meta: provider=volcano
+Network request failed: unknown certificate verification error
+
+2026-06-30T22:10:58 [INFO] Row P1-B035: generation success — PNG at /tmp/site-image-regen/P1-B035.png. Encoding to ['jpg'].
+2026-06-30T22:10:58 [INFO] Row P1-B035: generation success — PNG at /tmp/site-image-regen/P1-B035.png. Encoding to ['jpg'].
+2026-06-30T22:10:58 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-get-involved-success.jpg
+2026-06-30T22:10:58 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-get-involved-success.jpg
+2026-06-30T22:10:59 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-get-involved-success.jpg (1280x451)
+2026-06-30T22:10:59 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-get-involved-success.jpg (1280x451)
+2026-06-30T22:10:59 [INFO] Row P1-B035 DONE. Session: done=42 failed=2. Total: 61/110 done.
+2026-06-30T22:10:59 [INFO] Row P1-B035 DONE. Session: done=42 failed=2. Total: 61/110 done.
+2026-06-30T22:10:59 [INFO] Row P1-B038: gen_size=2048x720, target=1280x450, formats=['jpg'], engine=hm
+2026-06-30T22:10:59 [INFO] Row P1-B038: gen_size=2048x720, target=1280x450, formats=['jpg'], engine=hm
+2026-06-30T22:10:59 [INFO] Row P1-B040: gen_size=2048x720, target=1280x450, formats=['jpg'], engine=hm
+2026-06-30T22:10:59 [INFO] Row P1-B040: gen_size=2048x720, target=1280x450, formats=['jpg'], engine=hm
+2026-06-30T22:10:59 [INFO] Row P1-B041: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:10:59 [INFO] Row P1-B041: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T22:10:59 [INFO] Row P1-B039: gen_size=2048x720, target=1280x450, formats=['jpg'], engine=hm
+2026-06-30T22:10:59 [INFO] Row P1-B039: gen_size=2048x720, target=1280x450, formats=['jpg'], engine=hm
+2026-06-30T22:10:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:10:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:10:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:10:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:10:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:10:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:10:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:10:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:11:51 [WARNING] Row P1-B041: rate-limited by hm engine.
+2026-06-30T22:11:51 [WARNING] Row P1-B041: rate-limited by hm engine.
+2026-06-30T22:11:51 [WARNING] Row P1-B040: rate-limited by hm engine.
+2026-06-30T22:11:51 [WARNING] Row P1-B040: rate-limited by hm engine.
+2026-06-30T22:11:51 [WARNING] Row P1-B038: rate-limited by hm engine.
+2026-06-30T22:11:51 [WARNING] Row P1-B038: rate-limited by hm engine.
+2026-06-30T22:11:52 [WARNING] Row P1-B039: rate-limited by hm engine.
+2026-06-30T22:11:52 [WARNING] Row P1-B039: rate-limited by hm engine.
+2026-06-30T22:11:52 [WARNING] Rate-limit detected but no time parseable. Sleeping 18000s (fallback).
+2026-06-30T22:11:52 [WARNING] Rate-limit detected but no time parseable. Sleeping 18000s (fallback).
+2026-06-30T22:22:46 [WARNING] Signal 15 received — will exit after current row completes.
+2026-06-30T22:22:46 [WARNING] Signal 15 received — will exit after current row completes.
+2026-06-30T22:22:49 [WARNING] Signal 15 received — will exit after current row completes.
+2026-06-30T22:22:49 [WARNING] Signal 15 received — will exit after current row completes.
+2026-06-30T22:22:52 [INFO] Rate-limit sleep done. Resuming.
+2026-06-30T22:22:52 [INFO] Rate-limit sleep done. Resuming.
+2026-06-30T22:22:52 [INFO] Shutdown requested — draining pool.
+2026-06-30T22:22:52 [INFO] Shutdown requested — draining pool.
+2026-06-30T22:22:52 [INFO] === Runner loop exited. done=61, failed=2, pending=47, total=110 ===
+2026-06-30T22:22:52 [INFO] === Runner loop exited. done=61, failed=2, pending=47, total=110 ===
+2026-06-30T22:22:52 [INFO] Git checkpoint: staging 4 files
+2026-06-30T22:22:52 [INFO] Git checkpoint: staging 4 files
