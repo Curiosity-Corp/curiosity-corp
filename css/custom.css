@@ -110,36 +110,16 @@ h4a {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* Homepage hero slider (.hero-slider .flexslider): captions are
+/* Homepage hero slider (.hero-slider .swiper): captions are
    vertically centered and can sit anywhere across the slide, so
    use a flat overlay instead of a directional gradient. Slides
    that already use a solid white .flex-caption-cause card are
    unaffected — that card sits above the scrim with its own
-   dark-on-white text. */
-.hero-slider.flexslider ul.slides li.parallax::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-  z-index: 1;
-  pointer-events: none;
-}
-.hero-slider.flexslider ul.slides li .flex-caption {
-  position: relative;
-  z-index: 2;
-}
-.hero-slider.flexslider .flex-prev,
-.hero-slider.flexslider .flex-next {
-  z-index: 3;
-}
-
-/* Homepage hero slider, Swiper build: same scrim/caption stacking
-   as the FlexSlider rules above, retargeted at Swiper's markup
-   (.swiper-slide instead of ul.slides li). Swiper's own nav buttons
-   are already z-index:10 (see vendor/swiper/swiper-bundle.min.css),
-   comfortably above the scrim (1) and caption (2) below — the
-   explicit z-index here just documents/pins that so it can't
-   regress if the scrim or caption z-index is bumped later. */
+   dark-on-white text. Swiper's own nav buttons are already
+   z-index:10 (see vendor/swiper/swiper-bundle.min.css), comfortably
+   above the scrim (1) and caption (2) below — the explicit z-index
+   here just documents/pins that so it can't regress if the scrim or
+   caption z-index is bumped later. */
 .hero-slider.swiper .swiper-slide.parallax::after {
   content: "";
   position: absolute;

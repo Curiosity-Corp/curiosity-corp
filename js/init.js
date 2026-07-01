@@ -144,37 +144,6 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 		});
 	}
 /* ==================================================
-   Hero Flex Slider
-================================================== */
-	BORNTOGIVE.heroflex = function() {
-		$('.heroflex').each(function(){
-				var carouselInstance = $(this); 
-				var carouselAutoplay = carouselInstance.attr("data-autoplay") == 'yes' ? true : false
-				var carouselPagination = carouselInstance.attr("data-pagination") == 'yes' ? true : false
-				var carouselArrows = carouselInstance.attr("data-arrows") == 'yes' ? true : false
-				var carouselDirection = carouselInstance.attr("data-direction") ? carouselInstance.attr("data-direction") : "horizontal"
-				var carouselStyle = carouselInstance.attr("data-style") ? carouselInstance.attr("data-style") : "fade"
-				var carouselSpeed = carouselInstance.attr("data-speed") ? carouselInstance.attr("data-speed") : "5000"
-				var carouselPause = carouselInstance.attr("data-pause") == 'yes' ? true : false
-				
-				carouselInstance.flexslider({
-					animation: carouselStyle,
-					easing: "swing",               
-					direction: carouselDirection,       
-					slideshow: carouselAutoplay,              
-					slideshowSpeed: carouselSpeed,         
-					animationSpeed: 600,         
-					initDelay: 0,              
-					randomize: false,            
-					pauseOnHover: carouselPause,       
-					controlNav: carouselPagination,           
-					directionNav: carouselArrows,            
-					prevText: "",         
-					nextText: ""
-				});
-		});
-	}
-/* ==================================================
    Hero Swiper Slider
 ================================================== */
 	BORNTOGIVE.heroSwiper = function() {
@@ -193,72 +162,6 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 						nextEl: ".swiper-button-next",
 						prevEl: ".swiper-button-prev"
 					}
-				});
-		});
-	}
-/* ==================================================
-   Flex Slider
-================================================== */
-	BORNTOGIVE.galleryflex = function() {
-		$('.galleryflex').each(function(){
-				var carouselInstance = $(this); 
-				var carouselAutoplay = carouselInstance.attr("data-autoplay") == 'yes' ? true : false
-				var carouselPagination = carouselInstance.attr("data-pagination") == 'yes' ? true : false
-				var carouselArrows = carouselInstance.attr("data-arrows") == 'yes' ? true : false
-				var carouselDirection = carouselInstance.attr("data-direction") ? carouselInstance.attr("data-direction") : "horizontal"
-				var carouselStyle = carouselInstance.attr("data-style") ? carouselInstance.attr("data-style") : "fade"
-				var carouselSpeed = carouselInstance.attr("data-speed") ? carouselInstance.attr("data-speed") : "5000"
-				var carouselPause = carouselInstance.attr("data-pause") == 'yes' ? true : false
-				
-				carouselInstance.flexslider({
-					animation: carouselStyle,
-					easing: "swing",
-					direction: carouselDirection,
-					slideshow: carouselAutoplay,
-					slideshowSpeed: carouselSpeed,
-					animationSpeed: 600,
-					initDelay: 0,
-					animationLoop: false,
-					randomize: false,
-					pauseOnHover: carouselPause,
-					controlNav: carouselPagination,
-					directionNav: carouselArrows,
-					prevText: "",
-					nextText: ""
-				});
-		});
-	}
-/* ==================================================
-   Owl Carousel
-================================================== */
-	BORNTOGIVE.OwlCarousel = function() {
-		$('.owl-carousel').each(function(){
-				var carouselInstance = $(this); 
-				var carouselColumns = carouselInstance.attr("data-columns") ? carouselInstance.attr("data-columns") : "1"
-				var carouselitemsDesktop = carouselInstance.attr("data-items-desktop") ? carouselInstance.attr("data-items-desktop") : "4"
-				var carouselitemsDesktopSmall = carouselInstance.attr("data-items-desktop-small") ? carouselInstance.attr("data-items-desktop-small") : "3"
-				var carouselitemsTablet = carouselInstance.attr("data-items-tablet") ? carouselInstance.attr("data-items-tablet") : "2"
-				var carouselitemsMobile = carouselInstance.attr("data-items-mobile") ? carouselInstance.attr("data-items-mobile") : "1"
-				var carouselAutoplay = carouselInstance.attr("data-autoplay") ? carouselInstance.attr("data-autoplay") : false
-				var carouselPagination = carouselInstance.attr("data-pagination") == 'yes' ? true : false
-				var carouselArrows = carouselInstance.attr("data-arrows") == 'yes' ? true : false
-				var carouselSingle = carouselInstance.attr("data-single-item") == 'yes' ? true : false
-				var carouselStyle = carouselInstance.attr("data-style") ? carouselInstance.attr("data-style") : "fade"
-				
-				carouselInstance.owlCarousel({
-					items: carouselColumns,
-					autoPlay : carouselAutoplay,
-					navigation : carouselArrows,
-					pagination : carouselPagination,
-					itemsDesktop:[1199,carouselitemsDesktop],
-					itemsDesktopSmall:[979,carouselitemsDesktopSmall],
-					itemsTablet:[768,carouselitemsTablet],
-					itemsMobile:[479,carouselitemsMobile],
-					singleItem:carouselSingle,
-					navigationText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
-					stopOnHover: true,
-					lazyLoad: true,
-					transitionStyle: 'carouselStyle'
 				});
 		});
 	}
@@ -524,16 +427,13 @@ $(document).ready(function(){
 	BORNTOGIVE.toggle();
 	BORNTOGIVE.toolTip();
 	BORNTOGIVE.TwitterWidget();
-	BORNTOGIVE.OwlCarousel();
 	BORNTOGIVE.SwiperCarousel();
 	BORNTOGIVE.Magnific();
 	BORNTOGIVE.SuperFish();
 	BORNTOGIVE.Counters();
 	BORNTOGIVE.IsoTope();
 	BORNTOGIVE.StickyHeader();
-	BORNTOGIVE.heroflex();
 	BORNTOGIVE.heroSwiper();
-	BORNTOGIVE.galleryflex();
 	BORNTOGIVE.gallerySwiper();
 	BORNTOGIVE.pricingTable();
 	BORNTOGIVE.MobileMenu();
