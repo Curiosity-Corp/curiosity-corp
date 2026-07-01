@@ -1987,7 +1987,7 @@ body.boxed .body {
   margin-bottom: 15px;
 }
 .testimonial-block blockquote p {
-  font-family: "Lora", serif;
+  font-family: "Lato", sans-serif;
   font-style: normal;
   font-size: 18px;
   line-height: 28px;
@@ -2571,7 +2571,7 @@ body.boxed .body {
 .comments li h5 span {
   color: #999;
   font-weight: 400;
-  font-family: "Lora", serif;
+  font-family: "Lato", sans-serif;
 }
 .post-comment-content {
   padding-left: 100px;
