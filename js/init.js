@@ -316,7 +316,7 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 				$(window).load(function() {
 					destination.isotope({
 						itemSelector: ".grid-item",
-						layoutMode: 'sloppyMasonry'
+						layoutMode: 'masonry'
 					});
 					source.find("a").on("click", function(e) {
 						e.preventDefault();
@@ -355,7 +355,7 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 			var IsoTopeCont = $(".isotope-grid");
 			IsoTopeCont.isotope({
 				itemSelector: ".grid-item",
-				layoutMode: 'sloppyMasonry'
+				layoutMode: 'masonry'
 			});
 			if ($(".grid-holder").length > 0){	
 				var $container_blog = $('.grid-holder');
