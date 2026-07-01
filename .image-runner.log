@@ -1,0 +1,79 @@
+2026-06-30T21:19:29 [INFO] === site-image-regen runner starting ===
+2026-06-30T21:19:29 [INFO] Engine:      hm (built-in (fleet.engine unavailable))
+2026-06-30T21:19:29 [INFO] Concurrency: 4
+2026-06-30T21:19:29 [INFO] Manifest:    /home/mrh/repos/curiosity-corp/curiosity-corp/image-manifest.csv
+2026-06-30T21:19:29 [INFO] Repo:        /home/mrh/repos/curiosity-corp/curiosity-corp
+2026-06-30T21:19:29 [INFO] Style:       /home/mrh/repos/curiosity-corp/curiosity-corp/style.txt
+2026-06-30T21:19:29 [INFO] Log:         /home/mrh/repos/curiosity-corp/curiosity-corp/.image-runner.log
+2026-06-30T21:19:29 [INFO] Timezone:    America/New_York
+2026-06-30T21:19:29 [INFO] Cinematic suffix: Photojournalistic documentary style, shallow depth of field, cool teal-and-white
+2026-06-30T21:19:29 [INFO] Negative suffix:  Avoid: visible human faces looking at camera, recognizable individual portraits,
+2026-06-30T21:19:29 [INFO] Row P0-01: gen_size=2048x1168, target=1480x844, formats=['jpg'], engine=hm
+2026-06-30T21:19:29 [INFO] Row P0-02: gen_size=2048x880, target=1280x553, formats=['jpg'], engine=hm
+2026-06-30T21:19:29 [INFO] Row P0-03: gen_size=2048x1168, target=1480x844, formats=['jpg'], engine=hm
+2026-06-30T21:19:29 [INFO] Row P0-10: gen_size=1200x800, target=600x400, formats=['jpg'], engine=hm
+2026-06-30T21:19:29 [INFO] Running hm image generate (timeout=300s, 2048x1168)
+2026-06-30T21:19:29 [INFO] Running hm image generate (timeout=300s, 2048x880)
+2026-06-30T21:19:29 [INFO] Running hm image generate (timeout=300s, 2048x1168)
+2026-06-30T21:19:29 [INFO] Running hm image generate (timeout=300s, 1200x800)
+2026-06-30T21:22:32 [INFO] Row P0-02: generation success — PNG at /tmp/site-image-regen/P0-02.png. Encoding to ['jpg'].
+2026-06-30T21:22:32 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/slides/silk.jpg
+2026-06-30T21:22:33 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/slides/silk.jpg (1280x553)
+2026-06-30T21:22:33 [INFO] Row P0-02 DONE. Session: done=1 failed=0. Total: 1/110 done.
+2026-06-30T21:22:50 [INFO] Row P0-01: generation success — PNG at /tmp/site-image-regen/P0-01.png. Encoding to ['jpg'].
+2026-06-30T21:22:50 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/slides/athens.jpg
+2026-06-30T21:22:51 [INFO] Row P0-10: generation success — PNG at /tmp/site-image-regen/P0-10.png. Encoding to ['jpg'].
+2026-06-30T21:22:51 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/books.jpg
+2026-06-30T21:22:51 [INFO] Row P0-03: generation success — PNG at /tmp/site-image-regen/P0-03.png. Encoding to ['jpg'].
+2026-06-30T21:22:51 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/slides/chalkboard2.jpg
+2026-06-30T21:22:51 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/books.jpg (600x400)
+2026-06-30T21:22:51 [INFO] Row P0-10 DONE. Session: done=2 failed=0. Total: 2/110 done.
+2026-06-30T21:22:52 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/slides/athens.jpg (1480x844)
+2026-06-30T21:22:52 [INFO] Row P0-01 DONE. Session: done=3 failed=0. Total: 3/110 done.
+2026-06-30T21:22:52 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/slides/chalkboard2.jpg (1480x844)
+2026-06-30T21:22:52 [INFO] Row P0-03 DONE. Session: done=4 failed=0. Total: 4/110 done.
+2026-06-30T21:22:52 [INFO] Row P0-13: gen_size=816x816, target=200x200, formats=['jpg'], engine=hm
+2026-06-30T21:22:52 [INFO] Row P0-11: gen_size=1008x672, target=251x168, formats=['jpg'], engine=hm
+2026-06-30T21:22:52 [INFO] Row P0-12: gen_size=1184x800, target=597x397, formats=['jpg'], engine=hm
+2026-06-30T21:22:52 [INFO] Row P0-14: gen_size=816x816, target=200x200, formats=['jpg'], engine=hm
+2026-06-30T21:22:52 [INFO] Running hm image generate (timeout=300s, 816x816)
+2026-06-30T21:22:52 [INFO] Running hm image generate (timeout=300s, 1008x672)
+2026-06-30T21:22:52 [INFO] Running hm image generate (timeout=300s, 1184x800)
+2026-06-30T21:22:52 [INFO] Running hm image generate (timeout=300s, 816x816)
+2026-06-30T21:25:44 [INFO] Row P0-12: generation success — PNG at /tmp/site-image-regen/P0-12.png. Encoding to ['jpg'].
+2026-06-30T21:25:44 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/areport2.jpg
+2026-06-30T21:25:44 [INFO] Row P0-13: generation success — PNG at /tmp/site-image-regen/P0-13.png. Encoding to ['jpg'].
+2026-06-30T21:25:44 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/200/forest.jpg
+2026-06-30T21:25:45 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/200/forest.jpg (200x200)
+2026-06-30T21:25:45 [INFO] Row P0-13 DONE. Session: done=5 failed=0. Total: 5/110 done.
+2026-06-30T21:25:45 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/areport2.jpg (597x397)
+2026-06-30T21:25:45 [INFO] Row P0-12 DONE. Session: done=6 failed=0. Total: 6/110 done.
+2026-06-30T21:26:13 [INFO] Row P0-14: generation success — PNG at /tmp/site-image-regen/P0-14.png. Encoding to ['jpg'].
+2026-06-30T21:26:13 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/200/meeting.jpg
+2026-06-30T21:26:13 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/200/meeting.jpg (200x200)
+2026-06-30T21:26:13 [INFO] Row P0-14 DONE. Session: done=7 failed=0. Total: 7/110 done.
+2026-06-30T21:26:13 [INFO] Row P0-11: generation success — PNG at /tmp/site-image-regen/P0-11.png. Encoding to ['jpg'].
+2026-06-30T21:26:13 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/taocottage3.jpg
+2026-06-30T21:26:14 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/taocottage3.jpg (251x168)
+2026-06-30T21:26:14 [INFO] Row P0-11 DONE. Session: done=8 failed=0. Total: 8/110 done.
+2026-06-30T21:26:14 [INFO] Row P0-20: gen_size=1200x800, target=603x402, formats=['jpg'], engine=hm
+2026-06-30T21:26:14 [INFO] Running hm image generate (timeout=300s, 1200x800)
+2026-06-30T21:26:14 [INFO] Row P0-17: gen_size=816x816, target=200x200, formats=['jpg'], engine=hm
+2026-06-30T21:26:14 [INFO] Running hm image generate (timeout=300s, 816x816)
+2026-06-30T21:26:14 [INFO] Row P0-16: gen_size=1200x800, target=600x400, formats=['jpg'], engine=hm
+2026-06-30T21:26:14 [INFO] Running hm image generate (timeout=300s, 1200x800)
+2026-06-30T21:26:14 [INFO] Row P0-15: gen_size=1200x800, target=600x400, formats=['jpg'], engine=hm
+2026-06-30T21:26:14 [INFO] Running hm image generate (timeout=300s, 1200x800)
+2026-06-30T21:28:21 [INFO] Row P0-20: generation success — PNG at /tmp/site-image-regen/P0-20.png. Encoding to ['jpg'].
+2026-06-30T21:28:21 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/silkwomen2.jpg
+2026-06-30T21:28:21 [INFO] Row P0-15: generation success — PNG at /tmp/site-image-regen/P0-15.png. Encoding to ['jpg'].
+2026-06-30T21:28:21 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/post1.jpg
+2026-06-30T21:28:21 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/600/silkwomen2.jpg (603x402)
+2026-06-30T21:28:21 [INFO] Row P0-20 DONE. Session: done=9 failed=0. Total: 9/110 done.
+2026-06-30T21:28:21 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/post1.jpg (600x400)
+2026-06-30T21:28:21 [INFO] Row P0-15 DONE. Session: done=10 failed=0. Total: 10/110 done.
+2026-06-30T21:28:21 [INFO] Git checkpoint: staging 20 files
+ion: done=9 failed=0. Total: 9/110 done.
+2026-06-30T21:28:21 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/post1.jpg (600x400)
+2026-06-30T21:28:21 [INFO] Row P0-15 DONE. Session: done=10 failed=0. Total: 10/110 done.
+2026-06-30T21:28:21 [INFO] Git checkpoint: staging 20 files
