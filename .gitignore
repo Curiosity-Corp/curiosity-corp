@@ -1,0 +1,6 @@
+
+# site-image-regen runtime artifacts
+.image-runner.log
+.image-hero.log
+.image-probe.log
+.image-runner.done

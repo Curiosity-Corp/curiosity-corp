@@ -1,0 +1,43 @@
+[PREAMBLE]
+Curiosity Research Corporation is a credible-futurist education nonprofit — "Igniting Curiosity" into
+frontier-tech pedagogy. Every image must look like a photo a serious research institute or aerospace
+lab would publish in its own annual report: aspirational but documentary, not stock-photo sci-fi and
+not concept art. Think "real lab, real students, slightly elevated lighting."
+
+Subjects: diverse students (varied age, race, gender) genuinely engaged with frontier-tech tools — AI
+interfaces, robotics, aerospace hardware, physics demonstration rigs, advanced computing setups,
+data-visualization dashboards. Prefer object/environment/hands-only framing over posed portraits;
+where a human presence is implied, show hands, wrists, backs, or silhouettes engaged with the
+technology rather than posed faces-to-camera.
+
+Settings: modern lab and maker-space environments, clean and well-equipped but not sterile;
+occasional aerospace/physics-adjacent settings (observatories, fabrication spaces, mission-control-style
+rooms, launch/rocketry hardware) for higher-aspiration pages (impact, mission, government/institutional
+partner pages); outdoor settings only when paired with visible technology (a tablet, a drone, sensors)
+to avoid generic "kids in a field" NGO imagery.
+
+Palette: cool, clean, slightly high-contrast — blues, teals, and whites consistent with the site's
+brand palette (colors/color1.css, primary teal #42b8d4-family), with warm amber/orange accent lighting
+used sparingly to suggest "spark" or "ignition" moments (screen glow, a single warm practical light).
+
+Lighting: directional and a little dramatic — single strong light sources, rim lighting, screen-glow
+on surfaces and hands during tech interaction. Avoid flat, even, catalog-style lighting.
+
+Level of futurism: near-future, plausible, photographic — not CGI, not abstract sci-fi concept art,
+not over-stylized illustration. The credibility test: would a grant reviewer believe this photo
+represents a real program?
+
+[CINEMATIC_SUFFIX]
+Photojournalistic documentary style, shallow depth of field, cool teal-and-white color grade with
+sparing warm amber accent light, directional dramatic lighting, high dynamic range, sharp focus,
+editorial photography, horizontal composition, no CGI look, near-future photographic realism.
+
+[NEGATIVE_SUFFIX]
+Absolutely no brain-shaped or head-shaped iconography of any kind (glowing, wireframe, anatomical, or
+otherwise) — this is a hard rule regardless of what the main prompt describes. Absolutely no legible
+text, words, letters, captions, or readable UI labels rendered anywhere in the image — if a screen or
+sign appears, it must show only abstract blurred light with no readable characters. No visible human
+faces looking at camera and no recognizable individual portraits — use silhouettes, backs, hands, or
+out-of-focus figures only. No generic stock-photo "diverse team high-fiving" clichés, no watermarks, no
+logos, no sci-fi HUD interfaces, no washed-out low-contrast "soft NGO" lighting, no CGI rendering look,
+no cartoon or illustration style.
