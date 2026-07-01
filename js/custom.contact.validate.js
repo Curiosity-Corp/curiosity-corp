@@ -45,10 +45,10 @@ function handleFormSubmit(form, input) {
     if (!errors) {
         showSuccess();
     } else {
-        swal.fire({
+        Swal.fire({
             title: "Form Error",
             text: "Please ensure all fields are correct!",
-            type: "error",
+            icon: "error",
             confirmButtonText: "Ok",
         })
     }
@@ -62,7 +62,7 @@ function showErrors(form, errors) {
 }
 
 function showErrorsForInput(input, errors) {
-    var formGroup = closestParent(input, "form-group")
+    var formGroup = closestParent(input, "mb-3")
     resetFormGroup(formGroup);
     if (errors) {
         formGroup.classList.add("has-error");
@@ -113,7 +113,7 @@ function addError(formGroup, error) {
 
 //function to reset the form
 function resetForm() {
-    document.querySelectorAll('div.form-group.has-success').forEach(formGroup => {
+    document.querySelectorAll('div.mb-3.has-success').forEach(formGroup => {
         formGroup.classList.remove('has-success');
     })
     document.querySelectorAll('#contactform input.form-control, select.form-control, textarea').forEach(input => {
@@ -136,24 +136,24 @@ function showSuccess() {
                 success: function (data, textStatus, xhr) {
                     console.log(xhr.status)
                     if (xhr.status === 200) {
-                        swal.fire({
+                        Swal.fire({
                             title: "Thank You!",
-                            type: "success",
+                            icon: "success",
                             confirmButtonText: 'Ok'
                         });
                         resetForm();
                     } else {
-                        swal.fire({
+                        Swal.fire({
                             title: "Some Error Occurred!",
-                            type: "error",
+                            icon: "error",
                             confirmButtonText: 'Ok'
                         });
                     }
                 },
                 error: function (data) {
-                    swal.fire({
+                    Swal.fire({
                         title: "An unexpected Error Occurred!",
-                        type: "error",
+                        icon: "error",
                         confirmButtonText: 'Ok'
                     })
                 },

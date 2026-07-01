@@ -6,7 +6,7 @@
   ================================================== -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Curiosity Corporation — Igniting Curiosity</title>
-<meta name="description" content="Curiosity Research Corporation is a 501(c)3 research institute studying the psychology of curiosity, in humans and machines, to engineer the pedagogy of the next century.">
+<meta name="description" content="Curiosity Research Corporation is a research institute with a pending 501(c)(3) application, studying the psychology of curiosity, in humans and machines, to engineer the pedagogy of the next century.">
 <meta name="keywords" content="">
 <meta name="author" content="">
 <!-- Mobile Specific Metas
@@ -16,14 +16,10 @@
 <!-- CSS
   ================================================== -->
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="vendor/magnific/magnific-popup.css" rel="stylesheet" type="text/css">
-<link href="vendor/owl-carousel/css/owl.carousel.css" rel="stylesheet" type="text/css">
-<link href="vendor/owl-carousel/css/owl.theme.css" rel="stylesheet" type="text/css">
-<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" media="all" />   
+<link href="vendor/glightbox/glightbox.min.css" rel="stylesheet" type="text/css">
+<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css">
 <link href="css/portfolio.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="css/components/bs-switches.css" type="text/css" />
 <link rel="stylesheet" href="css/components/radio-checkbox.css" type="text/css" />
 <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" /><![endif]-->
 <link href="css/custom.css" rel="stylesheet" type="text/css"><!-- CUSTOM STYLESHEET FOR STYLING -->
@@ -63,7 +59,7 @@
                 </div>
              	<a href="#" class="visible-sm visible-xs" id="menu-toggle"><i class="fa fa-bars"></i></a>
                 <div class="header-info-col"><a href="get-involved/advocate.html" class="btn btn-primary">Become a Partner</a></div>
-                <ul class="sf-menu dd-menu pull-right" role="menu">
+                <ul class="sf-menu dd-menu float-end" role="menu">
                     <li class="megamenu"><a href="javascrip:void(0)">What We Do</a>
                         <ul class="dropdown">
                             <li>
@@ -204,14 +200,6 @@
                                 <div class="megamenu-container container">
                                     <div class="row">
                                         <div class="col-md-3 megamenu-col">
-                                        	<span class="megamenu-sub-title text-center"><i class="fa fa-star"></i> Award</span> 
-                                            <div class="text-center">
-                                                <a href="https://www.guidestar.org/Profile/9759491" target="_blank"><object data="images/GuideStar_platinum.svg" width="175px" type="image/svg+xml">
-                                                    <img src="images/put-platinum2019-seal.avif" />
-                                                </object></a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 megamenu-col">
                                         	<span class="megamenu-sub-title"><i class="fas fa-info-circle"></i> Information</span>
                                             <ul class="sub-menu">
                                                 <li><a href="impact/briefs.html">Technical Briefs</a></li>
@@ -300,7 +288,7 @@
                                                             <strong></strong>
                                                         </div>
                                                     </a>
-                                                    <h5><a href="https://iblossom.org" target="_blank" data-toggle="modal" data-target="#DonateModal">iBlossom</a></h5>
+                                                    <h5><a href="https://iblossom.org" target="_blank" data-bs-toggle="modal" data-bs-target="#DonateModal">iBlossom</a></h5>
                                                     <span class="meta-data">Women Empowerment</span>
                                                 </li>
                                                 <li>
@@ -310,7 +298,7 @@
                                                             <strong></strong>
                                                         </div>
                                                     </a>
-                                                    <h5><a href="https://ignitecuriosity.org" target="_blank" data-toggle="modal" data-target="#DonateModal">Ignite Curiosity</a></h5>
+                                                    <h5><a href="https://ignitecuriosity.org" target="_blank" data-bs-toggle="modal" data-bs-target="#DonateModal">Ignite Curiosity</a></h5>
                                                     <span class="meta-data">Alternative Learning</span>
                                                 </li>
                                             </ul>
@@ -417,9 +405,9 @@
     <!-- Hero Area -->
     <div class="hero-area">
     	<!-- Start Hero Slider -->
-      	<div class="flexslider heroflex hero-slider" data-autoplay="yes" data-pagination="no" data-arrows="yes" data-style="fade" data-pause="yes">
-            <ul class="slides">
-                <li class="parallax" style="background-image:url(images/slides/athens.avif)">
+      	<div class="swiper hero-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide parallax" style="background-image:url(images/slides/athens.avif)">
                 	<div class="flex-caption">
                     	<div class="container">
                         	<div class="flex-caption-table">
@@ -433,8 +421,8 @@
                           	</div>
                         </div>
                     </div>
-                </li>
-                 <li class="parallax" style="background-image:url(images/slides/silk.avif)">
+                </div>
+                 <div class="swiper-slide parallax" style="background-image:url(images/slides/silk.avif)">
                 	<div class="flex-caption">
                     	<div class="container">
                         	<div class="flex-caption-table">
@@ -448,24 +436,26 @@
                           	</div>
                         </div>
                     </div>
-                </li>
-                <li class="parallax" style="background-image:url(images/slides/chalkboard2.avif)">
+                </div>
+                <div class="swiper-slide parallax" style="background-image:url(images/slides/chalkboard2.avif)">
                 	<div class="flex-caption">
                     	<div class="container">
                         	<div class="flex-caption-table">
                             	<div class="flex-caption-cell text-align-center">
                         			<div class="flex-caption-cause">
-                            			<h3><a href="#" data-toggle="modal" data-target="#DonateModal">Literacy, Redefined</a></h3>
+                            			<h3><a href="#" data-bs-toggle="modal" data-bs-target="#DonateModal">Literacy, Redefined</a></h3>
                     					<p>Literacy used to mean reading and writing. We&apos;re engineering what it means next — AI fluency, computational thinking, and the languages the next century will run on.</p>
                                         	<!-- <span class="meta-data">Donated $26400 / <span class="cause-target">$30000</span></span> -->
-                                    		<a href="#" class="btn btn-primary btn-lg" target="_blank" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                    		<a href="#" class="btn btn-primary btn-lg" target="_blank" data-bs-toggle="modal" data-bs-target="#DonateModal">Donate Now</a>
                           			</div>
                         		</div>
                     		</div>
                         </div>
                     </div>
-                </li>
-          	</ul>
+                </div>
+          	</div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
        	</div>
         <!-- End Hero Slider -->
     </div>
@@ -474,7 +464,7 @@
         	<span>Volunteer to Help</span>
         	<strong>Join Us</strong>
         </a>
-        <a href="#" class="featured-link col-md-4 col-sm-4" data-toggle="modal" data-target="#DonateModal">
+        <a href="#" class="featured-link col-md-4 col-sm-4" data-bs-toggle="modal" data-bs-target="#DonateModal">
         	<span>Give to a Cause</span>
         	<strong>Make a Donation</strong>
         </a>
@@ -495,125 +485,130 @@
                         </div>
                         <div class="col-md-7 col-sm-7">
                         	<div class="spacer-10"></div>
-                        	<p>Our mission is to make the world more curious. We're a 501(c)3 research institute: we study the psychology of curiosity, design and test the pedagogical methods that spark it, and investigate how learning models — from the traditional classroom to the flip-school — must evolve to keep learners motivated. That research charter extends beyond human learners: we build AI pedagogy for machine and other sentient systems, too. It becomes practice through Curiosity Camps and Cottages, Curiosity Coaches, and the DreamTrack portfolio system — moving every learner from first spark to career-ready, auditable mastery.</p>
+                        	<p>Our mission is to make the world more curious. We're a research institute with a pending 501(c)(3) application: we study the psychology of curiosity, design and test the pedagogical methods that spark it, and investigate how learning models — from the traditional classroom to the flip-school — must evolve to keep learners motivated. That research charter extends beyond human learners: we build AI pedagogy for machine and other sentient systems, too. It becomes practice through Curiosity Camps and Cottages, Curiosity Coaches, and the DreamTrack portfolio system — moving every learner from first spark to career-ready, auditable mastery.</p>
                         </div>
                   	</div>
                     <div class="carousel-wrapper">
                         <div class="row">
-                            <ul class="owl-carousel carousel-fw" id="causes-slider" data-columns="4" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="4" data-items-desktop-small="3" data-items-tablet="2" data-items-mobile="1">
-                                <li class="item">
+                            <div class="swiper carousel-fw" id="causes-slider" data-columns="4" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="4" data-items-desktop-small="3" data-items-tablet="2" data-items-mobile="1">
+                            	<ul class="swiper-wrapper">
+                                <li class="item swiper-slide">
                                     <div class="grid-item cause-grid-item small-business format-standard">
                                         <div class="grid-item-inner">
                                             <a href="cause/silk-women.html" class="media-box">
                                                 <img src="images/600/silkwomen2.avif" alt="">
                                             </a>
                                             <div class="grid-item-content">
-                                                <!-- <a class="cProgress" data-complete="88" data-color="F23827" data-toggle="tooltip" data-original-title="10 days left"><strong></strong></a> -->
+                                                <!-- <a class="cProgress" data-complete="88" data-color="F23827" data-bs-toggle="tooltip" data-original-title="10 days left"><strong></strong></a> -->
                                                 <h3 class="post-title"><a href="cause/silk-women.html">Curiosity Coaches</a></h3>
                                                 <div class="meta-data">AI-Driven Mentor Guides</div>
                                             </div>
-                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                        	<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DonateModal">Donate Now</a>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="item">
+                                <li class="item swiper-slide">
                                     <div class="grid-item cause-grid-item small-business format-standard">
                                         <div class="grid-item-inner">
                                             <a href="cause/devdojo.html" class="media-box">
                                                 <img src="images/600/devdojo.avif" alt="">
                                             </a>
                                             <div class="grid-item-content">
-                                                <!-- <a class="cProgress" data-complete="75" data-color="8CC152" data-toggle="tooltip" data-original-title="65 days left"><strong></strong></a> -->
+                                                <!-- <a class="cProgress" data-complete="75" data-color="8CC152" data-bs-toggle="tooltip" data-original-title="65 days left"><strong></strong></a> -->
                                                 <h3 class="post-title"><a href="cause/devdojo.html">Curiosity Hive</a></h3>
                                                 <div class="meta-data">Online Learning Network</div>
                                             </div>
-                                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DonateModal">Donate Now</a>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="item">
+                                <li class="item swiper-slide">
                                     <div class="grid-item cause-grid-item small-business format-standard">
                                         <div class="grid-item-inner">
                                             <a href="cause/instarlab.html" class="media-box">
                                                 <img src="images/600/marsrover.avif" alt="">
                                             </a>
                                             <div class="grid-item-content">
-                                                <!-- <a class="cProgress" data-complete="52" data-color="F6BB42" data-toggle="tooltip" data-original-title="25 days left"><strong></strong></a> -->
+                                                <!-- <a class="cProgress" data-complete="52" data-color="F6BB42" data-bs-toggle="tooltip" data-original-title="25 days left"><strong></strong></a> -->
                                                 <h3 class="post-title"><a href="cause/instarlab.html">Curiosity Corners</a></h3>
                                                 <div class="meta-data">Curiosity, Sized for Home</div>
                                             </div>
-                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                        	<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DonateModal">Donate Now</a>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="item">
+                                <li class="item swiper-slide">
                                     <div class="grid-item cause-grid-item small-business format-standard">
                                         <div class="grid-item-inner">
                                             <a href="cause/themov.html" class="media-box">
                                                 <img src="images/600/themov3.avif" alt="">
                                             </a>
                                             <div class="grid-item-content">
-                                                <!-- <a class="cProgress" data-complete="75" data-color="8CC152" data-toggle="tooltip" data-original-title="65 days left"><strong></strong></a> -->
+                                                <!-- <a class="cProgress" data-complete="75" data-color="8CC152" data-bs-toggle="tooltip" data-original-title="65 days left"><strong></strong></a> -->
                                                 <h3 class="post-title"><a href="cause/themov.html">Curiosity Camps</a></h3>
                                                 <div class="meta-data">Bootcamp-Style Mastery</div>
                                             </div>
-                                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DonateModal">Donate Now</a>
                                         </div>
                                     </div>
                                 </li>
                                 
-                                <li class="item">
+                                <li class="item swiper-slide">
                                     <div class="grid-item cause-grid-item small-business format-standard">
                                         <div class="grid-item-inner">
                                             <a href="cause/movdance.html" class="media-box">
                                                 <img src="images/600/gala.avif" alt="">
                                             </a>
                                             <div class="grid-item-content">
-                                                <!-- <a class="cProgress" data-complete="50" data-color="8CC152" data-toggle="tooltip" data-original-title="105 days left"><strong></strong></a> -->
+                                                <!-- <a class="cProgress" data-complete="50" data-color="8CC152" data-bs-toggle="tooltip" data-original-title="105 days left"><strong></strong></a> -->
                                                 <h3 class="post-title"><a href="cause/movdance.html">Curiosity Cottages</a></h3>
                                                 <div class="meta-data">Curiosity-Designed Spaces</div>
                                             </div>
-                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                        	<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DonateModal">Donate Now</a>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="item">
+                                <li class="item swiper-slide">
                                     <div class="grid-item cause-grid-item small-business format-standard">
                                         <div class="grid-item-inner">
                                             <a href="cause/miss-lyra.html" class="media-box">
                                                 <img src="images/600/lyra2.avif" alt="">
                                             </a>
                                             <div class="grid-item-content">
-                                                <!-- <a class="cProgress" data-complete="20" data-color="8CC152" data-toggle="tooltip" data-original-title="102 days left"><strong></strong></a> -->
+                                                <!-- <a class="cProgress" data-complete="20" data-color="8CC152" data-bs-toggle="tooltip" data-original-title="102 days left"><strong></strong></a> -->
                                                 <h3 class="post-title"><a href="cause/miss-lyra.html">Curiosity Compass</a></h3>
                                                 <div class="meta-data">Chart Your Own Course</div>
                                             </div>
-                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                        	<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DonateModal">Donate Now</a>
                                         </div>
                                     </div>
                                 </li>
-                                <li class="item">
+                                <li class="item swiper-slide">
                                     <div class="grid-item cause-grid-item small-business format-standard">
                                         <div class="grid-item-inner">
                                             <a href="cause/pedadida.html" class="media-box">
                                                 <img src="images/600/pedadida.avif" alt="">
                                             </a>
                                             <div class="grid-item-content">
-                                                <!-- <a class="cProgress" data-complete="88" data-color="8CC152" data-toggle="tooltip" data-original-title="70 days left"><strong></strong></a> -->
+                                                <!-- <a class="cProgress" data-complete="88" data-color="8CC152" data-bs-toggle="tooltip" data-original-title="70 days left"><strong></strong></a> -->
                                                 <h3 class="post-title"><a href="cause/pedadida.html">Curiosity Classroom<br>LMS Learning Platform </a></h3>
                                                 <div class="meta-data">Open-Source LMS</div>
                                             </div>
-                                        	<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#DonateModal">Donate Now</a>
+                                        	<a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#DonateModal">Donate Now</a>
                                         </div>
                                     </div>
                                 </li>
-                            </ul>
+                            
+                            	</ul>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                            </div>
                         </div>
                     </div>
                     <a href="causes.html" class="btn btn-primary">Explore All Programs</a>
                	</div>
             </div>
-            <div class="padding-tb45 position-absolute parallax parallax3 portbg">
+            <div class="padding-tb45 parallax parallax3 portbg">
                 <div class="container">
                     <!--portfolio-content starts visible-md-block visible-lg-block -->
                     <div class="front-portfolio-container">
@@ -759,7 +754,7 @@
             </div>
             <div class="parallax parallax6 padding-tb100" style="background-image:url(images/slides/chitral.avif)">
             	<div class="container">
-                    <div class="parallax-text-block pull-right">
+                    <div class="parallax-text-block float-end">
                         <h3>Curiosity Chapters</h3>
                         <p>Our regional chapters carry frontier pedagogy — S.P.A.R.K., Dream Quest, and Curiosity Coaches — into local communities. We have opened Curiosity Chapters in Asia, Africa, and Rural America to build the on-ramp to the next century's disciplines wherever a Dreamer is starting from.</p>
                         <a href="get-involved/chapter.html" class="btn btn-primary">Learn More</a>
@@ -774,11 +769,12 @@
                 </div>
                 <div class="carousel-wrapper">
                     <div class="row">
-                        <ul class="owl-carousel carousel-fw" id="stories-slider" data-columns="1" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="1" data-items-desktop-small="2" data-items-tablet="1" data-items-mobile="1">
-                            <li class="item">
+                        <div class="swiper carousel-fw" id="stories-slider" data-columns="1" data-autoplay="" data-pagination="no" data-arrows="yes" data-single-item="no" data-items-desktop="1" data-items-desktop-small="2" data-items-tablet="1" data-items-mobile="1">
+                        	<ul class="swiper-wrapper">
+                            <li class="item swiper-slide">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <img src="images/slides/platanillo.avif" alt="" class="img-responsive">
+                                        <img src="images/slides/platanillo.avif" alt="" class="img-fluid">
                                     </div>
                                     
                                     <div class="col-md-6">
@@ -796,10 +792,10 @@
                                     </div>
                                 </div>
                            	</li>
-                            <li class="item">
+                            <li class="item swiper-slide">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <img src="images/marietta_landscape.avif" alt="" class="img-responsive">
+                                        <img src="images/marietta_landscape.avif" alt="" class="img-fluid">
                                     </div>
                                     
                                     <div class="col-md-6">
@@ -817,7 +813,11 @@
                                     </div>
                                 </div>
                            	</li>
-                      	</ul>
+                      	
+                        	</ul>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        </div>
                   	</div>
                	</div>
           	</div>
@@ -831,16 +831,19 @@
                         <div class="col-md-9 col-sm-9">
                             <div class="carousel-wrapper">
                                 <div class="row">
-                                    <ul class="owl-carousel carousel-fw" id="partners-slider" data-columns="5" data-autoplay="5000" data-pagination="no" data-arrows="no" data-single-item="no" data-items-desktop="4" data-items-desktop-small="3" data-items-tablet="3" data-items-mobile="2">
-                                        <li class="item"><a href="https://google.com" target="_blank"><img src="images/partners/google-logo.avif" alt=""></a></li>
-                                        <li class="item"><a href="https://taomgt.com" target="_blank"><img src="images/partners/taomgt.avif" alt=""></a></li>
-                                        <li class="item"><a href="https://www.usa.canon.com/" target="_blank"><img src="images/partners/canon.avif" alt=""></a></li>
-                                        <li class="item"><a href="https://microsoft.com" target="_blank"><img src="images/partners/microsoft_small.avif" alt=""></a></li>
-                                        <li class="item"><a href="https://adobe.com" target="_blank"><img src="images/partners/adobe.avif" alt=""></a></li>
-                                        <li class="item"><a href="https://unrealengine.com" target="_blank"><img src="images/partners/unreal.avif" alt=""></a></li>
-                                        <li class="item"><a href="https://salesforce.com" target="_blank"><img src="images/partners/salesforce2.avif" alt=""></a></li>
-                                        <li class="item"><a href="https://geekspod.com" target="_blank"><img src="images/partners/geekspod.avif" alt=""></a></li>
-                                    </ul>
+                                    <div class="swiper carousel-fw" id="partners-slider" data-columns="5" data-autoplay="5000" data-pagination="no" data-arrows="no" data-single-item="no" data-items-desktop="4" data-items-desktop-small="3" data-items-tablet="3" data-items-mobile="2">
+                                    	<ul class="swiper-wrapper">
+                                        <li class="item swiper-slide"><a href="https://google.com" target="_blank"><img src="images/partners/google-logo.avif" alt=""></a></li>
+                                        <li class="item swiper-slide"><a href="https://taomgt.com" target="_blank"><img src="images/partners/taomgt.avif" alt=""></a></li>
+                                        <li class="item swiper-slide"><a href="https://www.usa.canon.com/" target="_blank"><img src="images/partners/canon.avif" alt=""></a></li>
+                                        <li class="item swiper-slide"><a href="https://microsoft.com" target="_blank"><img src="images/partners/microsoft_small.avif" alt=""></a></li>
+                                        <li class="item swiper-slide"><a href="https://adobe.com" target="_blank"><img src="images/partners/adobe.avif" alt=""></a></li>
+                                        <li class="item swiper-slide"><a href="https://unrealengine.com" target="_blank"><img src="images/partners/unreal.avif" alt=""></a></li>
+                                        <li class="item swiper-slide"><a href="https://salesforce.com" target="_blank"><img src="images/partners/salesforce2.avif" alt=""></a></li>
+                                        <li class="item swiper-slide"><a href="https://geekspod.com" target="_blank"><img src="images/partners/geekspod.avif" alt=""></a></li>
+                                    
+                                    	</ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -863,8 +866,9 @@
                         <div class="col-md-8 col-sm-8">
                             <div class="carousel-wrapper">
                                 <div class="row">
-                                    <ul class="owl-carousel carousel-fw" id="news-slider" data-columns="2" data-autoplay="" data-pagination="yes" data-arrows="no" data-single-item="no" data-items-desktop="2" data-items-desktop-small="1" data-items-tablet="1" data-items-mobile="1">
-                                        <li class="item">
+                                    <div class="swiper carousel-fw" id="news-slider" data-columns="2" data-autoplay="" data-pagination="yes" data-arrows="no" data-single-item="no" data-items-desktop="2" data-items-desktop-small="1" data-items-tablet="1" data-items-mobile="1">
+                                    	<ul class="swiper-wrapper">
+                                        <li class="item swiper-slide">
                                             <div class="grid-item blog-grid-item format-standard">
                                                 <div class="grid-item-inner">
                                                     <a href="news/shinrin-yoku.html" class="media-box">
@@ -877,7 +881,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="item">
+                                        <li class="item swiper-slide">
                                             <div class="grid-item blog-grid-item format-standard">
                                                 <div class="grid-item-inner">
                                                     <a href="news/business-integration.html" class="media-box">
@@ -890,7 +894,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="item">
+                                        <li class="item swiper-slide">
                                             <div class="grid-item blog-grid-item format-standard">
                                                 <div class="grid-item-inner">
                                                     <a href="news/microbusiness.html" class="media-box">
@@ -903,7 +907,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li class="item">
+                                        <li class="item swiper-slide">
                                             <div class="grid-item blog-grid-item format-standard">
                                                 <div class="grid-item-inner">
                                                     <a href="news/smalltown.html" class="media-box">
@@ -916,7 +920,10 @@
                                                 </div>
                                             </div>
                                         </li>
-                                    </ul>
+                                    
+                                    	</ul>
+                                    <div class="swiper-pagination"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -925,7 +932,7 @@
             </div>
             <div class="accent-bg padding-tb20 cta-fw">
     			<div class="container">
-                    <a href="get-involved/volunteer.html" class="btn btn-default btn-ghost btn-light btn-rounded pull-right " >Become a Volunteer</a>
+                    <a href="get-involved/volunteer.html" class="btn btn-secondary btn-ghost btn-light btn-rounded float-end" >Become a Volunteer</a>
                     <h4>Ignite curiosity in others — help engineer the pedagogy of the next century.</h4>
                 </div>
             </div>
@@ -941,7 +948,7 @@
                         <p class="default-retina-logo"><a href="index.html"><object data="images/logo_white.svg" width="140px" height="40px" type="image/svg+xml" class="default-retina-logo">
                             <img src="images/logo.avif" />
                         </object></a></p>
-                        <p>We engineer the pedagogy of the next century — igniting curiosity from first spark to provable mastery. We are a Non-Profit Organization headquartered in USA. Tax ID: 33-3478603</p>
+                        <p>We engineer the pedagogy of the next century — igniting curiosity from first spark to provable mastery. We are a Non-Profit Organization headquartered in USA. Our 501(c)(3) tax-exempt status is pending IRS determination. Tax ID: 33-3478603</p>
                         <p>+1 929-229-2917</p>
                         <p>200 Henrietta St<br>Ravenswood, WV 26164</p>
                     </div>
@@ -986,12 +993,12 @@
 </div>
 
 <!-- Donate Form Modal -->
-<div class="modal fade" id="DonateModal" tabindex="-1" role="dialog" data-backdrop="static">
+<div class="modal fade" id="DonateModal" tabindex="-1" role="dialog" data-bs-backdrop="static">
   	<div class="modal-dialog" role="document">
     	<div class="modal-content">
             <form action="#" method="post" id="payment-form">
       		<div class="modal-header">
-        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         		<div class="row">
                     <div class="col-md-6 col-sm-6 total-amount-option">
                         <h4>Choose an amount</h4>
@@ -1006,7 +1013,13 @@
                     <div class="col-md-6 col-sm-6 total-amount-option">
                         <h4>Frequency</h4>
                         <ul class="predefined-amount2 predefined-amount">
-                            <input class="bt-switch" type="checkbox" data-inverse="true" data-on-text="Monthly" data-off-text="One-Time" data-on-color="info" data-off-color="info" name="subscription" id="subscription" onchange="updateForm(this);">
+                            <div class="d-flex align-items-center gap-2 bt-switch-group">
+                                <span class="small text-muted">One-Time</span>
+                                <div class="form-check form-switch mb-0">
+                                    <input class="form-check-input" type="checkbox" role="switch" name="subscription" id="subscription" onchange="updateForm(this);">
+                                </div>
+                                <span class="small text-muted">Monthly</span>
+                            </div>
                         </ul>
                     </div>
                	</div>
@@ -1028,10 +1041,10 @@
                         <div class="form-control"  id="card-element"></div>
                         <input type="text" class="form-control" placeholder="Address" name="Address" id="address">
        					<div class="row">
-                			<div class="col-md-8 col-sm-8 col-xs-8">
+                			<div class="col-md-8 col-sm-8 col-8">
                         		<input type="text" class="form-control" placeholder="City" name="city" id="city">
                             </div>
-                			<div class="col-md-4 col-sm-4 col-xs-4">
+                			<div class="col-md-4 col-sm-4 col-4">
                         		<input type="text" class="form-control" placeholder="State" name="state" id="state">
                             </div>
                     	</div>
@@ -1044,7 +1057,7 @@
                 <div id="card-errors" role="alert" class="text-center alert-error"></div>
                 <div class="spacer-10"></div>
                 <p class="small">
-                <br>Curiosity Research Corporation is a Section 501(c)3 charitable organization, EIN 33-3478603.<br>All donation are deemed tax-deductible absent any limitations on deductibility applicable to a particular taxpayer.<br>No goods or services were provided in exchange for your contribution.</p>
+                <br>Curiosity Research Corporation's 501(c)(3) tax-exempt application is pending IRS determination (EIN 33-3478603).<br>Contributions are not yet tax-deductible; if exemption is granted, they may be deductible retroactively to the extent allowed by law.<br>No goods or services were provided in exchange for your contribution.</p>
               </div>
             </form>
             <script src="https://js.stripe.com/v3/"></script>
@@ -1052,20 +1065,17 @@
   	</div>
 </div>
 
-<script src="js/jquery-2.1.3.min.js"></script> <!-- Jquery Library Call -->
-<script src="vendor/magnific/jquery.magnific-popup.min.js"></script> <!-- PrettyPhoto Plugin -->
-<script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>  
+<script src="js/jquery-3.7.1.min.js"></script> <!-- Jquery Library Call -->
+<script src="js/jquery-migrate-3.6.0.min.js"></script> <!-- Jquery Migrate Shim -->
+<script src="vendor/glightbox/glightbox.min.js"></script> <!-- GLightbox -->
 <script src="js/ui-plugins.js"></script> <!-- UI Plugins -->
 <script src="js/helper-plugins.js"></script> <!-- Helper Plugins -->
-<script src="vendor/owl-carousel/js/owl.carousel.min.js"></script> <!-- Owl Carousel -->
+<script src="vendor/swiper/swiper-bundle.min.js"></script> <!-- Swiper -->
 <script src="js/bootstrap.js"></script> <!-- UI -->
 <script src="js/init.js"></script> <!-- All Scripts -->
-<script src="vendor/flexslider/js/jquery.flexslider.js"></script> <!-- FlexSlider -->
 <script src="js/circle-progress.js"></script> <!-- Circle Progress Bars -->
 <!-- Krashnik Stripe Integration -->
 <script src="js/client.js"></script> 
-<script src="js/components/bs-switches.js"></script>
-<script>jQuery(".bt-switch").bootstrapSwitch();</script>
 <!-- End Krashnik Stripe Integration -->
 
 

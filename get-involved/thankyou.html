@@ -20,12 +20,8 @@
 <!-- CSS
   ================================================== -->
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="../css/bootstrap-theme.css" rel="stylesheet" type="text/css">
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<link href="../vendor/magnific/magnific-popup.css" rel="stylesheet" type="text/css">
-<link href="../vendor/owl-carousel/css/owl.carousel.css" rel="stylesheet" type="text/css">
-<link href="../vendor/owl-carousel/css/owl.theme.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="../css/components/bs-switches.css" type="text/css" />
+<link href="../vendor/glightbox/glightbox.min.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="../css/components/radio-checkbox.css" type="text/css" />
 <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" /><![endif]-->
 <link href="../css/custom.css" rel="stylesheet" type="text/css"><!-- CUSTOM STYLESHEET FOR STYLING -->
@@ -90,7 +86,7 @@ var membership = getUrlParam('membership','Unedefined');
              	<a href="#" class="visible-sm visible-xs" id="menu-toggle"><i class="fa fa-bars"></i></a>
                 <div class="header-info-col"><a href="../get-involved/give.html" class="btn btn-primary">Donate</a></div>
                 
-                <ul class="sf-menu dd-menu pull-right" role="menu">
+                <ul class="sf-menu dd-menu float-end" role="menu">
                     <li class="megamenu"><a href="javascrip:void(0)">What We Do</a>
                         <ul class="dropdown">
                             <li>
@@ -231,16 +227,6 @@ var membership = getUrlParam('membership','Unedefined');
                                 <div class="megamenu-container container">
                                     <div class="row">
                                         <div class="col-md-3 megamenu-col">
-                                        	<span class="megamenu-sub-title text-center"><i class="fa fa-star"></i> Award</span> 
-                                            <a href="https://www.guidestar.org/Profile/9759491" target="_blank">
-                                                <div class="text-center">
-                                                    <object data="../images/GuideStar_platinum.svg" width="175px" type="image/svg+xml">
-                                                        <img src="../images/put-platinum2019-seal.avif" />
-                                                    </object>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 megamenu-col">
                                         	<span class="megamenu-sub-title"><i class="fas fa-info-circle"></i> Information</span>
                                             <ul class="sub-menu">
                                                 <li><a href="../impact/briefs.html">Technical Briefs</a></li>
@@ -329,7 +315,7 @@ var membership = getUrlParam('membership','Unedefined');
                                                             <strong></strong>
                                                         </div>
                                                     </a>
-                                                    <h5><a href="https://iblossom.org" target="_blank" data-toggle="modal" data-target="#DonateModal">iBlossom</a></h5>
+                                                    <h5><a href="https://iblossom.org" target="_blank" data-bs-toggle="modal" data-bs-target="#DonateModal">iBlossom</a></h5>
                                                     <span class="meta-data">Women Empowerment</span>
                                                 </li>
                                                 <li>
@@ -339,7 +325,7 @@ var membership = getUrlParam('membership','Unedefined');
                                                             <strong></strong>
                                                         </div>
                                                     </a>
-                                                    <h5><a href="https://ignitecuriosity.org" target="_blank" data-toggle="modal" data-target="#DonateModal">Ignite Curiosity</a></h5>
+                                                    <h5><a href="https://ignitecuriosity.org" target="_blank" data-bs-toggle="modal" data-bs-target="#DonateModal">Ignite Curiosity</a></h5>
                                                     <span class="meta-data">Alternative Learning</span>
                                                 </li>
                                             </ul>
@@ -459,7 +445,7 @@ var membership = getUrlParam('membership','Unedefined');
         	<div class="container">
                 <div class="text-align-center">
                     <h2><script type="text/javascript">document.write(unescape(name));</script>, You're Funding the Next Frontier</h2>
-                    <p class="lead">Thank you for your contribution today. We've emailed a receipt for your records to <script type="text/javascript">document.write(email);</script>, including our Tax ID (33-3478603) for your tax-deductible donation of $<script type="text/javascript">document.write(amount/100);</script>. Below are a few of the programs your gift is helping fund.</p>
+                    <p class="lead">Thank you for your contribution today. We've emailed a receipt for your records to <script type="text/javascript">document.write(email);</script>, including our Tax ID (33-3478603), for your donation of $<script type="text/javascript">document.write(amount/100);</script>. Our 501(c)(3) application is pending; your contribution is not yet tax-deductible but may become deductible retroactively if exemption is granted. Below are a few of the programs your gift is helping fund.</p>
 
                     <div class="text-align-left">
                         <div class="spacer-50"></div>
@@ -524,7 +510,7 @@ var membership = getUrlParam('membership','Unedefined');
                                 </div>
                             </div>
                         </div>
-                        <div class="spacer-50 hidden-sm hidden-xs"></div>
+                        <div class="spacer-50 d-none d-md-block"></div>
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="icon-box ibox-border">
@@ -554,7 +540,7 @@ var membership = getUrlParam('membership','Unedefined');
                                 </div>
                             </div>
                         </div>
-                    	<div class="spacer-75 hidden-sm hidden-xs"></div>
+                    	<div class="spacer-75 d-none d-md-block"></div>
                    	</div>
                 </div>
             </div>
@@ -601,7 +587,7 @@ var membership = getUrlParam('membership','Unedefined');
                             </div>
                             <p class="lead">The next century will run on AI, emerging technology, physics, and aerospace fluency the way this century ran on reading and writing. We build the original curricula, the AI-driven coaching, and the auditable evidence infrastructure that get a Dreamer there — in partnership with schools, education ministries, and the Curiosity Consortium.</p>
                             <div class="cta">
-                                <a href="../get-involved/give.html" class="btn btn-primary pull-right">Fund the Next Frontier</a>
+                                <a href="../get-involved/give.html" class="btn btn-primary float-end">Fund the Next Frontier</a>
                                 <p>Help engineer the pedagogy of the next century.</p>
                             </div>
                             <div class="spacer-30"></div>
@@ -662,7 +648,7 @@ var membership = getUrlParam('membership','Unedefined');
                         <p class="default-retina-logo"><a href="index.html"><object data="../images/logo_white.svg" width="140px" height="40px" type="image/svg+xml" class="default-retina-logo">
                             <img src="../images/logo.avif" />
                         </object></a></p>
-                        <p>We engineer the pedagogy of the next century — igniting curiosity from first spark to provable mastery. We are a Non-Profit Organization headquartered in USA. Tax ID: 33-3478603</p>
+                        <p>We engineer the pedagogy of the next century — igniting curiosity from first spark to provable mastery. We are a Non-Profit Organization headquartered in USA. Our 501(c)(3) tax-exempt status is pending IRS determination. Tax ID: 33-3478603</p>
                         <p>+1 929-229-2917</p>
                         <p>200 Henrietta St<br>Ravenswood, WV 26164</p>
                     </div>
@@ -704,14 +690,13 @@ var membership = getUrlParam('membership','Unedefined');
       	</div>
   	</div>
   	<a id="back-to-top"><i class="fa fa-angle-double-up"></i></a></div>
-<script src="../js/jquery-2.1.3.min.js"></script> <!-- Jquery Library Call -->
-<script src="../vendor/magnific/jquery.magnific-popup.min.js"></script> <!-- PrettyPhoto Plugin -->
+<script src="../js/jquery-3.7.1.min.js"></script> <!-- Jquery Library Call -->
+<script src="../js/jquery-migrate-3.6.0.min.js"></script> <!-- Jquery Migrate Shim -->
+<script src="../vendor/glightbox/glightbox.min.js"></script> <!-- GLightbox -->
 <script src="../js/ui-plugins.js"></script> <!-- UI Plugins -->
 <script src="../js/helper-plugins.js"></script> <!-- Helper Plugins -->
-<script src="../vendor/owl-carousel/js/owl.carousel.min.js"></script> <!-- Owl Carousel -->
 <script src="../js/bootstrap.js"></script> <!-- UI -->
 <script src="../js/init.js"></script> <!-- All Scripts -->
-<script src="../vendor/flexslider/js/jquery.flexslider.js"></script> <!-- FlexSlider -->
 <script src="../js/circle-progress.js"></script> <!-- Circle Progress Bars -->
 </body>
 </html>

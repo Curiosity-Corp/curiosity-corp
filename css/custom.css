@@ -110,13 +110,17 @@ h4a {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-/* Homepage hero slider (.hero-slider .flexslider): captions are
+/* Homepage hero slider (.hero-slider .swiper): captions are
    vertically centered and can sit anywhere across the slide, so
    use a flat overlay instead of a directional gradient. Slides
    that already use a solid white .flex-caption-cause card are
    unaffected — that card sits above the scrim with its own
-   dark-on-white text. */
-.hero-slider.flexslider ul.slides li.parallax::after {
+   dark-on-white text. Swiper's own nav buttons are already
+   z-index:10 (see vendor/swiper/swiper-bundle.min.css), comfortably
+   above the scrim (1) and caption (2) below — the explicit z-index
+   here just documents/pins that so it can't regress if the scrim or
+   caption z-index is bumped later. */
+.hero-slider.swiper .swiper-slide.parallax::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -124,17 +128,40 @@ h4a {
   z-index: 1;
   pointer-events: none;
 }
-.hero-slider.flexslider ul.slides li .flex-caption {
+.hero-slider.swiper .swiper-slide .flex-caption {
   position: relative;
   z-index: 2;
 }
-.hero-slider.flexslider .flex-prev,
-.hero-slider.flexslider .flex-next {
-  z-index: 3;
+.hero-slider.swiper .swiper-button-prev,
+.hero-slider.swiper .swiper-button-next {
+  z-index: 10;
 }
 .flex-caption-text h1,
 .flex-caption-text h2,
 .flex-caption-text h3,
 .flex-caption-text p {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* ==================================================
+   BS5 migration: restore Bootstrap 3's implicit
+   .container micro-clearfix.
+   BS 3.4.1 applied `.container:after{clear:both}` to every
+   .container (part of its clearfix mixin). Bootstrap 5 dropped
+   this since BS4/5 assume floats are self-contained inside a
+   flex .row. Several pages here float custom-grid content
+   (e.g. .grid-holder/.isotope blog grids) directly inside a
+   bare .container with no .row wrapper, relying on that BS3
+   behavior — without it the container collapses to zero extra
+   height and the next section (often .site-footer) renders on
+   top of the floated content. Re-add the old clearfix so that
+   pre-existing float-in-container markup keeps working under
+   BS5 unmodified. */
+.container:before,
+.container:after {
+  content: "";
+  display: table;
+}
+.container:after {
+  clear: both;
 }

@@ -144,123 +144,106 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 		});
 	}
 /* ==================================================
-   Hero Flex Slider
+   Hero Swiper Slider
 ================================================== */
-	BORNTOGIVE.heroflex = function() {
-		$('.heroflex').each(function(){
-				var carouselInstance = $(this); 
-				var carouselAutoplay = carouselInstance.attr("data-autoplay") == 'yes' ? true : false
-				var carouselPagination = carouselInstance.attr("data-pagination") == 'yes' ? true : false
-				var carouselArrows = carouselInstance.attr("data-arrows") == 'yes' ? true : false
-				var carouselDirection = carouselInstance.attr("data-direction") ? carouselInstance.attr("data-direction") : "horizontal"
-				var carouselStyle = carouselInstance.attr("data-style") ? carouselInstance.attr("data-style") : "fade"
-				var carouselSpeed = carouselInstance.attr("data-speed") ? carouselInstance.attr("data-speed") : "5000"
-				var carouselPause = carouselInstance.attr("data-pause") == 'yes' ? true : false
-				
-				carouselInstance.flexslider({
-					animation: carouselStyle,
-					easing: "swing",               
-					direction: carouselDirection,       
-					slideshow: carouselAutoplay,              
-					slideshowSpeed: carouselSpeed,         
-					animationSpeed: 600,         
-					initDelay: 0,              
-					randomize: false,            
-					pauseOnHover: carouselPause,       
-					controlNav: carouselPagination,           
-					directionNav: carouselArrows,            
-					prevText: "",         
-					nextText: ""
+	BORNTOGIVE.heroSwiper = function() {
+		$('.hero-slider.swiper').each(function(){
+				new Swiper(this, {
+					effect: "fade",
+					fadeEffect: { crossFade: true },
+					loop: true,
+					speed: 600,
+					autoplay: {
+						delay: 5000,
+						disableOnInteraction: false,
+						pauseOnMouseEnter: true
+					},
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev"
+					}
 				});
 		});
 	}
 /* ==================================================
-   Flex Slider
+   Gallery Swiper (single-item slideshow embedded in a grid cell)
 ================================================== */
-	BORNTOGIVE.galleryflex = function() {
-		$('.galleryflex').each(function(){
-				var carouselInstance = $(this); 
-				var carouselAutoplay = carouselInstance.attr("data-autoplay") == 'yes' ? true : false
-				var carouselPagination = carouselInstance.attr("data-pagination") == 'yes' ? true : false
-				var carouselArrows = carouselInstance.attr("data-arrows") == 'yes' ? true : false
-				var carouselDirection = carouselInstance.attr("data-direction") ? carouselInstance.attr("data-direction") : "horizontal"
-				var carouselStyle = carouselInstance.attr("data-style") ? carouselInstance.attr("data-style") : "fade"
-				var carouselSpeed = carouselInstance.attr("data-speed") ? carouselInstance.attr("data-speed") : "5000"
-				var carouselPause = carouselInstance.attr("data-pause") == 'yes' ? true : false
-				
-				carouselInstance.flexslider({
-					animation: carouselStyle,
-					easing: "swing",
-					direction: carouselDirection,
-					slideshow: carouselAutoplay,
-					slideshowSpeed: carouselSpeed,
-					animationSpeed: 600,
-					initDelay: 0,
-					animationLoop: false,
-					randomize: false,
-					pauseOnHover: carouselPause,
-					controlNav: carouselPagination,
-					directionNav: carouselArrows,
-					prevText: "",
-					nextText: ""
+	BORNTOGIVE.gallerySwiper = function() {
+		$('.gallery-slider.swiper').each(function(){
+				var carouselInstance = $(this);
+				new Swiper(this, {
+					loop: true,
+					speed: 600,
+					autoplay: {
+						delay: 5000,
+						disableOnInteraction: false,
+						pauseOnMouseEnter: true
+					},
+					navigation: {
+						nextEl: carouselInstance.find('.swiper-button-next').get(0),
+						prevEl: carouselInstance.find('.swiper-button-prev').get(0)
+					}
 				});
 		});
 	}
 /* ==================================================
-   Owl Carousel
+   Swiper Carousel (generic, reads the same data-* attrs as OwlCarousel)
 ================================================== */
-	BORNTOGIVE.OwlCarousel = function() {
-		$('.owl-carousel').each(function(){
-				var carouselInstance = $(this); 
+	BORNTOGIVE.SwiperCarousel = function() {
+		$('.swiper.carousel-fw').each(function(){
+				var carouselInstance = $(this);
 				var carouselColumns = carouselInstance.attr("data-columns") ? carouselInstance.attr("data-columns") : "1"
 				var carouselitemsDesktop = carouselInstance.attr("data-items-desktop") ? carouselInstance.attr("data-items-desktop") : "4"
 				var carouselitemsDesktopSmall = carouselInstance.attr("data-items-desktop-small") ? carouselInstance.attr("data-items-desktop-small") : "3"
 				var carouselitemsTablet = carouselInstance.attr("data-items-tablet") ? carouselInstance.attr("data-items-tablet") : "2"
 				var carouselitemsMobile = carouselInstance.attr("data-items-mobile") ? carouselInstance.attr("data-items-mobile") : "1"
-				var carouselAutoplay = carouselInstance.attr("data-autoplay") ? carouselInstance.attr("data-autoplay") : false
 				var carouselPagination = carouselInstance.attr("data-pagination") == 'yes' ? true : false
 				var carouselArrows = carouselInstance.attr("data-arrows") == 'yes' ? true : false
 				var carouselSingle = carouselInstance.attr("data-single-item") == 'yes' ? true : false
-				var carouselStyle = carouselInstance.attr("data-style") ? carouselInstance.attr("data-style") : "fade"
-				
-				carouselInstance.owlCarousel({
-					items: carouselColumns,
-					autoPlay : carouselAutoplay,
-					navigation : carouselArrows,
-					pagination : carouselPagination,
-					itemsDesktop:[1199,carouselitemsDesktop],
-					itemsDesktopSmall:[979,carouselitemsDesktopSmall],
-					itemsTablet:[768,carouselitemsTablet],
-					itemsMobile:[479,carouselitemsMobile],
-					singleItem:carouselSingle,
-					navigationText: ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
-					stopOnHover: true,
-					lazyLoad: true,
-					transitionStyle: 'carouselStyle'
-				});
+
+				var autoplayAttr = carouselInstance.attr("data-autoplay");
+				var autoplayDelay = 0;
+				if(autoplayAttr){
+					var parsedDelay = parseInt(autoplayAttr, 10);
+					autoplayDelay = (parsedDelay > 0) ? parsedDelay : 5000;
+				}
+
+				var swiperConfig = {
+					slidesPerView: carouselSingle ? 1 : parseInt(carouselitemsMobile, 10),
+					spaceBetween: 30,
+					breakpoints: {
+						768:  { slidesPerView: carouselSingle ? 1 : parseInt(carouselitemsTablet, 10) },
+						992:  { slidesPerView: carouselSingle ? 1 : parseInt(carouselitemsDesktopSmall, 10) },
+						1200: { slidesPerView: carouselSingle ? 1 : parseInt(carouselitemsDesktop, 10) },
+						1400: { slidesPerView: carouselSingle ? 1 : parseInt(carouselColumns, 10) }
+					}
+				};
+
+				if(autoplayDelay > 0){
+					swiperConfig.loop = true;
+					swiperConfig.autoplay = { delay: autoplayDelay, disableOnInteraction: false };
+				}
+				if(carouselPagination && carouselInstance.find('.swiper-pagination').length){
+					swiperConfig.pagination = { el: carouselInstance.find('.swiper-pagination').get(0), clickable: true };
+				}
+				if(carouselArrows && carouselInstance.find('.swiper-button-next').length){
+					swiperConfig.navigation = {
+						nextEl: carouselInstance.find('.swiper-button-next').get(0),
+						prevEl: carouselInstance.find('.swiper-button-prev').get(0)
+					};
+				}
+
+				new Swiper(this, swiperConfig);
 		});
 	}
 /* ==================================================
-   Magnific Popup
+   GLightbox
 ================================================== */
-	BORNTOGIVE.Magnific = function() {
-		jQuery('.format-gallery').each(function(){
-			$(this).magnificPopup({
-				delegate: 'a.popup-image', // child items selector, by clicking on it popup will open
-				type: 'image',
-				gallery:{enabled:true}
-				// other options
-			});
-		});
-		jQuery('.magnific-image').magnificPopup({ 
-			type: 'image',
-			gallery:{enabled:false}
-			// other options
-		});
-		jQuery('.magnific-video').magnificPopup({ 
-			type: 'iframe',
-			gallery:{enabled:false}
-			// other options
+	BORNTOGIVE.GLightbox = function() {
+		GLightbox({
+			selector: '.glightbox',
+			touchNavigation: true,
+			loop: false
 		});
 	}
 /* ==================================================
@@ -329,11 +312,11 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 		$("ul.sort-source").each(function() {
 			var source = $(this);
 			var destination = $("ul.sort-destination[data-sort-id=" + $(this).attr("data-sort-id") + "]");
-			if(destination.get(0)) {
+			if(destination.get(0) && typeof jQuery.fn.isotope === 'function') {
 				$(window).load(function() {
 					destination.isotope({
 						itemSelector: ".grid-item",
-						layoutMode: 'sloppyMasonry'
+						layoutMode: 'masonry'
 					});
 					source.find("a").on("click", function(e) {
 						e.preventDefault();
@@ -370,11 +353,13 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 		});
 		$(window).load(function() {
 			var IsoTopeCont = $(".isotope-grid");
-			IsoTopeCont.isotope({
-				itemSelector: ".grid-item",
-				layoutMode: 'sloppyMasonry'
-			});
-			if ($(".grid-holder").length > 0){	
+			if (typeof jQuery.fn.isotope === 'function' && IsoTopeCont.length) {
+				IsoTopeCont.isotope({
+					itemSelector: ".grid-item",
+					layoutMode: 'masonry'
+				});
+			}
+			if (typeof jQuery.fn.isotope === 'function' && $(".grid-holder").length > 0){	
 				var $container_blog = $('.grid-holder');
 				$container_blog.isotope({
 					itemSelector : '.grid-item'
@@ -431,14 +416,14 @@ $(document).ready(function(){
 	BORNTOGIVE.toggle();
 	BORNTOGIVE.toolTip();
 	BORNTOGIVE.TwitterWidget();
-	BORNTOGIVE.OwlCarousel();
-	BORNTOGIVE.Magnific();
+	BORNTOGIVE.SwiperCarousel();
+	BORNTOGIVE.GLightbox();
 	BORNTOGIVE.SuperFish();
 	BORNTOGIVE.Counters();
 	BORNTOGIVE.IsoTope();
 	BORNTOGIVE.StickyHeader();
-	BORNTOGIVE.heroflex();
-	BORNTOGIVE.galleryflex();
+	BORNTOGIVE.heroSwiper();
+	BORNTOGIVE.gallerySwiper();
 	BORNTOGIVE.pricingTable();
 	BORNTOGIVE.MobileMenu();
 	BORNTOGIVE.CProgress();
@@ -446,7 +431,7 @@ $(document).ready(function(){
 	WWHGetter();
 	// apply matchHeight to each item container's items
 	$('.content').each(function() {
-		$(this).find('.owl-carousel .grid-item').find('.grid-item-content').matchHeight({
+		$(this).find('.carousel-fw .grid-item').find('.grid-item-content').matchHeight({
 			//property: 'min-height'
 		});
 		$(this).find('.featured-texts').find('.featured-text').matchHeight({

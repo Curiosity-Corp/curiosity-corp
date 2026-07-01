@@ -15,13 +15,9 @@
 <!-- CSS
   ================================================== -->
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="../css/bootstrap-theme.css" rel="stylesheet" type="text/css">
 <link href="../css/style.css" rel="stylesheet" type="text/css">
-<link href="../vendor/magnific/magnific-popup.css" rel="stylesheet" type="text/css">
-<link href="../vendor/owl-carousel/css/owl.carousel.css" rel="stylesheet" type="text/css">
-<link href="../vendor/owl-carousel/css/owl.theme.css" rel="stylesheet" type="text/css">
-<script src="../js/sweetalert2/dist/sweetalert2.all.min.js"></script>
-<link rel="stylesheet" href="../css/components/bs-switches.css" type="text/css" />
+<link href="../vendor/glightbox/glightbox.min.css" rel="stylesheet" type="text/css">
+<script src="../vendor/sweetalert2/sweetalert2.all.min.js"></script>
 <link rel="stylesheet" href="../css/components/radio-checkbox.css" type="text/css" />
 <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" /><![endif]-->
 <link href="../css/custom.css" rel="stylesheet" type="text/css"><!-- CUSTOM STYLESHEET FOR STYLING -->
@@ -64,7 +60,7 @@
              	<a href="#" class="visible-sm visible-xs" id="menu-toggle"><i class="fa fa-bars"></i></a>
                 <div class="header-info-col"><a href="../get-involved/give.html" class="btn btn-primary">Donate</a></div>
                 
-                <ul class="sf-menu dd-menu pull-right" role="menu">
+                <ul class="sf-menu dd-menu float-end" role="menu">
                     <li class="megamenu"><a href="javascrip:void(0)">What We Do</a>
                         <ul class="dropdown">
                             <li>
@@ -205,16 +201,6 @@
                                 <div class="megamenu-container container">
                                     <div class="row">
                                         <div class="col-md-3 megamenu-col">
-                                        	<span class="megamenu-sub-title text-center"><i class="fa fa-star"></i> Award</span> 
-                                            <a href="https://www.guidestar.org/Profile/9759491" target="_blank">
-                                                <div class="text-center">
-                                                    <object data="../images/GuideStar_platinum.svg" width="175px" type="image/svg+xml">
-                                                        <img src="../images/put-platinum2019-seal.avif" />
-                                                    </object>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-md-3 megamenu-col">
                                         	<span class="megamenu-sub-title"><i class="fas fa-info-circle"></i> Information</span>
                                             <ul class="sub-menu">
                                                 <li><a href="../impact/briefs.html">Technical Briefs</a></li>
@@ -303,7 +289,7 @@
                                                             <strong></strong>
                                                         </div>
                                                     </a>
-                                                    <h5><a href="https://iblossom.org" target="_blank" data-toggle="modal" data-target="#DonateModal">iBlossom</a></h5>
+                                                    <h5><a href="https://iblossom.org" target="_blank" data-bs-toggle="modal" data-bs-target="#DonateModal">iBlossom</a></h5>
                                                     <span class="meta-data">Women Empowerment</span>
                                                 </li>
                                                 <li>
@@ -313,7 +299,7 @@
                                                             <strong></strong>
                                                         </div>
                                                     </a>
-                                                    <h5><a href="https://ignitecuriosity.org" target="_blank" data-toggle="modal" data-target="#DonateModal">Ignite Curiosity</a></h5>
+                                                    <h5><a href="https://ignitecuriosity.org" target="_blank" data-bs-toggle="modal" data-bs-target="#DonateModal">Ignite Curiosity</a></h5>
                                                     <span class="meta-data">Alternative Learning</span>
                                                 </li>
                                             </ul>
@@ -436,19 +422,19 @@
                         <h2>Tabs</h2>
                         <div class="tabs">
                             <ul class="nav nav-tabs">
-                                <li class="active"> <a data-toggle="tab" href="#sampletab1"> Sample Tab #1 </a> </li>
-                                <li> <a data-toggle="tab" href="#sampletab2"> Sample Tab #2 </a> </li>
-                                <li> <a data-toggle="tab" href="#sampletab3"> Sample Tab #3 </a> </li>
+                                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#sampletab1"> Sample Tab #1 </a></li>
+                                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#sampletab2"> Sample Tab #2 </a></li>
+                                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#sampletab3"> Sample Tab #3 </a></li>
                             </ul>
                             <div class="tab-content">
                                 <div id="sampletab1" class="tab-pane active">
-                                    <p>You can activate a tab or pill navigation without writing any JavaScript by simply specifying data-toggle="tab" or data-toggle="pill" on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap tab styling, while adding the nav and nav-pills classes will apply pill styling.</p>
+                                    <p>You can activate a tab or pill navigation without writing any JavaScript by simply specifying data-bs-toggle="tab" or data-bs-toggle="pill" on an element. Adding the nav and nav-tabs classes to the tab ul will apply the Bootstrap tab styling, while adding the nav and nav-pills classes will apply pill styling.</p>
                                 </div>
                                 <div id="sampletab2" class="tab-pane">
                                     <p>Add quick, dynamic tab functionality to transition through panes of local content, even via dropdown menus. Nested tabs are not supported.</p>
                                 </div>
                                 <div id="sampletab3" class="tab-pane">
-                                    <p>Activates a tab element and content container. Tab should have either a data-target or an href targeting a container node in the DOM. In the above examples, the tabs are the s with data-toggle="tab" attributes.</p>
+                                    <p>Activates a tab element and content container. Tab should have either a data-target or an href targeting a container node in the DOM. In the above examples, the tabs are the s with data-bs-toggle="tab" attributes.</p>
                                 </div>
                             </div>
                         </div>
@@ -473,17 +459,17 @@
                         </div>
                         <div class="progress-label"> <span>Stripped Progress Bar</span> </div>
                         <div class="progress progress-striped">
-                            <div class="progress-bar progress-bar-success" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
+                            <div class="progress-bar progress-bar-success" style="width: 40%"> <span class="visually-hidden">40% Complete (success)</span> </div>
                         </div>
                         <div class="progress-label"> <span>Colored Progress Bars</span> </div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-info" style="width: 20%"> <span class="sr-only">20% Complete</span> </div>
+                            <div class="progress-bar progress-bar-info" style="width: 20%"> <span class="visually-hidden">20% Complete</span> </div>
                         </div>
                         <div class="progress">
                             <div class="progress-bar progress-bar-warning" style="width: 60%"> <span>60% Complete (warning)</span> </div>
                         </div>
                         <div class="progress">
-                            <div class="progress-bar progress-bar-danger" style="width: 80%"> <span class="sr-only">80% Complete</span> </div>
+                            <div class="progress-bar progress-bar-danger" style="width: 80%"> <span class="visually-hidden">80% Complete</span> </div>
                         </div>
                 	</div>
                 </div>    
@@ -491,28 +477,28 @@
                     <h2>Accordion</h2>
                     <!-- Start Accordion -->
                     <div class="accordion" id="accordionArea">
-                        <div class="accordion-group panel">
-                            <div class="accordion-heading accordionize"> <a class="accordion-toggle active" data-toggle="collapse" data-parent="#accordionArea" href="#oneArea"> Accordion Panel #1 <i class="fa fa-angle-down"></i> </a> </div>
-                            <div id="oneArea" class="accordion-body in collapse">
-                                <div class="accordion-inner">Just add data-toggle="collapse" and a data-target to the element to automatically assign control of a collapsible element. The data-target attribute accepts a CSS selector to apply the collapse to. Be sure to add the class collapse to the collapsible element. If you'd like it to default open, add the additional class in.
+                        <div class="accordion-group card">
+                            <div class="accordion-heading accordionize"> <a class="accordion-toggle active" data-bs-toggle="collapse" data-bs-parent="#accordionArea" href="#oneArea"> Accordion Panel #1 <i class="fa fa-angle-down"></i> </a> </div>
+                            <div id="oneArea" class="accordion-body show collapse">
+                                <div class="accordion-inner">Just add data-bs-toggle="collapse" and a data-target to the element to automatically assign control of a collapsible element. The data-target attribute accepts a CSS selector to apply the collapse to. Be sure to add the class collapse to the collapsible element. If you'd like it to default open, add the additional class in.
 
-To add accordion-like group management to a collapsible control, add the data attribute data-parent="#selector". Refer to the demo to see this in action.</div>
+To add accordion-like group management to a collapsible control, add the data attribute data-bs-parent="#selector". Refer to the demo to see this in action.</div>
                             </div>
                         </div>
-                        <div class="accordion-group panel">
-                            <div class="accordion-heading accordionize"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionArea" href="#twoArea"> Accordion Panel #2 <i class="fa fa-angle-down"></i> </a> </div>
+                        <div class="accordion-group card">
+                            <div class="accordion-heading accordionize"> <a class="accordion-toggle" data-bs-toggle="collapse" data-bs-parent="#accordionArea" href="#twoArea"> Accordion Panel #2 <i class="fa fa-angle-down"></i> </a> </div>
                             <div id="twoArea" class="accordion-body collapse">
-                                <div class="accordion-inner">Just add data-toggle="collapse" and a data-target to the element to automatically assign control of a collapsible element. The data-target attribute accepts a CSS selector to apply the collapse to. Be sure to add the class collapse to the collapsible element. If you'd like it to default open, add the additional class in.
+                                <div class="accordion-inner">Just add data-bs-toggle="collapse" and a data-target to the element to automatically assign control of a collapsible element. The data-target attribute accepts a CSS selector to apply the collapse to. Be sure to add the class collapse to the collapsible element. If you'd like it to default open, add the additional class in.
 
-To add accordion-like group management to a collapsible control, add the data attribute data-parent="#selector". Refer to the demo to see this in action.</div>
+To add accordion-like group management to a collapsible control, add the data attribute data-bs-parent="#selector". Refer to the demo to see this in action.</div>
                             </div>
                         </div>
-                        <div class="accordion-group panel">
-                            <div class="accordion-heading accordionize"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionArea" href="#threeArea"> Accordion Panel #3 <i class="fa fa-angle-down"></i> </a> </div>
+                        <div class="accordion-group card">
+                            <div class="accordion-heading accordionize"> <a class="accordion-toggle" data-bs-toggle="collapse" data-bs-parent="#accordionArea" href="#threeArea"> Accordion Panel #3 <i class="fa fa-angle-down"></i> </a> </div>
                             <div id="threeArea" class="accordion-body collapse">
-                                <div class="accordion-inner">Just add data-toggle="collapse" and a data-target to the element to automatically assign control of a collapsible element. The data-target attribute accepts a CSS selector to apply the collapse to. Be sure to add the class collapse to the collapsible element. If you'd like it to default open, add the additional class in.
+                                <div class="accordion-inner">Just add data-bs-toggle="collapse" and a data-target to the element to automatically assign control of a collapsible element. The data-target attribute accepts a CSS selector to apply the collapse to. Be sure to add the class collapse to the collapsible element. If you'd like it to default open, add the additional class in.
 
-To add accordion-like group management to a collapsible control, add the data attribute data-parent="#selector". Refer to the demo to see this in action.</div>
+To add accordion-like group management to a collapsible control, add the data attribute data-bs-parent="#selector". Refer to the demo to see this in action.</div>
                             </div>
                         </div>
                     </div>
@@ -520,28 +506,28 @@ To add accordion-like group management to a collapsible control, add the data at
                     <div class="spacer-30"></div>
                     <h2>Toggles</h2>
                     <div class="accordion" id="toggleArea">
-                        <div class="accordion-group panel">
-                            <div class="accordion-heading togglize"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#collapseOne"> Toggle Panel #1 <i class="fa fa-plus-circle"></i> <i class="fa fa-minus-circle"></i> </a> </div>
+                        <div class="accordion-group card">
+                            <div class="accordion-heading togglize"> <a class="accordion-toggle" data-bs-toggle="collapse" data-bs-parent="#" href="#collapseOne"> Toggle Panel #1 <i class="fa fa-plus-circle"></i> <i class="fa fa-minus-circle"></i> </a> </div>
                             <div id="collapseOne" class="accordion-body collapse">
-                                <div class="accordion-inner">Just add data-toggle="collapse" and a data-target to the element to automatically assign control of a collapsible element. The data-target attribute accepts a CSS selector to apply the collapse to. Be sure to add the class collapse to the collapsible element. If you'd like it to default open, add the additional class in.
+                                <div class="accordion-inner">Just add data-bs-toggle="collapse" and a data-target to the element to automatically assign control of a collapsible element. The data-target attribute accepts a CSS selector to apply the collapse to. Be sure to add the class collapse to the collapsible element. If you'd like it to default open, add the additional class in.
 
-To add accordion-like group management to a collapsible control, add the data attribute data-parent="#selector". Refer to the demo to see this in action.</div>
+To add accordion-like group management to a collapsible control, add the data attribute data-bs-parent="#selector". Refer to the demo to see this in action.</div>
                             </div>
                         </div>
-                        <div class="accordion-group panel">
-                            <div class="accordion-heading togglize"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#collapseTwo"> Toggle Panel #2 <i class="fa fa-plus-circle"></i> <i class="fa fa-minus-circle"></i> </a> </div>
+                        <div class="accordion-group card">
+                            <div class="accordion-heading togglize"> <a class="accordion-toggle" data-bs-toggle="collapse" data-bs-parent="#" href="#collapseTwo"> Toggle Panel #2 <i class="fa fa-plus-circle"></i> <i class="fa fa-minus-circle"></i> </a> </div>
                             <div id="collapseTwo" class="accordion-body collapse">
-                                <div class="accordion-inner">Just add data-toggle="collapse" and a data-target to the element to automatically assign control of a collapsible element. The data-target attribute accepts a CSS selector to apply the collapse to. Be sure to add the class collapse to the collapsible element. If you'd like it to default open, add the additional class in.
+                                <div class="accordion-inner">Just add data-bs-toggle="collapse" and a data-target to the element to automatically assign control of a collapsible element. The data-target attribute accepts a CSS selector to apply the collapse to. Be sure to add the class collapse to the collapsible element. If you'd like it to default open, add the additional class in.
 
-To add accordion-like group management to a collapsible control, add the data attribute data-parent="#selector". Refer to the demo to see this in action.</div>
+To add accordion-like group management to a collapsible control, add the data attribute data-bs-parent="#selector". Refer to the demo to see this in action.</div>
                             </div>
                         </div>
                         <div class="accordion-group">
-                            <div class="accordion-heading togglize"> <a class="accordion-toggle" data-toggle="collapse" data-parent="#" href="#collapseThird"> Toggle Panel #3 <i class="fa fa-plus-circle"></i> <i class="fa fa-minus-circle"></i> </a> </div>
+                            <div class="accordion-heading togglize"> <a class="accordion-toggle" data-bs-toggle="collapse" data-bs-parent="#" href="#collapseThird"> Toggle Panel #3 <i class="fa fa-plus-circle"></i> <i class="fa fa-minus-circle"></i> </a> </div>
                             <div id="collapseThird" class="accordion-body collapse">
-                                <div class="accordion-inner">Just add data-toggle="collapse" and a data-target to the element to automatically assign control of a collapsible element. The data-target attribute accepts a CSS selector to apply the collapse to. Be sure to add the class collapse to the collapsible element. If you'd like it to default open, add the additional class in.
+                                <div class="accordion-inner">Just add data-bs-toggle="collapse" and a data-target to the element to automatically assign control of a collapsible element. The data-target attribute accepts a CSS selector to apply the collapse to. Be sure to add the class collapse to the collapsible element. If you'd like it to default open, add the additional class in.
 
-To add accordion-like group management to a collapsible control, add the data attribute data-parent="#selector". Refer to the demo to see this in action.</div>
+To add accordion-like group management to a collapsible control, add the data attribute data-bs-parent="#selector". Refer to the demo to see this in action.</div>
                             </div>
                         </div>
                     </div>
@@ -917,11 +903,11 @@ To add accordion-like group management to a collapsible control, add the data at
             <div class="row">
                 <div class="col-md-12" data-appear-animation="bounceInRight">
                     <h2>Alert Boxes</h2>
-                    <div class="alert alert-standard fade in"> <a class="close" data-dismiss="alert" href="#">&times;</a> <strong>Oh snap!</strong> Change a few things up and try submitting again. </div>
-                    <div class="alert alert-warning fade in"> <a class="close" data-dismiss="alert" href="#">&times;</a> <strong>Warning!</strong> Best check yo self, you're not looking too good. </div>
-                    <div class="alert alert-error fade in"> <a class="close" data-dismiss="alert" href="#">&times;</a> <strong>Oh snap!</strong> Change a few things up and try submitting again. </div>
-                    <div class="alert alert-info fade in"> <a class="close" data-dismiss="alert" href="#">&times;</a> <strong>Heads up!</strong> This alert needs your attention, but it's not super important. </div>
-                    <div class="alert alert-success fade in"> <a class="close" data-dismiss="alert" href="#">&times;</a> <strong>Well done!</strong> You successfully read this important alert message. </div>
+                    <div class="alert alert-standard fade show"> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> <strong>Oh snap!</strong> Change a few things up and try submitting again. </div>
+                    <div class="alert alert-warning fade show"> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> <strong>Warning!</strong> Best check yo self, you're not looking too good. </div>
+                    <div class="alert alert-error fade show"> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> <strong>Oh snap!</strong> Change a few things up and try submitting again. </div>
+                    <div class="alert alert-info fade show"> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> <strong>Heads up!</strong> This alert needs your attention, but it's not super important. </div>
+                    <div class="alert alert-success fade show"> <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> <strong>Well done!</strong> You successfully read this important alert message. </div>
                 </div>
             </div>
             <hr class="fw">
@@ -935,8 +921,8 @@ To add accordion-like group management to a collapsible control, add the data at
                         <span class="interval">Until Sold</span>
                         <ul class="features">
                             <li>This is included</li>
-                            <li>You even get this <a href="#" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. RP band performance at Shop Pleu."><i class="fa fa-info-circle"></i></a></li>
-                            <li>Yes, this too! <a href="#" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="<i class='fa fa-binoculars fa-3x text-warning'></i><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. RP band performance at Shop Pleu."><i class="fa fa-info-circle"></i></a></li>
+                            <li>You even get this <a href="#" data-bs-toggle="popover" data-trigger="focus" data-placement="right" data-content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. RP band performance at Shop Pleu."><i class="fa fa-info-circle"></i></a></li>
+                            <li>Yes, this too! <a href="#" data-bs-toggle="popover" data-trigger="focus" data-placement="right" data-content="<i class='fa fa-binoculars fa-3x text-warning'></i><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. RP band performance at Shop Pleu."><i class="fa fa-info-circle"></i></a></li>
                         </ul>
                         <a class="btn btn-primary" href="#">Signup Now</a>
                     </div>
@@ -947,7 +933,7 @@ To add accordion-like group management to a collapsible control, add the data at
                         <h4> <span class="dollar-sign">$</span> 99 </h4>
                         <span class="interval">Until Sold</span>
                         <ul class="features">
-                            <li>This is included <a href="#" data-toggle="popover" data-trigger="focus" data-placement="right" data-content="<i class='fa fa-cc-visa fa-3x text-info'></i><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. RP band performance at Shop Pleu."><i class="fa fa-info-circle"></i></a></li>
+                            <li>This is included <a href="#" data-bs-toggle="popover" data-trigger="focus" data-placement="right" data-content="<i class='fa fa-cc-visa fa-3x text-info'></i><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. RP band performance at Shop Pleu."><i class="fa fa-info-circle"></i></a></li>
                             <li>And this too</li>
                             <li>Maybe even this</li>
                             <li>Nevermind, it&#8217;s not</li>
@@ -974,23 +960,23 @@ To add accordion-like group management to a collapsible control, add the data at
             <div class="row">
                 <div class="col-md-6">
                     <h2>Tooltips</h2>
-                    <p>Inspired by the excellent jQuery.<a href="#" data-toggle="tooltip" data-original-title="Default tooltip" >tipsy</a> plugin written by Jason Frame; <a href="#" id="back-top" data-placement="left"  data-toggle="tooltip" title="" data-original-title="Another tooltip">Tooltips</a> are an updated version, which don't rely on images, use CSS3 for animations, and data-attributes for local title storage.</p>
+                    <p>Inspired by the excellent jQuery.<a href="#" data-bs-toggle="tooltip" data-original-title="Default tooltip" >tipsy</a> plugin written by Jason Frame; <a href="#" id="back-top" data-placement="left"  data-bs-toggle="tooltip" title="" data-original-title="Another tooltip">Tooltips</a> are an updated version, which don't rely on images, use CSS3 for animations, and data-attributes for local title storage.</p>
                 </div>
                 <div class="col-md-6">
                     <h2>Modal Box</h2>
                     <p>Modals are streamlined, but flexible, dialog prompts with the minimum required functionality and smart defaults.</p>
                     <p>Toggle a modal via JavaScript by clicking the button below. It will slide down and fade in from the top of the page.</p>
-                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button>
+                    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#myModal">Launch demo modal</button>
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog"  aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                                 </div>
                                 <div class="modal-body"> One fine body... </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-default inverted" data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-secondary inverted" data-bs-dismiss="modal">Close</button>
                                         <button type="button" class="btn btn-primary">Save changes</button>
                                     </div>
                                 </div>
@@ -1034,7 +1020,7 @@ To add accordion-like group management to a collapsible control, add the data at
                         <p>Individual form controls automatically receive some global styling.</p>
                         <form action="" type="post">
                         <div class="row">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <div class="col-md-6">
                                     <label>Your name *</label>
                                     <input type="text" value="" maxlength="100" class="form-control" name="name" id="name">
@@ -1046,7 +1032,7 @@ To add accordion-like group management to a collapsible control, add the data at
                             </div>
                         </div>
                         <div class="row">
-                            <div class="form-group">
+                            <div class="mb-3">
                                 <div class="col-md-12">
                                     <label>Comment *</label>
                                     <textarea maxlength="5000" rows="10" class="form-control" name="comment" id="comment" style="height: 138px;"></textarea>
@@ -1060,38 +1046,38 @@ To add accordion-like group management to a collapsible control, add the data at
                         </div>
                     </form>
                 </div>
-                <div class="col-md-5 col-md-offset-1">
+                <div class="col-md-5 offset-md-1">
                     <hr class="visible-sm visible-xs tall" />
                     <h2>Pagination</h2>
                     <p class="short">Large</p>
                     <ul class="pagination pagination-lg">
-                        <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-chevron-right"></i></a></li>
                     </ul>
                     <p class="short">Default</p>
                     <ul class="pagination">
-                        <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-chevron-right"></i></a></li>
                     </ul>
                     <p class="short">Small</p>
                     <ul class="pagination pagination-sm">
-                        <li><a href="#"><i class="fa fa-chevron-left"></i></a></li>
-                        <li class="active"><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-chevron-left"></i></a></li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item"><a class="page-link" href="#"><i class="fa fa-chevron-right"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -1099,7 +1085,7 @@ To add accordion-like group management to a collapsible control, add the data at
             <div class="row">
                 <div class="col-md-6">
                     <h2>Buttons</h2>
-                    <button type="button" class="btn btn-default">Default</button>
+                    <button type="button" class="btn btn-secondary">Default</button>
                     <button type="button" class="btn btn-primary">Primary</button>
                     <button type="button" class="btn btn-success">Success</button>
                     <button type="button" class="btn btn-info">Info</button>
@@ -1108,34 +1094,34 @@ To add accordion-like group management to a collapsible control, add the data at
                     <button type="button" class="btn btn-danger">Danger</button>
                     <h2 class="spaced">Buttons Disabled</h2>
                     <button type="button" class="btn btn-primary" disabled="disabled">Primary button</button>
-                    <button type="button" class="btn btn-default" disabled="disabled">Button</button>
+                    <button type="button" class="btn btn-secondary" disabled="disabled">Button</button>
                     <h2 class="spaced">Labels</h2>
-                    <span class="label label-default">Default</span>
-                    <span class="label label-primary">Primary</span>
-                    <span class="label label-success">Success</span>
-                    <span class="label label-info">Info</span>
-                    <span class="label label-warning">Warning</span>
-                    <span class="label label-danger">Danger</span>
-                    <span class="label label-dark">Dark</span>
+                    <span class="badge text-bg-secondary">Default</span>
+                    <span class="badge text-bg-primary">Primary</span>
+                    <span class="badge text-bg-success">Success</span>
+                    <span class="badge text-bg-info">Info</span>
+                    <span class="badge text-bg-warning">Warning</span>
+                    <span class="badge text-bg-danger">Danger</span>
+                    <span class="badge text-bg-dark">Dark</span>
                 </div>
-                <div class="col-md-5 col-md-offset-1">
+                <div class="col-md-5 offset-md-1">
                     <hr class="visible-sm visible-xs tall" />
                     <h2>Buttons Sizes</h2>
                     <p>
                         <button type="button" class="btn btn-primary btn-lg">Large button</button>
-                        <button type="button" class="btn btn-default btn-lg">Large button</button>
+                        <button type="button" class="btn btn-secondary btn-lg">Large button</button>
                     </p>
                     <p>
                         <button type="button" class="btn btn-primary">Default button</button>
-                        <button type="button" class="btn btn-default">Default button</button>
+                        <button type="button" class="btn btn-secondary">Default button</button>
                     </p>
                     <p>
                          <button type="button" class="btn btn-primary btn-sm">Small button</button>
-                        <button type="button" class="btn btn-default btn-sm">Small button</button>
+                        <button type="button" class="btn btn-secondary btn-sm">Small button</button>
                     </p>
                     <p>
-                        <button type="button" class="btn btn-primary btn-xs">Extra small button</button>
-                        <button type="button" class="btn btn-default btn-xs">Extra small button</button>
+                        <button type="button" class="btn btn-primary btn-sm">Extra small button</button>
+                        <button type="button" class="btn btn-secondary btn-sm">Extra small button</button>
                     </p>
                 </div>
             </div>
@@ -1153,7 +1139,7 @@ To add accordion-like group management to a collapsible control, add the data at
                         <p class="default-retina-logo"><a href="index.html"><object data="../images/logo_white.svg" width="140px" height="40px" type="image/svg+xml" class="default-retina-logo">
                             <img src="../images/logo.avif" />
                         </object></a></p>
-                        <p>We engineer the pedagogy of the next century — igniting curiosity from first spark to provable mastery. We are a Non-Profit Organization headquartered in USA. Tax ID: 33-3478603</p>
+                        <p>We engineer the pedagogy of the next century — igniting curiosity from first spark to provable mastery. We are a Non-Profit Organization headquartered in USA. Our 501(c)(3) tax-exempt status is pending IRS determination. Tax ID: 33-3478603</p>
                         <p>+1 929-229-2917</p>
                         <p>200 Henrietta St<br>Ravenswood, WV 26164</p>
                     </div>
@@ -1195,14 +1181,13 @@ To add accordion-like group management to a collapsible control, add the data at
       	</div>
   	</div>
   	<a id="back-to-top"><i class="fa fa-angle-double-up"></i></a></div>
-<script src="../js/jquery-2.1.3.min.js"></script> <!-- Jquery Library Call -->
-<script src="../vendor/magnific/jquery.magnific-popup.min.js"></script> <!-- PrettyPhoto Plugin -->
+<script src="../js/jquery-3.7.1.min.js"></script> <!-- Jquery Library Call -->
+<script src="../js/jquery-migrate-3.6.0.min.js"></script> <!-- Jquery Migrate Shim -->
+<script src="../vendor/glightbox/glightbox.min.js"></script> <!-- GLightbox -->
 <script src="../js/ui-plugins.js"></script> <!-- UI Plugins -->
 <script src="../js/helper-plugins.js"></script> <!-- Helper Plugins -->
-<script src="../vendor/owl-carousel/js/owl.carousel.min.js"></script> <!-- Owl Carousel -->
 <script src="../js/bootstrap.js"></script> <!-- UI -->
 <script src="../js/init.js"></script> <!-- All Scripts -->
-<script src="../vendor/flexslider/js/jquery.flexslider.js"></script> <!-- FlexSlider -->
 <script src="../js/circle-progress.js"></script> <!-- Circle Progress Bars -->
 </body>
 </html>
