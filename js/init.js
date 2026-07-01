@@ -312,7 +312,7 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 		$("ul.sort-source").each(function() {
 			var source = $(this);
 			var destination = $("ul.sort-destination[data-sort-id=" + $(this).attr("data-sort-id") + "]");
-			if(destination.get(0)) {
+			if(destination.get(0) && typeof jQuery.fn.isotope === 'function') {
 				$(window).load(function() {
 					destination.isotope({
 						itemSelector: ".grid-item",
@@ -353,11 +353,13 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 		});
 		$(window).load(function() {
 			var IsoTopeCont = $(".isotope-grid");
-			IsoTopeCont.isotope({
-				itemSelector: ".grid-item",
-				layoutMode: 'masonry'
-			});
-			if ($(".grid-holder").length > 0){	
+			if (typeof jQuery.fn.isotope === 'function' && IsoTopeCont.length) {
+				IsoTopeCont.isotope({
+					itemSelector: ".grid-item",
+					layoutMode: 'masonry'
+				});
+			}
+			if (typeof jQuery.fn.isotope === 'function' && $(".grid-holder").length > 0){	
 				var $container_blog = $('.grid-holder');
 				$container_blog.isotope({
 					itemSelector : '.grid-item'
