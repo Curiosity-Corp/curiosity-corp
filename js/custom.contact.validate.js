@@ -62,7 +62,7 @@ function showErrors(form, errors) {
 }
 
 function showErrorsForInput(input, errors) {
-    var formGroup = closestParent(input, "form-group")
+    var formGroup = closestParent(input, "mb-3")
     resetFormGroup(formGroup);
     if (errors) {
         formGroup.classList.add("has-error");
@@ -113,7 +113,7 @@ function addError(formGroup, error) {
 
 //function to reset the form
 function resetForm() {
-    document.querySelectorAll('div.form-group.has-success').forEach(formGroup => {
+    document.querySelectorAll('div.mb-3.has-success').forEach(formGroup => {
         formGroup.classList.remove('has-success');
     })
     document.querySelectorAll('#contactform input.form-control, select.form-control, textarea').forEach(input => {

@@ -127,7 +127,7 @@ function addError(formGroup, error) {
 
 //function to reset the form
 function resetForm() {
-    document.querySelectorAll('div.form-group.has-success').forEach(formGroup => {
+    document.querySelectorAll('div.mb-3.has-success').forEach(formGroup => {
         formGroup.classList.remove('has-success');
     })
     document.querySelectorAll('#jobsForm input.form-control, select.form-control, textarea').forEach(input => {
