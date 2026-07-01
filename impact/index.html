@@ -20,6 +20,7 @@
 <link href="../vendor/magnific/magnific-popup.css" rel="stylesheet" type="text/css">
 <link href="../vendor/owl-carousel/css/owl.carousel.css" rel="stylesheet" type="text/css">
 <link href="../vendor/owl-carousel/css/owl.theme.css" rel="stylesheet" type="text/css">
+<link href="../vendor/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css">
 <script src="../js/sweetalert2/dist/sweetalert2.all.min.js"></script>
 <link rel="stylesheet" href="../css/components/bs-switches.css" type="text/css" />
 <link rel="stylesheet" href="../css/components/radio-checkbox.css" type="text/css" />
@@ -491,8 +492,9 @@
                     </div>
                     <div class="carousel-wrapper">
                         <div class="row">
-                            <ul class="owl-carousel carousel-fw" id="testimonials-slider" data-columns="2" data-autoplay="5000" data-pagination="yes" data-arrows="no" data-single-item="no" data-items-desktop="2" data-items-desktop-small="2" data-items-tablet="1" data-items-mobile="1">
-                                <li class="item">
+                            <div class="swiper carousel-fw" id="testimonials-slider" data-columns="2" data-autoplay="5000" data-pagination="yes" data-arrows="no" data-single-item="no" data-items-desktop="2" data-items-desktop-small="2" data-items-tablet="1" data-items-mobile="1">
+                            	<ul class="swiper-wrapper">
+                                <li class="item swiper-slide">
                                     <div class="testimonial-block">
                                         <blockquote>
                                             <p>DreamTrack turns a Dreamer's progress into a portfolio artifact — evidence a university admissions office or an employer can inspect directly, not a summary we ask you to take on faith.</p>
@@ -504,7 +506,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="item">
+                                <li class="item swiper-slide">
                                     <div class="testimonial-block">
                                         <blockquote>
                                             <p>Every Dream Quest journey ends at a Capstone: a demonstrated, career-ready body of work, reviewed the way a research team reviews a protocol before it ships.</p>
@@ -516,7 +518,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li class="item">
+                                <li class="item swiper-slide">
                                     <div class="testimonial-block">
                                         <blockquote>
                                             <p>Curiosity Coaches pair each Dreamer with an AI-driven guide built on agentic practice — instrumented and reviewed like any tool in a research lab, not a black box.</p>
@@ -528,7 +530,10 @@
                                         </div>
                                     </div>
                                 </li>
-                            </ul>
+                            
+                            	</ul>
+                            <div class="swiper-pagination"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -593,6 +598,7 @@
 <script src="../js/ui-plugins.js"></script> <!-- UI Plugins -->
 <script src="../js/helper-plugins.js"></script> <!-- Helper Plugins -->
 <script src="../vendor/owl-carousel/js/owl.carousel.min.js"></script> <!-- Owl Carousel -->
+<script src="../vendor/swiper/swiper-bundle.min.js"></script> <!-- Swiper -->
 <script src="../js/bootstrap.js"></script> <!-- UI -->
 <script src="../js/init.js"></script> <!-- All Scripts -->
 <script src="../vendor/flexslider/js/jquery.flexslider.js"></script> <!-- FlexSlider -->
