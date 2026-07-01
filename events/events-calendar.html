@@ -19,9 +19,6 @@
 <link href="../css/style.css" rel="stylesheet" type="text/css">
 <link href="../vendor/glightbox/glightbox.min.css" rel="stylesheet" type="text/css">
 <script src="../vendor/sweetalert2/sweetalert2.all.min.js"></script>
-<!-- Event Calendar Style addition -->
-<link href="../vendor/fullcalendar/fullcalendar.css" rel="stylesheet">
-<link href="../vendor/fullcalendar/fullcalendar.print.css" rel="stylesheet" media="print">
 <link rel="stylesheet" href="../css/components/bs-switches.css" type="text/css" />
 <link rel="stylesheet" href="../css/components/radio-checkbox.css" type="text/css" />
 <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" /><![endif]-->
@@ -490,7 +487,6 @@
       	</div>
   	</div>
   	<a id="back-to-top"><i class="fa fa-angle-double-up"></i></a></div>
-<script src='../vendor/fullcalendar/lib/moment.min.js'></script><!-- Calendar Moment Function -->
 <script src="../js/jquery-3.7.1.min.js"></script> <!-- Jquery Library Call -->
 <script src="../js/jquery-migrate-3.6.0.min.js"></script> <!-- Jquery Migrate Shim -->
 <script src="../vendor/glightbox/glightbox.min.js"></script> <!-- GLightbox -->
@@ -499,24 +495,22 @@
 <script src="../js/bootstrap.js"></script> <!-- UI -->
 <script src="../js/init.js"></script> <!-- All Scripts -->
 <script src="../js/circle-progress.js"></script> <!-- Circle Progress Bars -->
-<script src='../vendor/fullcalendar/fullcalendar.min.js'></script>
+<script src="../vendor/fullcalendar6/index.global.min.js"></script> <!-- FullCalendar (vanilla, no jQuery/moment) -->
 <script>
 
-	$(document).ready(function() {
-		var date = new Date();
-		var d = date.getDate();
-		var m = date.getMonth();
-		var y = date.getFullYear();
-		$('#calendar').fullCalendar({
+	document.addEventListener('DOMContentLoaded', function() {
+		var el = document.getElementById('calendar');
+		var cal = new FullCalendar.Calendar(el, {
+			initialView: 'dayGridMonth',
 			editable: false,
 			height: 'auto',
-        	minTime: '08:00:00',
-        	maxTime: '20:00:00',
-			eventLimit: true, // allow "more" link when too many events
+			slotMinTime: '08:00:00',
+			slotMaxTime: '20:00:00',
+			dayMaxEvents: true, // allow "more" link when too many events
 			// Convenings are added here as they're scheduled — no placeholder dates.
 			events: []
 		});
-		
+		cal.render();
 	});
 
 </script>
