@@ -175,6 +175,28 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 		});
 	}
 /* ==================================================
+   Hero Swiper Slider
+================================================== */
+	BORNTOGIVE.heroSwiper = function() {
+		$('.hero-slider.swiper').each(function(){
+				new Swiper(this, {
+					effect: "fade",
+					fadeEffect: { crossFade: true },
+					loop: true,
+					speed: 600,
+					autoplay: {
+						delay: 5000,
+						disableOnInteraction: false,
+						pauseOnMouseEnter: true
+					},
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev"
+					}
+				});
+		});
+	}
+/* ==================================================
    Flex Slider
 ================================================== */
 	BORNTOGIVE.galleryflex = function() {
@@ -438,6 +460,7 @@ $(document).ready(function(){
 	BORNTOGIVE.IsoTope();
 	BORNTOGIVE.StickyHeader();
 	BORNTOGIVE.heroflex();
+	BORNTOGIVE.heroSwiper();
 	BORNTOGIVE.galleryflex();
 	BORNTOGIVE.pricingTable();
 	BORNTOGIVE.MobileMenu();

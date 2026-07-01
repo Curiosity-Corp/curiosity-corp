@@ -21,7 +21,8 @@
 <link href="vendor/magnific/magnific-popup.css" rel="stylesheet" type="text/css">
 <link href="vendor/owl-carousel/css/owl.carousel.css" rel="stylesheet" type="text/css">
 <link href="vendor/owl-carousel/css/owl.theme.css" rel="stylesheet" type="text/css">
-<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" media="all" />   
+<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css">
+<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/portfolio.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="css/components/bs-switches.css" type="text/css" />
 <link rel="stylesheet" href="css/components/radio-checkbox.css" type="text/css" />
@@ -417,9 +418,9 @@
     <!-- Hero Area -->
     <div class="hero-area">
     	<!-- Start Hero Slider -->
-      	<div class="flexslider heroflex hero-slider" data-autoplay="yes" data-pagination="no" data-arrows="yes" data-style="fade" data-pause="yes">
-            <ul class="slides">
-                <li class="parallax" style="background-image:url(images/slides/athens.avif)">
+      	<div class="swiper hero-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide parallax" style="background-image:url(images/slides/athens.avif)">
                 	<div class="flex-caption">
                     	<div class="container">
                         	<div class="flex-caption-table">
@@ -433,8 +434,8 @@
                           	</div>
                         </div>
                     </div>
-                </li>
-                 <li class="parallax" style="background-image:url(images/slides/silk.avif)">
+                </div>
+                 <div class="swiper-slide parallax" style="background-image:url(images/slides/silk.avif)">
                 	<div class="flex-caption">
                     	<div class="container">
                         	<div class="flex-caption-table">
@@ -448,8 +449,8 @@
                           	</div>
                         </div>
                     </div>
-                </li>
-                <li class="parallax" style="background-image:url(images/slides/chalkboard2.avif)">
+                </div>
+                <div class="swiper-slide parallax" style="background-image:url(images/slides/chalkboard2.avif)">
                 	<div class="flex-caption">
                     	<div class="container">
                         	<div class="flex-caption-table">
@@ -464,8 +465,10 @@
                     		</div>
                         </div>
                     </div>
-                </li>
-          	</ul>
+                </div>
+          	</div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
        	</div>
         <!-- End Hero Slider -->
     </div>
@@ -1059,9 +1062,9 @@
 <script src="js/ui-plugins.js"></script> <!-- UI Plugins -->
 <script src="js/helper-plugins.js"></script> <!-- Helper Plugins -->
 <script src="vendor/owl-carousel/js/owl.carousel.min.js"></script> <!-- Owl Carousel -->
+<script src="vendor/swiper/swiper-bundle.min.js"></script> <!-- Swiper -->
 <script src="js/bootstrap.js"></script> <!-- UI -->
 <script src="js/init.js"></script> <!-- All Scripts -->
-<script src="vendor/flexslider/js/jquery.flexslider.js"></script> <!-- FlexSlider -->
 <script src="js/circle-progress.js"></script> <!-- Circle Progress Bars -->
 <!-- Krashnik Stripe Integration -->
 <script src="js/client.js"></script> 

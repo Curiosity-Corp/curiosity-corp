@@ -132,6 +132,30 @@ h4a {
 .hero-slider.flexslider .flex-next {
   z-index: 3;
 }
+
+/* Homepage hero slider, Swiper build: same scrim/caption stacking
+   as the FlexSlider rules above, retargeted at Swiper's markup
+   (.swiper-slide instead of ul.slides li). Swiper's own nav buttons
+   are already z-index:10 (see vendor/swiper/swiper-bundle.min.css),
+   comfortably above the scrim (1) and caption (2) below — the
+   explicit z-index here just documents/pins that so it can't
+   regress if the scrim or caption z-index is bumped later. */
+.hero-slider.swiper .swiper-slide.parallax::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-slider.swiper .swiper-slide .flex-caption {
+  position: relative;
+  z-index: 2;
+}
+.hero-slider.swiper .swiper-button-prev,
+.hero-slider.swiper .swiper-button-next {
+  z-index: 10;
+}
 .flex-caption-text h1,
 .flex-caption-text h2,
 .flex-caption-text h3,
