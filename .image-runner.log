@@ -504,3 +504,147 @@ no decodable image asset found in /tmp/site-image-regen/P1-31_hmdir (files: ['/t
 2026-06-30T21:54:22 [INFO] Row P1-B012 DONE. Session: done=20 failed=0. Total: 39/110 done.
 2026-06-30T21:54:22 [INFO] Git checkpoint: staging 20 files
 2026-06-30T21:54:22 [INFO] Git checkpoint: staging 20 files
+2026-06-30T21:54:22 [INFO] Git checkpoint committed: feat(images): runner checkpoint (39/110) [local]
+2026-06-30T21:54:22 [INFO] Git checkpoint committed: feat(images): runner checkpoint (39/110) [local]
+2026-06-30T21:54:22 [INFO] Row P1-B014: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:54:22 [INFO] Row P1-B014: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:54:22 [INFO] Row P1-B015: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:54:22 [INFO] Row P1-B015: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:54:22 [INFO] Row P1-B016: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:54:22 [INFO] Row P1-B016: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:54:22 [INFO] Row P1-B017: gen_size=2048x1280, target=1280x800, formats=['jpg'], engine=hm
+2026-06-30T21:54:22 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:54:22 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:54:22 [INFO] Row P1-B017: gen_size=2048x1280, target=1280x800, formats=['jpg'], engine=hm
+2026-06-30T21:54:22 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:54:22 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:54:22 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:54:22 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:54:22 [INFO] Running hm image generate (timeout=300s, 2048x1280)
+2026-06-30T21:54:22 [INFO] Running hm image generate (timeout=300s, 2048x1280)
+2026-06-30T21:56:26 [INFO] Row P1-B016: generation success — PNG at /tmp/site-image-regen/P1-B016.png. Encoding to ['jpg'].
+2026-06-30T21:56:26 [INFO] Row P1-B016: generation success — PNG at /tmp/site-image-regen/P1-B016.png. Encoding to ['jpg'].
+2026-06-30T21:56:26 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-pedadida.jpg
+2026-06-30T21:56:26 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-pedadida.jpg
+2026-06-30T21:56:26 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-pedadida.jpg (1280x451)
+2026-06-30T21:56:26 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-pedadida.jpg (1280x451)
+2026-06-30T21:56:26 [INFO] Row P1-B016 DONE. Session: done=21 failed=0. Total: 40/110 done.
+2026-06-30T21:56:26 [INFO] Row P1-B016 DONE. Session: done=21 failed=0. Total: 40/110 done.
+2026-06-30T21:56:58 [INFO] Row P1-B017: generation success — PNG at /tmp/site-image-regen/P1-B017.png. Encoding to ['jpg'].
+2026-06-30T21:56:58 [INFO] Row P1-B017: generation success — PNG at /tmp/site-image-regen/P1-B017.png. Encoding to ['jpg'].
+2026-06-30T21:56:58 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-causes-grid.jpg
+2026-06-30T21:56:58 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-causes-grid.jpg
+2026-06-30T21:56:58 [INFO] Row P1-B014: generation success — PNG at /tmp/site-image-regen/P1-B014.png. Encoding to ['jpg'].
+2026-06-30T21:56:58 [INFO] Row P1-B014: generation success — PNG at /tmp/site-image-regen/P1-B014.png. Encoding to ['jpg'].
+2026-06-30T21:56:58 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-miss-lyra.jpg
+2026-06-30T21:56:58 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-miss-lyra.jpg
+2026-06-30T21:56:58 [INFO] Row P1-B015: generation success — PNG at /tmp/site-image-regen/P1-B015.png. Encoding to ['jpg'].
+2026-06-30T21:56:58 [INFO] Row P1-B015: generation success — PNG at /tmp/site-image-regen/P1-B015.png. Encoding to ['jpg'].
+2026-06-30T21:56:58 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-movdance.jpg
+2026-06-30T21:56:58 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-movdance.jpg
+2026-06-30T21:56:59 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-miss-lyra.jpg (1280x451)
+2026-06-30T21:56:59 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-miss-lyra.jpg (1280x451)
+2026-06-30T21:56:59 [INFO] Row P1-B014 DONE. Session: done=22 failed=0. Total: 41/110 done.
+2026-06-30T21:56:59 [INFO] Row P1-B014 DONE. Session: done=22 failed=0. Total: 41/110 done.
+2026-06-30T21:56:59 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-movdance.jpg (1280x451)
+2026-06-30T21:56:59 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-movdance.jpg (1280x451)
+2026-06-30T21:56:59 [INFO] Row P1-B015 DONE. Session: done=23 failed=0. Total: 42/110 done.
+2026-06-30T21:56:59 [INFO] Row P1-B015 DONE. Session: done=23 failed=0. Total: 42/110 done.
+2026-06-30T21:56:59 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-causes-grid.jpg (1280x800)
+2026-06-30T21:56:59 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-causes-grid.jpg (1280x800)
+2026-06-30T21:56:59 [INFO] Row P1-B017 DONE. Session: done=24 failed=0. Total: 43/110 done.
+2026-06-30T21:56:59 [INFO] Row P1-B017 DONE. Session: done=24 failed=0. Total: 43/110 done.
+2026-06-30T21:56:59 [INFO] Row P1-B020: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:56:59 [INFO] Row P1-B020: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:56:59 [INFO] Row P1-B018: gen_size=2048x1280, target=1280x800, formats=['jpg'], engine=hm
+2026-06-30T21:56:59 [INFO] Row P1-B018: gen_size=2048x1280, target=1280x800, formats=['jpg'], engine=hm
+2026-06-30T21:56:59 [INFO] Row P1-B019: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:56:59 [INFO] Row P1-B019: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:56:59 [INFO] Row P1-B021: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:56:59 [INFO] Row P1-B021: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:56:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:56:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:56:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:56:59 [INFO] Running hm image generate (timeout=300s, 2048x1280)
+2026-06-30T21:56:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:56:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:56:59 [INFO] Running hm image generate (timeout=300s, 2048x1280)
+2026-06-30T21:56:59 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:58:53 [INFO] Row P1-B020: generation success — PNG at /tmp/site-image-regen/P1-B020.png. Encoding to ['jpg'].
+2026-06-30T21:58:53 [INFO] Row P1-B020: generation success — PNG at /tmp/site-image-regen/P1-B020.png. Encoding to ['jpg'].
+2026-06-30T21:58:53 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-themov.jpg
+2026-06-30T21:58:53 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-themov.jpg
+2026-06-30T21:58:53 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-themov.jpg (1280x451)
+2026-06-30T21:58:53 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-themov.jpg (1280x451)
+2026-06-30T21:58:53 [INFO] Row P1-B020 DONE. Session: done=25 failed=0. Total: 44/110 done.
+2026-06-30T21:58:53 [INFO] Row P1-B020 DONE. Session: done=25 failed=0. Total: 44/110 done.
+2026-06-30T21:59:44 [INFO] Row P1-B019: generation success — PNG at /tmp/site-image-regen/P1-B019.png. Encoding to ['jpg'].
+2026-06-30T21:59:44 [INFO] Row P1-B019: generation success — PNG at /tmp/site-image-regen/P1-B019.png. Encoding to ['jpg'].
+2026-06-30T21:59:44 [INFO] Row P1-B018: generation success — PNG at /tmp/site-image-regen/P1-B018.png. Encoding to ['jpg'].
+2026-06-30T21:59:44 [INFO] Row P1-B018: generation success — PNG at /tmp/site-image-regen/P1-B018.png. Encoding to ['jpg'].
+2026-06-30T21:59:44 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-silk-women.jpg
+2026-06-30T21:59:44 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-silk-women.jpg
+2026-06-30T21:59:44 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-causes.jpg
+2026-06-30T21:59:44 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-causes.jpg
+2026-06-30T21:59:44 [INFO] Row P1-B021: generation success — PNG at /tmp/site-image-regen/P1-B021.png. Encoding to ['jpg'].
+2026-06-30T21:59:44 [INFO] Row P1-B021: generation success — PNG at /tmp/site-image-regen/P1-B021.png. Encoding to ['jpg'].
+2026-06-30T21:59:44 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-events-calendar.jpg
+2026-06-30T21:59:44 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-events-calendar.jpg
+2026-06-30T21:59:45 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-silk-women.jpg (1280x451)
+2026-06-30T21:59:45 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-cause-silk-women.jpg (1280x451)
+2026-06-30T21:59:45 [INFO] Row P1-B019 DONE. Session: done=26 failed=0. Total: 45/110 done.
+2026-06-30T21:59:45 [INFO] Row P1-B019 DONE. Session: done=26 failed=0. Total: 45/110 done.
+2026-06-30T21:59:45 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-events-calendar.jpg (1280x451)
+2026-06-30T21:59:45 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-events-calendar.jpg (1280x451)
+2026-06-30T21:59:45 [INFO] Row P1-B021 DONE. Session: done=27 failed=0. Total: 46/110 done.
+2026-06-30T21:59:45 [INFO] Row P1-B021 DONE. Session: done=27 failed=0. Total: 46/110 done.
+2026-06-30T21:59:45 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-causes.jpg (1280x800)
+2026-06-30T21:59:45 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-causes.jpg (1280x800)
+2026-06-30T21:59:45 [INFO] Row P1-B018 DONE. Session: done=28 failed=0. Total: 47/110 done.
+2026-06-30T21:59:45 [INFO] Row P1-B018 DONE. Session: done=28 failed=0. Total: 47/110 done.
+2026-06-30T21:59:45 [INFO] Row P1-B022: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:59:45 [INFO] Row P1-B022: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:59:45 [INFO] Row P1-B025: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:59:45 [INFO] Row P1-B025: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:59:45 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:59:45 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:59:45 [INFO] Row P1-B024: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:59:45 [INFO] Row P1-B024: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:59:45 [INFO] Row P1-B023: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:59:45 [INFO] Row P1-B023: gen_size=2048x720, target=1280x451, formats=['jpg'], engine=hm
+2026-06-30T21:59:45 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:59:45 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:59:45 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:59:45 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:59:45 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T21:59:45 [INFO] Running hm image generate (timeout=300s, 2048x720)
+2026-06-30T22:01:55 [INFO] Row P1-B025: generation success — PNG at /tmp/site-image-regen/P1-B025.png. Encoding to ['jpg'].
+2026-06-30T22:01:55 [INFO] Row P1-B025: generation success — PNG at /tmp/site-image-regen/P1-B025.png. Encoding to ['jpg'].
+2026-06-30T22:01:55 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-get-involved-advocate.jpg
+2026-06-30T22:01:55 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-get-involved-advocate.jpg
+2026-06-30T22:01:55 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-get-involved-advocate.jpg (1280x451)
+2026-06-30T22:01:55 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-get-involved-advocate.jpg (1280x451)
+2026-06-30T22:01:55 [INFO] Row P1-B025 DONE. Session: done=29 failed=0. Total: 48/110 done.
+2026-06-30T22:01:55 [INFO] Row P1-B025 DONE. Session: done=29 failed=0. Total: 48/110 done.
+2026-06-30T22:02:28 [INFO] Row P1-B024: generation success — PNG at /tmp/site-image-regen/P1-B024.png. Encoding to ['jpg'].
+2026-06-30T22:02:28 [INFO] Row P1-B024: generation success — PNG at /tmp/site-image-regen/P1-B024.png. Encoding to ['jpg'].
+2026-06-30T22:02:28 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-single-event.jpg
+2026-06-30T22:02:28 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-single-event.jpg
+2026-06-30T22:02:28 [INFO] Row P1-B022: generation success — PNG at /tmp/site-image-regen/P1-B022.png. Encoding to ['jpg'].
+2026-06-30T22:02:28 [INFO] Row P1-B022: generation success — PNG at /tmp/site-image-regen/P1-B022.png. Encoding to ['jpg'].
+2026-06-30T22:02:28 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-events-grid.jpg
+2026-06-30T22:02:28 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-events-grid.jpg
+2026-06-30T22:02:28 [INFO] Row P1-B023: generation success — PNG at /tmp/site-image-regen/P1-B023.png. Encoding to ['jpg'].
+2026-06-30T22:02:28 [INFO] Row P1-B023: generation success — PNG at /tmp/site-image-regen/P1-B023.png. Encoding to ['jpg'].
+2026-06-30T22:02:28 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-index.jpg
+2026-06-30T22:02:28 [INFO] Encoding jpg -> /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-index.jpg
+2026-06-30T22:02:29 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-single-event.jpg (1280x451)
+2026-06-30T22:02:29 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-single-event.jpg (1280x451)
+2026-06-30T22:02:29 [INFO] Row P1-B024 DONE. Session: done=30 failed=0. Total: 49/110 done.
+2026-06-30T22:02:29 [INFO] Row P1-B024 DONE. Session: done=30 failed=0. Total: 49/110 done.
+2026-06-30T22:02:29 [INFO] Git checkpoint: staging 20 files
+2026-06-30T22:02:29 [INFO] Git checkpoint: staging 20 files
+2026-06-30T22:02:29 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-events-grid.jpg (1280x451)
+2026-06-30T22:02:29 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-events-grid.jpg (1280x451)
+2026-06-30T22:02:29 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-index.jpg (1280x451)
+2026-06-30T22:02:29 [INFO] Encoded OK: /home/mrh/repos/curiosity-corp/curiosity-corp/images/1280/banner-events-index.jpg (1280x451)
