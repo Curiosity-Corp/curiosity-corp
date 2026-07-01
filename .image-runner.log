@@ -1177,3 +1177,8 @@ Network request failed: unknown certificate verification error
 2026-06-30T23:07:09 [INFO] Row P2-41 DONE. Session: done=49 failed=6. Total: 110/110 done.
 2026-06-30T23:07:09 [INFO] Row P2-40 DONE. Session: done=50 failed=6. Total: 110/110 done.
 2026-06-30T23:07:09 [INFO] Git checkpoint: staging 18 files
+2026-06-30T23:07:09 [INFO] Git checkpoint committed: feat(images): runner checkpoint (110/110) [local]
+2026-06-30T23:07:09 [INFO] No pending rows — all done!
+2026-06-30T23:07:09 [INFO] === Runner loop exited. done=110, failed=0, pending=0, total=110 ===
+2026-06-30T23:07:09 [INFO] ALL DONE 110/110 — marker written to /home/mrh/repos/curiosity-corp/curiosity-corp/.image-runner.done
+2026-06-30T23:07:09 [INFO] Git checkpoint: staging 1 files
