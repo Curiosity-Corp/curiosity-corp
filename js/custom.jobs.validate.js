@@ -59,10 +59,10 @@ function handleFormSubmit(form, input) {
     if (!errors) {
         showSuccess();
     } else {
-        swal.fire({
+        Swal.fire({
             title: "Form Error",
             text: "Please ensure all fields are correct!",
-            type: "error",
+            icon: "error",
             confirmButtonText: "Ok",
         })
     }
@@ -149,24 +149,24 @@ function showSuccess() {
                 success: function (data, textStatus, xhr) {
                     console.log(xhr.status)
                     if (xhr.status === 200) {
-                        swal.fire({
+                        Swal.fire({
                             title: "Thank You!",
-                            type: "success",
+                            icon: "success",
                             confirmButtonText: 'Ok'
                         });
                         resetForm();
                     } else {
-                        swal.fire({
+                        Swal.fire({
                             title: "Some Error Occurred!",
-                            type: "error",
+                            icon: "error",
                             confirmButtonText: 'Ok'
                         });
                     }
                 },
                 error: function (data) {
-                    swal.fire({
+                    Swal.fire({
                         title: "An unexpected Error Occurred!",
-                        type: "error",
+                        icon: "error",
                         confirmButtonText: 'Ok'
                     })
                 },
