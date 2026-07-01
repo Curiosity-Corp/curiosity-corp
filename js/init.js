@@ -263,6 +263,27 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 		});
 	}
 /* ==================================================
+   Gallery Swiper (single-item slideshow embedded in a grid cell)
+================================================== */
+	BORNTOGIVE.gallerySwiper = function() {
+		$('.gallery-slider.swiper').each(function(){
+				var carouselInstance = $(this);
+				new Swiper(this, {
+					loop: true,
+					speed: 600,
+					autoplay: {
+						delay: 5000,
+						disableOnInteraction: false,
+						pauseOnMouseEnter: true
+					},
+					navigation: {
+						nextEl: carouselInstance.find('.swiper-button-next').get(0),
+						prevEl: carouselInstance.find('.swiper-button-prev').get(0)
+					}
+				});
+		});
+	}
+/* ==================================================
    Swiper Carousel (generic, reads the same data-* attrs as OwlCarousel)
 ================================================== */
 	BORNTOGIVE.SwiperCarousel = function() {
@@ -513,6 +534,7 @@ $(document).ready(function(){
 	BORNTOGIVE.heroflex();
 	BORNTOGIVE.heroSwiper();
 	BORNTOGIVE.galleryflex();
+	BORNTOGIVE.gallerySwiper();
 	BORNTOGIVE.pricingTable();
 	BORNTOGIVE.MobileMenu();
 	BORNTOGIVE.CProgress();
