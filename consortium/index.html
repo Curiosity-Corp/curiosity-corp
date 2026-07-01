@@ -731,9 +731,9 @@
             <!-- Hero Area -->
             <div class="hero-area">
                 <!-- Start Hero Slider -->
-                <div class="flexslider heroflex hero-slider" data-autoplay="yes" data-pagination="no" data-arrows="yes" data-style="fade" data-pause="yes">
-                    <ul class="slides">
-                        <li class="parallax" style="background-image:url(../images/slides/silk.avif)">
+                <div class="swiper hero-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide parallax" style="background-image:url(../images/slides/silk.avif)">
                             <div class="flex-caption">
                                 <div class="container">
                                     <div class="flex-caption-table">
@@ -747,8 +747,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="parallax" style="background-image:url(../images/slides/athens.avif)">
+                        </div>
+                        <div class="swiper-slide parallax" style="background-image:url(../images/slides/athens.avif)">
                             <div class="flex-caption">
                                 <div class="container">
                                     <div class="flex-caption-table">
@@ -761,8 +761,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                        <li class="parallax" style="background-image:url(../images/slides/chalkboard2.avif)">
+                        </div>
+                        <div class="swiper-slide parallax" style="background-image:url(../images/slides/chalkboard2.avif)">
                             <div class="flex-caption">
                                 <div class="container">
                                     <div class="flex-caption-table">
@@ -777,8 +777,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </li>
-                    </ul>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
                 <!-- End Hero Slider -->
             </div>
