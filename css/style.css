@@ -244,7 +244,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
 	color:#333;
 	text-decoration:none;
 }
-h1 .label, h2 .label, h3 .label, h4 .label, h5 .label, h6 .label{
+h1 .badge, h2 .badge, h3 .badge, h4 .badge, h5 .badge, h6 .badge{
 	font-size:11px;
 	position:relative;
 	top:-6px;
@@ -1104,7 +1104,7 @@ html[xmlns] .slides {
 	padding-top: 5px;
 	padding-bottom: 7px;
 }
-.selectpicker.btn-default{
+.selectpicker.btn-secondary{
 	background:#fff;
 	padding-left:10px;
 	text-transform:none;
@@ -2212,7 +2212,7 @@ body.boxed .body{
 #stories-slider li.item{
 	background:#f7f7f7;
 }
-#stories-slider li.item img.img-responsive{
+#stories-slider li.item img.img-fluid{
 	width:100%;
 }
 #stories-slider blockquote{

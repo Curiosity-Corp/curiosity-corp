@@ -138,3 +138,26 @@ h4a {
 .flex-caption-text p {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
+
+/* ==================================================
+   BS5 migration: restore Bootstrap 3's implicit
+   .container micro-clearfix.
+   BS 3.4.1 applied `.container:after{clear:both}` to every
+   .container (part of its clearfix mixin). Bootstrap 5 dropped
+   this since BS4/5 assume floats are self-contained inside a
+   flex .row. Several pages here float custom-grid content
+   (e.g. .grid-holder/.isotope blog grids) directly inside a
+   bare .container with no .row wrapper, relying on that BS3
+   behavior — without it the container collapses to zero extra
+   height and the next section (often .site-footer) renders on
+   top of the floated content. Re-add the old clearfix so that
+   pre-existing float-in-container markup keeps working under
+   BS5 unmodified. */
+.container:before,
+.container:after {
+  content: "";
+  display: table;
+}
+.container:after {
+  clear: both;
+}
