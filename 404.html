@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page Not Found | Curiosity Corporation</title>
 <meta name="description" content="The page you're looking for doesn't exist or has moved. Find your way back to Curiosity Research Corporation's programs, causes, and ways to get involved.">
 <link rel="canonical" href="https://curiositycorp.org/404.html">
@@ -41,29 +41,31 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 </head>
 <body class="error404">
-<div class="body">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div class="body" id="top">
 	<!-- Site Header Wrapper -->
     <div class="site-header-wrapper">
         <!-- Site Header -->
         <header class="site-header">
             <div class="container">
                 <div class="site-logo">
-                    <a href="/"><object data="/images/logo_white.svg" width="200px" height="60px" type="image/svg+xml" class="default-logo">
+                    <a href="/" aria-label="Curiosity Research Corporation — Home"><object data="/images/logo_white.svg" width="200px" height="60px" type="image/svg+xml" class="default-logo">
                         <img src="/images/logo.avif" alt="Curiosity Corporation" />
                     </object></a>
-                    <a href="/"><object data="/images/logo_white.svg" width="140px" height="40px" type="image/svg+xml" class="default-retina-logo">
+                    <a href="/" aria-label="Curiosity Research Corporation — Home"><object data="/images/logo_white.svg" width="140px" height="40px" type="image/svg+xml" class="default-retina-logo">
                         <img src="/images/logo.avif" alt="Curiosity Corporation" />
                     </object></a>
-                    <a href="/"><object data="/images/logo.svg" width="200px" height="60px" type="image/svg+xml" class="sticky-logo">
+                    <a href="/" aria-label="Curiosity Research Corporation — Home"><object data="/images/logo.svg" width="200px" height="60px" type="image/svg+xml" class="sticky-logo">
                         <img src="/images/logo.avif" alt="Curiosity Corporation" />
                     </object></a>
-                    <a href="/"><object data="/images/logo.svg" width="140px" height="40px" type="image/svg+xml" class="sticky-retina-logo">
+                    <a href="/" aria-label="Curiosity Research Corporation — Home"><object data="/images/logo.svg" width="140px" height="40px" type="image/svg+xml" class="sticky-retina-logo">
                         <img src="/images/logo.avif" alt="Curiosity Corporation" />
                     </object></a>
                 </div>
-                <a href="#" class="visible-sm visible-xs" id="menu-toggle"><i class="fa fa-bars"></i></a>
+                <button type="button" class="visible-sm visible-xs" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-menu"><i class="fa fa-bars" aria-hidden="true"></i></button>
                 <div class="header-info-col"><a href="/get-involved/advocate.html" class="btn btn-primary">Become a Partner</a></div>
-                <ul class="sf-menu dd-menu float-end" role="menu">
+                <nav aria-label="Primary Navigation">
+                <ul class="sf-menu dd-menu float-end" id="primary-menu">
                     <li><a href="javascript:void(0)">What We Do</a>
                         <ul class="dropdown">
                             <li><a href="/about/future.html">We Teach the Future</a></li>
@@ -114,9 +116,11 @@
                         </ul>
                     </li>
                 </ul>
+                </nav>
             </div>
         </header>
     </div>
+    <main id="main-content">
     <!-- 404 Content -->
     <div id="main-container">
         <div class="content">
@@ -158,12 +162,14 @@
         </div>
     </div>
     <!-- Site Footer -->
+    </main>
+    <footer>
     <div class="site-footer parallax parallax3" style="background-image:url(/images/parallax3.avif)">
     	<div class="container">
         	<div class="row">
             	<div class="col-md-4 col-sm-4">
                 	<div class="widget footer_widget">
-                        <p class="default-retina-logo"><a href="/"><object data="/images/logo_white.svg" width="140px" height="40px" type="image/svg+xml" class="default-retina-logo">
+                        <p class="default-retina-logo"><a href="/" aria-label="Curiosity Research Corporation — Home"><object data="/images/logo_white.svg" width="140px" height="40px" type="image/svg+xml" class="default-retina-logo">
                             <img src="/images/logo.avif" alt="Curiosity Corporation" />
                         </object></a></p>
                         <p>We engineer the pedagogy of the next century — igniting curiosity from first spark to provable mastery. We are a Non-Profit Organization headquartered in USA. Our 501(c)(3) tax-exempt status is pending IRS determination. Tax ID: 33-3478603</p>
@@ -207,7 +213,8 @@
            	</div>
       	</div>
   	</div>
-  	<a id="back-to-top"><i class="fa fa-angle-double-up"></i></a>
+    </footer>
+  	<a id="back-to-top" href="#top" aria-label="Back to top"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
 </div>
 
 <script src="/js/jquery-3.7.1.min.js" defer></script> <!-- Jquery Library Call -->
