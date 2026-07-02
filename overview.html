@@ -30,6 +30,9 @@
 <link href="css/custom.css" rel="stylesheet" type="text/css"><!-- CUSTOM STYLESHEET FOR STYLING -->
 <!-- Color Style -->
 <link href="colors/color1.css" rel="stylesheet" type="text/css">
+<!-- Cookie consent (Klaro) — only loaded on pages that embed a
+     non-essential third-party service (Google AdSense, below) -->
+<link href="css/klaro.css" rel="stylesheet" type="text/css">
 <!-- SCRIPTS
   ================================================== -->
 <style>
@@ -76,7 +79,16 @@
     }
   ]
 }</script>
-<script data-ad-client="ca-pub-6769622308567686" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Google Consent Mode v2 defaults (denied) — must run before the
+     gated Google ad tag below and before Klaro processes it -->
+<script src="js/consent-mode.js"></script>
+<!-- Klaro cookie consent manager (self-hosted, BSD-3-Clause) -->
+<script src="vendor/klaro/klaro-config.js"></script>
+<script defer data-config="klaroConfig" src="vendor/klaro/klaro-no-css.js"></script>
+<!-- Google AdSense — gated by Klaro: type="text/plain" prevents this
+     script from executing until the visitor accepts the
+     "Advertising" purpose; Klaro swaps the type and runs it then. -->
+<script type="text/plain" data-name="googleAdsense" data-ad-client="ca-pub-6769622308567686" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <link rel="preload" as="image" href="images/1280/banner-overview.avif" fetchpriority="high">
 </head>
 <body>
@@ -633,7 +645,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-6">
                     <div class="copyrights-col-left">
-                        <p>&copy; 2025 Curiosity Research Corporation. All Rights Reserved</p>
+                        <p>&copy; <span class="copyright-year">2025</span> Curiosity Research Corporation. All Rights Reserved</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6">
@@ -643,6 +655,7 @@
                             <li><a href="legal/payment-terms.html">Payment Terms</a></li>
                             <li><a href="legal/refund-policy.html">Refund Policy</a></li>
                             <li><a href="legal/tos.html">Terms of Use</a></li>
+                            <li><a href="#" class="klaro-manage" onclick="event.preventDefault(); window.klaro &amp;&amp; klaro.show();">Cookie Settings</a></li>
                         </ul>
                     </div>
                 </div>
@@ -682,5 +695,6 @@
 <script src="js/init.js" defer></script> <!-- All Scripts -->
 <script src="js/circle-progress.js" defer></script> <!-- Circle Progress Bars -->
 
+<script src="js/copyright-year.js" defer></script>
 </body>
 </html>

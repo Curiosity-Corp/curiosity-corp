@@ -1,0 +1,268 @@
+/* Klaro consent-manager styling — the vendored "no-css" Klaro build
+   ships zero styles by design, so every rule below targets Klaro's
+   own class hooks (klaro-org/klaro-js) and follows the site's brand
+   teal (#217c91, colors/color1.css) rather than Klaro's defaults. */
+
+.klaro .cookie-notice {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  max-width: 720px;
+  margin: 0 auto 16px;
+  padding: 20px 24px;
+  background: #fff;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  font-family: "Lato", "Lato Fallback", sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+@media (min-width: 720px) {
+  .klaro .cookie-notice {
+    left: 16px;
+    right: auto;
+    margin: 0 0 16px;
+  }
+}
+
+.klaro .cookie-notice.cookie-notice-hidden {
+  display: none;
+}
+
+.klaro .cn-body h2,
+.klaro .cn-body .title {
+  margin: 0 0 8px;
+  font-family: "Playfair Display", "Playfair Display Fallback", serif;
+  font-size: 18px;
+  color: #1a1a1a;
+}
+
+.klaro .cn-body p {
+  margin: 0 0 12px;
+}
+
+.klaro .cn-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.klaro .cm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  border: 2px solid #217c91;
+  font-family: "Lato", "Lato Fallback", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+/* Accept and Reject are rendered as equal-weight buttons — same
+   size, same border weight — only the fill differs. No dark-pattern
+   asymmetry (SOP §15.5: "Reject All is one click, equally prominent
+   as Accept All"). */
+.klaro .cm-btn-success,
+.klaro .cm-btn-success-var {
+  background: #217c91;
+  color: #fff;
+}
+.klaro .cm-btn-success:hover,
+.klaro .cm-btn-success-var:hover {
+  background: #1a6373;
+  border-color: #1a6373;
+}
+
+.klaro .cm-btn-decline,
+.klaro .cm-btn-danger {
+  background: #fff;
+  color: #217c91;
+}
+.klaro .cm-btn-decline:hover,
+.klaro .cm-btn-danger:hover {
+  background: #eef6f8;
+}
+
+.klaro .cm-btn-info,
+.klaro .cm-btn-lern-more {
+  background: transparent;
+  border-color: transparent;
+  color: #217c91;
+  text-decoration: underline;
+  padding-left: 4px;
+  padding-right: 4px;
+  min-height: auto;
+}
+.klaro .cm-btn-info:hover,
+.klaro .cm-btn-lern-more:hover {
+  color: #1a6373;
+}
+
+.klaro .cm-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 1px;
+  box-shadow: 0 0 0 4px #217c91;
+}
+
+/* Detail modal (opened via "Let me choose" / footer "Cookie
+   Settings" link) */
+.klaro .cm-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  background: rgba(20, 20, 20, 0.55);
+}
+
+.klaro .cookie-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 10002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.klaro .cm-modal {
+  width: 100%;
+  max-width: 560px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+  font-family: "Lato", "Lato Fallback", sans-serif;
+  color: #333;
+}
+
+.klaro .cm-header {
+  padding: 20px 24px 0;
+}
+.klaro .cm-header h1,
+.klaro .cm-header .title {
+  margin: 0;
+  font-family: "Playfair Display", "Playfair Display Fallback", serif;
+  font-size: 22px;
+  color: #1a1a1a;
+}
+
+.klaro .cm-body {
+  padding: 12px 24px;
+}
+
+.klaro .cm-purpose {
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.klaro .cm-purpose:last-child {
+  border-bottom: none;
+}
+
+.klaro .cm-service {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.klaro .cm-list-title {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.klaro .cm-list-description {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #555;
+}
+
+.klaro .cm-required {
+  font-size: 12px;
+  color: #777;
+  font-style: italic;
+}
+
+/* Toggle switch */
+.klaro .slider {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+  flex: 0 0 auto;
+  border-radius: 12px;
+  background: #ccc;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.klaro .slider::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.15s ease;
+}
+/* Klaro always adds a static "active" class to every slider markup
+   (round active) — it does not signal checked state, so the on/off
+   look here keys purely off the checkbox's real :checked state. */
+.klaro .cm-list-input:checked + label .slider {
+  background: #217c91;
+}
+.klaro .cm-list-input:checked + label .slider::before {
+  transform: translateX(18px);
+}
+.klaro .cm-list-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.klaro .cm-list-input:focus-visible + label .slider {
+  outline: 2px solid #217c91;
+  outline-offset: 2px;
+}
+.klaro .cm-list-input[disabled] + label .slider {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.klaro .cm-footer {
+  padding: 16px 24px 24px;
+  border-top: 1px solid #e5e5e5;
+}
+.klaro .cm-footer-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.klaro .cm-powered-by {
+  display: block;
+  margin-top: 12px;
+  font-size: 11px;
+  color: #999;
+  text-align: right;
+}
+.klaro .cm-powered-by a {
+  color: #999;
+}
+
+.klaro a {
+  color: #217c91;
+}
