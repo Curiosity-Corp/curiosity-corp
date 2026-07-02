@@ -1,0 +1,20 @@
+{
+  "name": "Curiosity Corporation",
+  "short_name": "Curiosity Corp",
+  "description": "Curiosity Research Corporation is a research institute with a pending 501(c)(3) application, studying the psychology of curiosity, in humans and machines, to engineer the pedagogy of the next century.",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+  "display": "browser",
+  "orientation": "any",
+  "theme_color": "#42b8d4",
+  "background_color": "#ffffff",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["education", "nonprofit"],
+  "icons": [
+    { "src": "/images/favicon/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/images/favicon/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/images/favicon/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
