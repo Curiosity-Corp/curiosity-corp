@@ -327,23 +327,19 @@ p {
 
 /* ==================================================
    Target size (WCAG 2.2 SC 2.5.8, SOP §8): Swiper's vendored
-   pagination bullets are an 8x8px visual dot with only a 4px
-   horizontal margin between them -- well under the 24x24px minimum
-   hit area. Expand the actual clickable/tappable area via an
-   invisible ::before centered on each bullet, without changing the
-   8px dot's appearance.
+   pagination bullets are an 8x8px dot with only 4px of margin
+   between them -- 16px center-to-center, under the 24px minimum
+   target *offset* the criterion allows as an alternative to a 24px
+   target itself. (An earlier attempt expanded each bullet's hit
+   area via an invisible ::before pseudo-element instead, but at
+   16px spacing those enlarged zones overlapped their neighbors --
+   axe still failed it, and overlapping hit areas are a real
+   usability problem, not just a lint issue.) Widening the actual
+   gap via Swiper's own spacing token is the correct fix: 8px dot +
+   16px gap (8px margin each side) = 24px center-to-center.
 ================================================== */
-.swiper-pagination-bullet {
-  position: relative;
-}
-.swiper-pagination-bullet::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 24px;
-  height: 24px;
-  transform: translate(-50%, -50%);
+:root {
+  --swiper-pagination-bullet-horizontal-gap: 8px;
 }
 
 /* SOP 11-animation: non-compositor transitions in style.css replaced
