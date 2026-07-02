@@ -319,18 +319,31 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 	BORNTOGIVE.MobileMenu = function() {
 		// Responsive Menu Events
 		$('#menu-toggle').on("click", function(){
-			$(this).toggleClass("opened");
+			var $toggle = $(this).toggleClass("opened");
+			$toggle.attr("aria-expanded", $toggle.hasClass("opened"));
 			$(".dd-menu").slideToggle();
 			if( $(window).scrollTop() <= 0 ) {
 				$(".site-header").toggleClass("menu-opened");
 			}
 			return false;
 		});
-		$(window).resize(function(){
-			if($("#menu-toggle").hasClass("opened")){
-				$(".dd-menu").css("display","block");
-			} else {
-				$("#menu-toggle").css("display","none");
+		// NOTE: the 992px check below must match the CSS breakpoint that
+		// shows/hides #menu-toggle (see the `@media (max-width: 992px)`
+		// block in css/style.css). This handler used to run on every
+		// resize event unconditionally, including the fake "resize" fired
+		// by mobile browsers when the address bar shows/hides or an
+		// on-screen keyboard opens/closes — which set `display:none`
+		// inline on #menu-toggle via jQuery .css(), permanently
+		// overriding the CSS and leaving mobile users with no way to
+		// open the nav at all. Only touch the inline styles when actually
+		// crossing the desktop breakpoint, and clear them (rather than
+		// force display:none) so the CSS media query stays in control at
+		// every other width.
+		$(window).on("resize", function(){
+			if ($(window).width() > 992) {
+				$(".dd-menu").css("display", "");
+				$("#menu-toggle").css("display", "").removeClass("opened").attr("aria-expanded", "false");
+				$(".site-header").removeClass("menu-opened");
 			}
 		});
 	}

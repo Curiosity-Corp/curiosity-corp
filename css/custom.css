@@ -297,6 +297,34 @@ p {
   font-size: 42px;
 }
 
+/* ==================================================
+   Mobile nav toggle (SOP §8 a11y sweep):
+   #menu-toggle carries the Bootstrap-3 utility classes
+   `visible-sm visible-xs`, which this template's BS5 migration
+   dropped the CSS for (grep confirms zero rules define them
+   anywhere in style.css or custom.css) -- so nothing was hiding
+   the button above the mobile breakpoint. style.css's
+   `@media (max-width: 992px) { #menu-toggle{display:block} }`
+   correctly *shows* it on mobile, but with no complementary
+   desktop rule the button rendered on desktop too. Also: the
+   element is now a real <button> (was an inert <a href="#">),
+   so it needs its native button chrome reset to keep the exact
+   visual the template already had.
+================================================== */
+#menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  #menu-toggle {
+    display: block;
+  }
+}
+
 /* SOP 11-animation: non-compositor transitions in style.css replaced
    with transform/opacity equivalents — same visual result, animates
    only properties the compositor can handle off the main thread.
