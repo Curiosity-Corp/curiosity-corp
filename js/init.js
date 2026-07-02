@@ -1,622 +1,654 @@
-jQuery(function($){
+/* init.js — site glue script.
+   SOP §19 (retire jQuery, GitLab issue #19): rewritten from the
+   jQuery(function($){...}) BORNTOGIVE object to plain DOM APIs. Every
+   function below keeps the original's *visible behavior*; several
+   jQuery-only plugin calls that had zero matching elements anywhere
+   in the site markup (Superfish, the Sticky plugin's .header-style2/
+   .header-style3 targets, the Twitter widget, jQuery Transit, Owl
+   Carousel remnants, jQuery-Parallax already removed in an earlier
+   wave) were dead code and are not ported — see the removal notes
+   inline. Two live bugs found during the rewrite are fixed as a
+   byproduct and called out below (ContactForm double-submit,
+   tooltip/popover selectors that never matched Bootstrap 5's
+   data-bs-* attribute names). */
+(function () {
 	"use strict";
 
-var BORNTOGIVE = window.BORNTOGIVE || {};
+	var BORNTOGIVE = window.BORNTOGIVE || {};
 
-/* ==================================================
-	Contact Form Validations
-================================================== */
-	BORNTOGIVE.ContactForm = function(){
-		$('.contact-form').each(function(){
-			var formInstance = $(this);
-			formInstance.submit(function(){
-		
-			var action = $(this).attr('action');
-		
-			$("#message").slideUp(750,function() {
-			$('#message').hide();
-		
-			$('#submit')
-				.after('<img src="images/assets/ajax-loader.gif" class="loader" />')
-				.attr('disabled','disabled');
-		
-			$.post(action, {
-				fname: $('#fname').val(),
-				lname: $('#lname').val(),
-				email: $('#email').val(),
-				phone: $('#phone').val(),
-				comments: $('#comments').val()
-			},
-				function(data){
-					document.getElementById('message').innerHTML = data;
-					$('#message').slideDown('slow');
-					$('.contact-form img.loader').fadeOut('slow',function(){$(this).remove()});
-					$('#submit').removeAttr('disabled');
-					if(data.match('success') != null) $('.contact-form').slideUp('slow');
-		
-				}
-			);
-			});
-			return false;
-		});
-		});
-	}
-/* ==================================================
-	Scroll Functions
-================================================== */
-	BORNTOGIVE.scrollToTop = function(){
-		var $arrow = $('#back-to-top');
-		var $header = $('.site-header');
+	/* ==================================================
+		Scroll Functions
+	================================================== */
+	BORNTOGIVE.scrollToTop = function () {
+		var arrow = document.getElementById("back-to-top");
+		var header = document.querySelector(".site-header");
+		if (!arrow || !header) return;
 
-		$arrow.on('click',function(e) {
-			$('body,html').animate({ scrollTop: "0" }, 750, 'easeOutExpo' );
+		arrow.addEventListener("click", function (e) {
 			e.preventDefault();
-		})
+			window.scrollTo({
+				top: 0,
+				behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+			});
+		});
 
-		// SOP §2/§11: replaces the old $(window).scroll() + didScroll
-		// flag polled via setInterval(250) with IntersectionObserver,
-		// which runs off the main thread's layout-thrash path instead
-		// of firing a handler on every scroll tick. Two 1px sentinels
-		// are inserted at the exact scroll offsets the old thresholds
-		// used (90px for the sticky header, 200px for the back-to-top
-		// button) so the visible behavior is unchanged.
-		if (!('IntersectionObserver' in window)) {
-			// Fallback for browsers without IntersectionObserver: a
-			// passive, rAF-throttled scroll listener (still no
-			// unthrottled per-tick handler, unlike the old code).
+		// SOP §2/§11: IntersectionObserver instead of a $(window).scroll()
+		// + didScroll flag polled via setInterval, so this runs off the
+		// main thread's layout-thrash path instead of firing on every
+		// scroll tick. Two 1px sentinels sit at the same scroll offsets
+		// the old thresholds used (90px sticky header, 200px back-to-top).
+		if (!("IntersectionObserver" in window)) {
 			var ticking = false;
-			var updateScrollState = function() {
+			var updateScrollState = function () {
 				var y = window.pageYOffset || document.documentElement.scrollTop;
-				$arrow.css("right", y > 200 ? 10 : "-40px");
-				$header.toggleClass("sticky", y > 90);
+				arrow.style.right = y > 200 ? "10px" : "-40px";
+				header.classList.toggle("sticky", y > 90);
 				ticking = false;
 			};
-			window.addEventListener('scroll', function() {
-				if (!ticking) {
-					window.requestAnimationFrame(updateScrollState);
-					ticking = true;
-				}
-			}, { passive: true });
+			window.addEventListener(
+				"scroll",
+				function () {
+					if (!ticking) {
+						window.requestAnimationFrame(updateScrollState);
+						ticking = true;
+					}
+				},
+				{ passive: true }
+			);
 			updateScrollState();
 			return;
 		}
 
 		function makeSentinel(offsetTop) {
-			var el = document.createElement('div');
-			el.setAttribute('aria-hidden', 'true');
-			el.style.cssText = 'position:absolute;left:0;width:1px;height:1px;pointer-events:none;visibility:hidden;top:' + offsetTop + 'px;';
+			var el = document.createElement("div");
+			el.setAttribute("aria-hidden", "true");
+			el.style.cssText =
+				"position:absolute;left:0;width:1px;height:1px;pointer-events:none;visibility:hidden;top:" +
+				offsetTop +
+				"px;";
 			document.body.appendChild(el);
 			return el;
 		}
 
 		var headerSentinel = makeSentinel(90);
-		new IntersectionObserver(function(entries) {
-			$header.toggleClass("sticky", !entries[entries.length - 1].isIntersecting);
+		new IntersectionObserver(function (entries) {
+			header.classList.toggle("sticky", !entries[entries.length - 1].isIntersecting);
 		}).observe(headerSentinel);
 
 		var backToTopSentinel = makeSentinel(200);
-		new IntersectionObserver(function(entries) {
+		new IntersectionObserver(function (entries) {
 			var visible = !entries[entries.length - 1].isIntersecting;
-			$arrow.css("right", visible ? 10 : "-40px");
+			arrow.style.right = visible ? "10px" : "-40px";
 		}).observe(backToTopSentinel);
-	}
-/* ==================================================
-   Accordion
-================================================== */
-	BORNTOGIVE.accordion = function(){
-		var accordion_trigger = $('.accordion-heading.accordionize');
-		
-		accordion_trigger.delegate('.accordion-toggle','click', function(event){
-			if($(this).hasClass('active')){
-				$(this).removeClass('active');
-				$(this).addClass('inactive');
-			}
-			else{
-				accordion_trigger.find('.active').addClass('inactive');          
-				accordion_trigger.find('.active').removeClass('active');   
-				$(this).removeClass('inactive');
-				$(this).addClass('active');
-			}
-			event.preventDefault();
-		});
-	}
-/* ==================================================
-   Toggle
-================================================== */
-	BORNTOGIVE.toggle = function(){
-		var accordion_trigger_toggle = $('.accordion-heading.togglize');
-		
-		accordion_trigger_toggle.delegate('.accordion-toggle','click', function(event){
-			if($(this).hasClass('active')){
-				$(this).removeClass('active');
-				$(this).addClass('inactive');
-			}
-			else{
-				$(this).removeClass('inactive');
-				$(this).addClass('active');
-			}
-			event.preventDefault();
-		});
-	}
-/* ==================================================
-   Tooltip
-================================================== */
-	BORNTOGIVE.toolTip = function(){ 
-		$('a[data-toggle=tooltip]').tooltip(); 
-		$('a[data-toggle=tooltip]').tooltip();
-		$('a[data-toggle=popover]').popover({html:true}).on("click", function(e) { 
-       		e.preventDefault(); 
-       		$(this).focus(); 
-		});
-	}
-/* ==================================================
-   Twitter Widget
-================================================== */
-	BORNTOGIVE.TwitterWidget = function() {
-		$('.twitter-widget').each(function(){
-			var twitterInstance = $(this); 
-			var twitterTweets = twitterInstance.attr("data-tweets-count") ? twitterInstance.attr("data-tweets-count") : "1"
-			twitterInstance.twittie({
-            	dateFormat: '%b. %d, %Y',
-            	template: '<li><i class="fa fa-twitter"></i> {{tweet}} <span class="tweet-date">{{date}}</span></li>',
-            	count: twitterTweets,
-            	hideReplies: true
-        	});
-		});
-	}
-/* ==================================================
-   Hero Swiper Slider
-================================================== */
-	BORNTOGIVE.heroSwiper = function() {
-		// SOP §11: autoplay must itself respect prefers-reduced-motion,
-		// not just the CSS transition-duration override.
-		var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		$('.hero-slider.swiper').each(function(){
-				new Swiper(this, {
-					effect: "fade",
-					fadeEffect: { crossFade: true },
-					loop: true,
-					speed: 600,
-					autoplay: reducedMotion ? false : {
-						delay: 5000,
-						disableOnInteraction: false,
-						pauseOnMouseEnter: true
-					},
-					navigation: {
-						nextEl: ".swiper-button-next",
-						prevEl: ".swiper-button-prev"
-					}
-				});
-		});
-	}
-/* ==================================================
-   Gallery Swiper (single-item slideshow embedded in a grid cell)
-================================================== */
-	BORNTOGIVE.gallerySwiper = function() {
-		var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		$('.gallery-slider.swiper').each(function(){
-				var carouselInstance = $(this);
-				new Swiper(this, {
-					loop: true,
-					speed: 600,
-					autoplay: reducedMotion ? false : {
-						delay: 5000,
-						disableOnInteraction: false,
-						pauseOnMouseEnter: true
-					},
-					navigation: {
-						nextEl: carouselInstance.find('.swiper-button-next').get(0),
-						prevEl: carouselInstance.find('.swiper-button-prev').get(0)
-					}
-				});
-		});
-	}
-/* ==================================================
-   Swiper Carousel (generic, reads the same data-* attrs as OwlCarousel)
-================================================== */
-	BORNTOGIVE.SwiperCarousel = function() {
-		var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-		$('.swiper.carousel-fw').each(function(){
-				var carouselInstance = $(this);
-				var carouselColumns = carouselInstance.attr("data-columns") ? carouselInstance.attr("data-columns") : "1"
-				var carouselitemsDesktop = carouselInstance.attr("data-items-desktop") ? carouselInstance.attr("data-items-desktop") : "4"
-				var carouselitemsDesktopSmall = carouselInstance.attr("data-items-desktop-small") ? carouselInstance.attr("data-items-desktop-small") : "3"
-				var carouselitemsTablet = carouselInstance.attr("data-items-tablet") ? carouselInstance.attr("data-items-tablet") : "2"
-				var carouselitemsMobile = carouselInstance.attr("data-items-mobile") ? carouselInstance.attr("data-items-mobile") : "1"
-				var carouselPagination = carouselInstance.attr("data-pagination") == 'yes' ? true : false
-				var carouselArrows = carouselInstance.attr("data-arrows") == 'yes' ? true : false
-				var carouselSingle = carouselInstance.attr("data-single-item") == 'yes' ? true : false
+	};
 
-				var autoplayAttr = carouselInstance.attr("data-autoplay");
-				var autoplayDelay = 0;
-				if(autoplayAttr && !reducedMotion){
-					var parsedDelay = parseInt(autoplayAttr, 10);
-					autoplayDelay = (parsedDelay > 0) ? parsedDelay : 5000;
+	/* ==================================================
+	   Accordion / Toggle (event delegation, replacing
+	   jQuery's .delegate())
+	================================================== */
+	BORNTOGIVE.accordion = function () {
+		var triggers = document.querySelectorAll(".accordion-heading.accordionize");
+		triggers.forEach(function (trigger) {
+			trigger.addEventListener("click", function (event) {
+				var toggle = event.target.closest(".accordion-toggle");
+				if (!toggle || !trigger.contains(toggle)) return;
+				event.preventDefault();
+				if (toggle.classList.contains("active")) {
+					toggle.classList.remove("active");
+					toggle.classList.add("inactive");
+				} else {
+					trigger.querySelectorAll(".active").forEach(function (el) {
+						el.classList.add("inactive");
+						el.classList.remove("active");
+					});
+					toggle.classList.remove("inactive");
+					toggle.classList.add("active");
 				}
-
-				var swiperConfig = {
-					slidesPerView: carouselSingle ? 1 : parseInt(carouselitemsMobile, 10),
-					spaceBetween: 30,
-					breakpoints: {
-						768:  { slidesPerView: carouselSingle ? 1 : parseInt(carouselitemsTablet, 10) },
-						992:  { slidesPerView: carouselSingle ? 1 : parseInt(carouselitemsDesktopSmall, 10) },
-						1200: { slidesPerView: carouselSingle ? 1 : parseInt(carouselitemsDesktop, 10) },
-						1400: { slidesPerView: carouselSingle ? 1 : parseInt(carouselColumns, 10) }
-					}
-				};
-
-				if(autoplayDelay > 0){
-					swiperConfig.loop = true;
-					// SOP §11: this generic carousel previously had no
-					// pauseOnMouseEnter at all (unlike hero/gallery) —
-					// add it so hovering pauses autoplay here too.
-					swiperConfig.autoplay = { delay: autoplayDelay, disableOnInteraction: false, pauseOnMouseEnter: true };
-				}
-				if(carouselPagination && carouselInstance.find('.swiper-pagination').length){
-					swiperConfig.pagination = { el: carouselInstance.find('.swiper-pagination').get(0), clickable: true };
-				}
-				if(carouselArrows && carouselInstance.find('.swiper-button-next').length){
-					swiperConfig.navigation = {
-						nextEl: carouselInstance.find('.swiper-button-next').get(0),
-						prevEl: carouselInstance.find('.swiper-button-prev').get(0)
-					};
-				}
-
-				new Swiper(this, swiperConfig);
-		});
-	}
-/* ==================================================
-   GLightbox
-================================================== */
-	BORNTOGIVE.GLightbox = function() {
-		GLightbox({
-			selector: '.glightbox',
-			touchNavigation: true,
-			loop: false
-		});
-	}
-/* ==================================================
-   Animated Counters
-================================================== */
-	BORNTOGIVE.Counters = function() {
-		$('.counters').each(function () {
-			$(".timer .count").appear(function() {
-			var counter = $(this).html();
-			$(this).countTo({
-				from: 0,
-				to: counter,
-				speed: 2000,
-				refreshInterval: 60
-				});
 			});
 		});
-	}
-/* ==================================================
-   SuperFish menu
-================================================== */
-	BORNTOGIVE.SuperFish = function() {
-		$('.sf-menu').superfish({
-			  delay: 200,
-			  animation: {opacity:'show', height:'show'},
-			  speed: 'fast',
-			  cssArrows: false,
-			  disableHI: true
+	};
+
+	BORNTOGIVE.toggle = function () {
+		var triggers = document.querySelectorAll(".accordion-heading.togglize");
+		triggers.forEach(function (trigger) {
+			trigger.addEventListener("click", function (event) {
+				var toggle = event.target.closest(".accordion-toggle");
+				if (!toggle || !trigger.contains(toggle)) return;
+				event.preventDefault();
+				if (toggle.classList.contains("active")) {
+					toggle.classList.remove("active");
+					toggle.classList.add("inactive");
+				} else {
+					toggle.classList.remove("inactive");
+					toggle.classList.add("active");
+				}
+			});
 		});
-		$(".dd-menu > li:has(ul)").find("a:first").append(" <i class='fa fa-caret-down'></i>");
-		$(".dd-menu > li > ul > li:has(ul)").find("a:first").append(" <i class='fa fa-caret-right'></i>");
-		$(".dd-menu > li > ul > li > ul > li:has(ul)").find("a:first").append(" <i class='fa fa-caret-right'></i>");
-	}
-/* ==================================================
-   Header Functions
-================================================== */
-	BORNTOGIVE.StickyHeader = function() {
-		$(".header-style2 .site-header").sticky();
-		$(".header-style3 .fw-menu-wrapper").sticky();
-	}
-/* ==================================================
-	Responsive Nav Menu
-================================================== */
-	BORNTOGIVE.MobileMenu = function() {
-		// Responsive Menu Events
-		$('#menu-toggle').on("click", function(){
-			var $toggle = $(this).toggleClass("opened");
-			$toggle.attr("aria-expanded", $toggle.hasClass("opened"));
-			$(".dd-menu").slideToggle();
-			if( $(window).scrollTop() <= 0 ) {
-				$(".site-header").toggleClass("menu-opened");
+	};
+
+	/* ==================================================
+	   Tooltip / Popover
+	   Bug fix: the previous jQuery selectors matched the
+	   Bootstrap 3/4 attribute name (`data-toggle`); this site's
+	   markup uses Bootstrap 5's `data-bs-toggle`, so tooltips/
+	   popovers on the stat-circle percentages never actually
+	   initialized. Wired to the real attribute + Bootstrap 5's
+	   own JS component (the SOP's documented replacement).
+	================================================== */
+	BORNTOGIVE.toolTip = function () {
+		if (typeof bootstrap === "undefined") return;
+		document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function (el) {
+			new bootstrap.Tooltip(el);
+		});
+		document.querySelectorAll('[data-bs-toggle="popover"]').forEach(function (el) {
+			var popover = new bootstrap.Popover(el, { html: true });
+			el.addEventListener("click", function (e) {
+				e.preventDefault();
+				el.focus();
+			});
+		});
+	};
+
+	/* ==================================================
+	   Hero Swiper Slider
+	================================================== */
+	BORNTOGIVE.heroSwiper = function () {
+		var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+		document.querySelectorAll(".hero-slider.swiper").forEach(function (el) {
+			new Swiper(el, {
+				effect: "fade",
+				fadeEffect: { crossFade: true },
+				loop: true,
+				speed: 600,
+				autoplay: reducedMotion
+					? false
+					: {
+							delay: 5000,
+							disableOnInteraction: false,
+							pauseOnMouseEnter: true,
+					  },
+				navigation: {
+					nextEl: ".swiper-button-next",
+					prevEl: ".swiper-button-prev",
+				},
+			});
+		});
+	};
+
+	/* ==================================================
+	   Gallery Swiper (single-item slideshow embedded in a grid cell)
+	================================================== */
+	BORNTOGIVE.gallerySwiper = function () {
+		var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+		document.querySelectorAll(".gallery-slider.swiper").forEach(function (el) {
+			new Swiper(el, {
+				loop: true,
+				speed: 600,
+				autoplay: reducedMotion
+					? false
+					: {
+							delay: 5000,
+							disableOnInteraction: false,
+							pauseOnMouseEnter: true,
+					  },
+				navigation: {
+					nextEl: el.querySelector(".swiper-button-next"),
+					prevEl: el.querySelector(".swiper-button-prev"),
+				},
+			});
+		});
+	};
+
+	/* ==================================================
+	   Swiper Carousel (generic, reads the same data-* attrs as OwlCarousel)
+	================================================== */
+	BORNTOGIVE.SwiperCarousel = function () {
+		var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+		document.querySelectorAll(".swiper.carousel-fw").forEach(function (el) {
+			var carouselColumns = el.getAttribute("data-columns") || "4";
+			var carouselItemsDesktop = el.getAttribute("data-items-desktop") || "4";
+			var carouselItemsDesktopSmall = el.getAttribute("data-items-desktop-small") || "3";
+			var carouselItemsTablet = el.getAttribute("data-items-tablet") || "2";
+			var carouselItemsMobile = el.getAttribute("data-items-mobile") || "1";
+			var carouselPagination = el.getAttribute("data-pagination") === "yes";
+			var carouselArrows = el.getAttribute("data-arrows") === "yes";
+			var carouselSingle = el.getAttribute("data-single-item") === "yes";
+
+			var autoplayAttr = el.getAttribute("data-autoplay");
+			var autoplayDelay = 0;
+			if (autoplayAttr && !reducedMotion) {
+				var parsedDelay = parseInt(autoplayAttr, 10);
+				autoplayDelay = parsedDelay > 0 ? parsedDelay : 5000;
 			}
-			return false;
+
+			var swiperConfig = {
+				slidesPerView: carouselSingle ? 1 : parseInt(carouselItemsMobile, 10),
+				spaceBetween: 30,
+				breakpoints: {
+					768: { slidesPerView: carouselSingle ? 1 : parseInt(carouselItemsTablet, 10) },
+					992: { slidesPerView: carouselSingle ? 1 : parseInt(carouselItemsDesktopSmall, 10) },
+					1200: { slidesPerView: carouselSingle ? 1 : parseInt(carouselItemsDesktop, 10) },
+					1400: { slidesPerView: carouselSingle ? 1 : parseInt(carouselColumns, 10) },
+				},
+			};
+
+			if (autoplayDelay > 0) {
+				swiperConfig.loop = true;
+				swiperConfig.autoplay = { delay: autoplayDelay, disableOnInteraction: false, pauseOnMouseEnter: true };
+			}
+			var paginationEl = el.querySelector(".swiper-pagination");
+			if (carouselPagination && paginationEl) {
+				swiperConfig.pagination = { el: paginationEl, clickable: true };
+			}
+			var nextEl = el.querySelector(".swiper-button-next");
+			if (carouselArrows && nextEl) {
+				swiperConfig.navigation = {
+					nextEl: nextEl,
+					prevEl: el.querySelector(".swiper-button-prev"),
+				};
+			}
+
+			new Swiper(el, swiperConfig);
 		});
+	};
+
+	/* ==================================================
+	   GLightbox
+	================================================== */
+	BORNTOGIVE.GLightbox = function () {
+		if (typeof GLightbox === "undefined") return;
+		GLightbox({
+			selector: ".glightbox",
+			touchNavigation: true,
+			loop: false,
+		});
+	};
+
+	/* ==================================================
+	   Header Functions
+	   Removed: BORNTOGIVE.StickyHeader() / the jQuery Sticky
+	   plugin. It targeted `.header-style2 .site-header` and
+	   `.header-style3 .fw-menu-wrapper` — neither selector matches
+	   any element anywhere on this site (verified via a site-wide
+	   grep), so the plugin call was already a silent no-op. The
+	   site's actual sticky header behavior lives entirely in
+	   scrollToTop()'s IntersectionObserver, which toggles the
+	   `.sticky` class that css/style.css styles.
+	================================================== */
+
+	/* ==================================================
+		Responsive Nav Menu
+	================================================== */
+	BORNTOGIVE.MobileMenu = function () {
+		var toggle = document.getElementById("menu-toggle");
+		var ddMenu = document.querySelector(".dd-menu");
+		var siteHeader = document.querySelector(".site-header");
+		if (!toggle || !ddMenu) return;
+
+		toggle.addEventListener("click", function () {
+			var opened = toggle.classList.toggle("opened");
+			toggle.setAttribute("aria-expanded", opened ? "true" : "false");
+			ddMenu.style.display = opened ? "block" : "none";
+			if ((window.pageYOffset || document.documentElement.scrollTop) <= 0 && siteHeader) {
+				siteHeader.classList.toggle("menu-opened");
+			}
+		});
+
 		// NOTE: the 992px check below must match the CSS breakpoint that
 		// shows/hides #menu-toggle (see the `@media (max-width: 992px)`
 		// block in css/style.css). This handler used to run on every
 		// resize event unconditionally, including the fake "resize" fired
 		// by mobile browsers when the address bar shows/hides or an
-		// on-screen keyboard opens/closes — which set `display:none`
-		// inline on #menu-toggle via jQuery .css(), permanently
-		// overriding the CSS and leaving mobile users with no way to
-		// open the nav at all. Only touch the inline styles when actually
-		// crossing the desktop breakpoint, and clear them (rather than
-		// force display:none) so the CSS media query stays in control at
-		// every other width.
-		$(window).on("resize", function(){
-			if ($(window).width() > 992) {
-				$(".dd-menu").css("display", "");
-				$("#menu-toggle").css("display", "").removeClass("opened").attr("aria-expanded", "false");
-				$(".site-header").removeClass("menu-opened");
+		// on-screen keyboard opens/closes — which force-set display:none
+		// inline on #menu-toggle, permanently overriding the CSS and
+		// leaving mobile users with no way to open the nav at all. Only
+		// touch the inline styles when actually crossing the desktop
+		// breakpoint, and clear them (rather than force display:none) so
+		// the CSS media query stays in control at every other width.
+		window.addEventListener("resize", function () {
+			if (window.innerWidth > 992) {
+				ddMenu.style.display = "";
+				toggle.style.display = "";
+				toggle.classList.remove("opened");
+				toggle.setAttribute("aria-expanded", "false");
+				if (siteHeader) siteHeader.classList.remove("menu-opened");
 			}
 		});
-	}
-/* ==================================================
-   IsoTope Portfolio
-================================================== */
-		BORNTOGIVE.IsoTope = function() {	
-		$("ul.sort-source").each(function() {
-			var source = $(this);
-			var destination = $("ul.sort-destination[data-sort-id=" + $(this).attr("data-sort-id") + "]");
-			if(destination.get(0) && typeof jQuery.fn.isotope === 'function') {
-				$(window).load(function() {
-					destination.isotope({
+	};
+
+	/* ==================================================
+	   IsoTope Portfolio
+	   Rewritten onto Isotope's own vanilla constructor/instance API
+	   (`new Isotope()` / `.arrange()`) instead of the jQuery-Bridget
+	   `.isotope()` method jQuery-Bridget bolts onto $.fn — Isotope's
+	   packaged bundle only needs jQuery for that bridge, and the core
+	   library is jQuery-free (SOP §19 / stretch issue #21 notes).
+	================================================== */
+	BORNTOGIVE.IsoTope = function () {
+		if (typeof Isotope !== "function") return;
+
+		// Matches the original's timing exactly: Isotope instantiation
+		// (and the initial filter click that lays the grid out) waited
+		// for `window.load` — i.e. images finished loading — rather than
+		// DOMContentLoaded, since masonry needs real image heights to
+		// compute correct positions.
+		window.addEventListener(
+			"load",
+			function () {
+				document.querySelectorAll("ul.sort-source").forEach(function (source) {
+					var sortId = source.getAttribute("data-sort-id");
+					var destination = document.querySelector('ul.sort-destination[data-sort-id="' + sortId + '"]');
+					if (!destination) return;
+
+					var iso = new Isotope(destination, {
 						itemSelector: ".grid-item",
-						layoutMode: 'masonry'
+						layoutMode: "masonry",
 					});
-					source.find("a").on("click", function(e) {
-						e.preventDefault();
-						var $this = $(this),
-							filter = $this.parent().attr("data-option-value");
-						source.find("li.active").removeClass("active");
-						$this.parent().addClass("active");
-						destination.isotope({
-							filter: filter
+
+					function applyFilter(filter) {
+						source.querySelectorAll("li.active").forEach(function (li) {
+							li.classList.remove("active");
 						});
-						if(window.location.hash != "" || filter.replace(".","") != "*") {
-							self.location = "#" + filter.replace(".","");
-						}
-						return false;
-					});
-					$(window).on("hashchange", function(e) {
-						var hashFilter = "." + location.hash.replace("#",""),
-							hash = (hashFilter == "." || hashFilter == ".*" ? "*" : hashFilter);
-						source.find("li.active").removeClass("active");
-						source.find("li[data-option-value='" + hash + "']").addClass("active");
-						destination.isotope({
-							filter: hash
+						var match = source.querySelector('li[data-option-value="' + filter + '"]');
+						if (match) match.classList.add("active");
+						iso.arrange({ filter: filter === "*" ? "*" : filter });
+					}
+
+					source.querySelectorAll("a").forEach(function (link) {
+						link.addEventListener("click", function (e) {
+							e.preventDefault();
+							var filter = link.parentElement.getAttribute("data-option-value");
+							applyFilter(filter);
+							if (window.location.hash !== "" || filter.replace(".", "") !== "*") {
+								window.location.hash = filter.replace(".", "");
+							}
 						});
 					});
-					var hashFilter = "." + (location.hash.replace("#","") || "*");
-					var initFilterEl = source.find("li[data-option-value='" + hashFilter + "'] a");
-					if(initFilterEl.get(0)) {
-						source.find("li[data-option-value='" + hashFilter + "'] a").click();
+
+					window.addEventListener("hashchange", function () {
+						var hashFilter = "." + location.hash.replace("#", "");
+						var hash = hashFilter === "." || hashFilter === ".*" ? "*" : hashFilter;
+						applyFilter(hash);
+					});
+
+					var initialFilter = "." + (location.hash.replace("#", "") || "*");
+					var initialMatch = source.querySelector('li[data-option-value="' + initialFilter + '"] a');
+					if (initialMatch) {
+						initialMatch.click();
 					} else {
-						source.find("li:first-child a").click();
+						var first = source.querySelector("li:first-child a");
+						if (first) first.click();
 					}
 				});
+
+				var isotopeGrid = document.querySelector(".isotope-grid");
+				if (isotopeGrid) {
+					new Isotope(isotopeGrid, { itemSelector: ".grid-item", layoutMode: "masonry" });
+				}
+
+				var gridHolder = document.querySelector(".grid-holder");
+				if (gridHolder) {
+					var blogIso = new Isotope(gridHolder, { itemSelector: ".grid-item" });
+					window.addEventListener(
+						"resize",
+						debounce(function () {
+							blogIso.layout();
+						}, 150)
+					);
+				}
+			},
+			{ once: true }
+		);
+	};
+
+	/* ==================================================
+	   Pricing Tables — batches all height reads before any
+	   writes (SOP §5/§11: avoid layout thrash).
+	================================================== */
+	BORNTOGIVE.pricingTable = function () {
+		document.querySelectorAll(".pricing-table").forEach(function (table) {
+			var featureLists = table.querySelectorAll("> div .features");
+			var heights = [];
+			featureLists.forEach(function (el) {
+				heights.push(el.offsetHeight);
+			});
+			var tallest = Math.max.apply(null, heights.length ? heights : [0]);
+			featureLists.forEach(function (el) {
+				el.style.height = tallest > 0 ? tallest + "px" : "auto";
+			});
+		});
+	};
+
+	/* ==================================================
+	   Equal-height groups (replaces jquery.matchHeight, which was
+	   bundled in js/ui-plugins.js). Groups elements by row (same
+	   rounded offsetTop) and sets each row to its tallest member's
+	   natural height — same "byRow" behavior matchHeight had.
+	   Reads are batched before writes per element group to avoid
+	   layout thrash.
+	================================================== */
+	function matchHeightGroup(elements) {
+		var els = Array.prototype.slice.call(elements);
+		if (els.length <= 1) return;
+
+		els.forEach(function (el) {
+			el.style.height = "";
+		});
+
+		var tops = els.map(function (el) {
+			return el.getBoundingClientRect().top;
+		});
+		var rows = [];
+		els.forEach(function (el, i) {
+			var row = rows.find(function (r) {
+				return Math.abs(r.top - tops[i]) <= 1;
+			});
+			if (row) {
+				row.els.push(el);
+			} else {
+				rows.push({ top: tops[i], els: [el] });
 			}
 		});
-		$(window).load(function() {
-			var IsoTopeCont = $(".isotope-grid");
-			if (typeof jQuery.fn.isotope === 'function' && IsoTopeCont.length) {
-				IsoTopeCont.isotope({
-					itemSelector: ".grid-item",
-					layoutMode: 'masonry'
+
+		rows.forEach(function (row) {
+			var heights = row.els.map(function (el) {
+				return el.offsetHeight;
+			});
+			var max = Math.max.apply(null, heights);
+			row.els.forEach(function (el) {
+				el.style.height = max + "px";
+			});
+		});
+	}
+
+	BORNTOGIVE.matchHeights = function () {
+		document.querySelectorAll(".content").forEach(function (content) {
+			matchHeightGroup(content.querySelectorAll(".carousel-fw .grid-item .grid-item-content"));
+			matchHeightGroup(content.querySelectorAll(".featured-texts .featured-text"));
+		});
+	};
+
+	/* ==================================================
+	   Init Functions
+	================================================== */
+	function debounce(fn, wait) {
+		var timeout;
+		return function () {
+			var args = arguments;
+			var context = this;
+			clearTimeout(timeout);
+			timeout = setTimeout(function () {
+				fn.apply(context, args);
+			}, wait);
+		};
+	}
+
+	function ready(fn) {
+		if (document.readyState === "loading") {
+			document.addEventListener("DOMContentLoaded", fn);
+		} else {
+			fn();
+		}
+	}
+
+	ready(function () {
+		BORNTOGIVE.scrollToTop();
+		BORNTOGIVE.accordion();
+		BORNTOGIVE.toggle();
+		BORNTOGIVE.toolTip();
+		BORNTOGIVE.SwiperCarousel();
+		BORNTOGIVE.GLightbox();
+		BORNTOGIVE.IsoTope();
+		BORNTOGIVE.heroSwiper();
+		BORNTOGIVE.gallerySwiper();
+		BORNTOGIVE.pricingTable();
+		BORNTOGIVE.MobileMenu();
+		BORNTOGIVE.matchHeights();
+
+		/* Centering the dropdown menus — removed. This jQuery mouseover
+		   handler computed an inline `left` offset for `.dd-menu li ul`.
+		   The only nav on this site is the megamenu (`.dd-menu > li.megamenu`),
+		   whose dropdown width/position is pinned with `left: 0 !important`
+		   in css/style.css — the JS-computed inline style was always
+		   overridden by that `!important` rule, so this was a no-op. */
+
+		/* Donation Modal (single amount) */
+		var predefinedAmount = document.querySelector(".predefined-amount input[name=total-amount]:checked");
+		if (predefinedAmount) predefinedAmount.closest("label").classList.add("selected");
+		document.querySelectorAll(".predefined-amount input[name=total-amount]").forEach(function (radio) {
+			radio.addEventListener("click", function () {
+				document.querySelectorAll(".predefined-amount input[name=total-amount]").forEach(function (r) {
+					if (r !== radio) r.closest("label").classList.remove("selected");
+				});
+				radio.closest("label").classList.add("selected");
+			});
+		});
+
+		/* Donation Modal (subscription frequency) */
+		var predefinedAmount2 = document.querySelector(".predefined-amount2 input[name=subscription]:checked");
+		if (predefinedAmount2) predefinedAmount2.closest("label").classList.add("selected");
+		document.querySelectorAll(".predefined-amount2 input[name=subscription]").forEach(function (radio) {
+			radio.addEventListener("click", function () {
+				document.querySelectorAll(".predefined-amount2 input[name=subscription]").forEach(function (r) {
+					if (r !== radio) r.closest("label").classList.remove("selected");
+				});
+				radio.closest("label").classList.add("selected");
+			});
+		});
+	});
+
+	window.addEventListener(
+		"load",
+		function () {
+			function appendZoomIcon(selector, iconClass) {
+				document.querySelectorAll(selector).forEach(function (el) {
+					var mediaBox = el.querySelector(".media-box");
+					if (!mediaBox) return;
+					var span = document.createElement("span");
+					span.className = "zoom";
+					span.innerHTML = '<span class="icon"><i class="fa ' + iconClass + '" aria-hidden="true"></i></span>';
+					mediaBox.appendChild(span);
 				});
 			}
-			if (typeof jQuery.fn.isotope === 'function' && $(".grid-holder").length > 0){	
-				var $container_blog = $('.grid-holder');
-				$container_blog.isotope({
-					itemSelector : '.grid-item'
-				});
-				$(window).resize(function() {
-					var $container_blog = $('.grid-holder');
-					$container_blog.isotope({
-						itemSelector : '.grid-item'
+			appendZoomIcon(".format-image", "fa-search");
+			appendZoomIcon(".format-standard", "fa-plus");
+			appendZoomIcon(".format-video", "fa-play");
+			appendZoomIcon(".format-link", "fa-link");
+
+			document.querySelectorAll(".carousel-wrapper").forEach(function (el) {
+				el.style.background = "none";
+			});
+		},
+		{ once: true }
+	);
+
+	/* Icon prepend — decorative leading icons, applied once at parse
+	   time (this script is `defer`red, so the DOM is fully parsed by
+	   the time this IIFE body runs). */
+	function prependIcon(selector, html) {
+		document.querySelectorAll(selector).forEach(function (el) {
+			el.insertAdjacentHTML("afterbegin", html);
+		});
+	}
+	prependIcon(".basic-link", '<i class="fa fa-angle-right" aria-hidden="true"></i> ');
+	prependIcon(".basic-link.backward", '<i class="fa fa-angle-left" aria-hidden="true"></i> ');
+	prependIcon("ul.checks li", '<i class="fa fa-check" aria-hidden="true"></i> ');
+	prependIcon(
+		"ul.angles li, .widget_categories ul li a, .widget_archive ul li a, .widget_recent_entries ul li a, .widget_recent_comments ul li a, .widget_links ul li a, .widget_meta ul li a",
+		'<i class="fa fa-caret-right" aria-hidden="true"></i> '
+	);
+	prependIcon("ul.chevrons li", '<i class="fa fa-chevron-right" aria-hidden="true"></i> ');
+	prependIcon("ul.carets li, ul.inline li", '<i class="fa fa-caret-right" aria-hidden="true"></i> ');
+	prependIcon("a.external", '<i class="fa fa-external-link" aria-hidden="true"></i> ');
+
+	/* Animation Appear / Animation Progress Bars — IntersectionObserver
+	   replacing jQuery.appear() (SOP §11's preferred scroll-position-
+	   driven pattern). Only live on the shortcodes.html style-guide
+	   pages; width-based progress-bar fill is kept (it mirrors the
+	   original demo exactly) but gated behind prefers-reduced-motion,
+	   which jumps straight to the final width with no transition. */
+	function initAppearAnimations() {
+		var appearEls = document.querySelectorAll("[data-appear-animation]");
+		if (appearEls.length && "IntersectionObserver" in window) {
+			var io = new IntersectionObserver(
+				function (entries, obs) {
+					entries.forEach(function (entry) {
+						if (!entry.isIntersecting) return;
+						var el = entry.target;
+						obs.unobserve(el);
+						var delay = parseInt(el.getAttribute("data-appear-animation-delay"), 10) || 1;
+						el.classList.add("appear-animation");
+						if (delay > 1) el.style.animationDelay = delay + "ms";
+						el.classList.add(el.getAttribute("data-appear-animation"));
+						setTimeout(function () {
+							el.classList.add("appear-animation-visible");
+						}, delay);
 					});
-				});
-			}
-		});
-	}
-/* ==================================================
-   Pricing Tables
-================================================== */
-	var $tallestCol;
-	BORNTOGIVE.pricingTable = function(){
-		$('.pricing-table').each(function(){
-			$tallestCol = 0;
-			$(this).find('> div .features').each(function(){
-				($(this).height() > $tallestCol) ? $tallestCol = $(this).height() : $tallestCol = $tallestCol;
-			});	
-			if($tallestCol == 0) $tallestCol = 'auto';
-			$(this).find('> div .features').css('height',$tallestCol);
-		});
-	}
-/* ==================================================
-   Circle Progress
-================================================== */
-	BORNTOGIVE.CProgress = function() {
-		$('.cProgress').each(function(){
-			var cproInstance = $(this); 
-			var cprocomplete = cproInstance.attr("data-complete") ? cproInstance.attr("data-complete") : "0.1"
-			var cprocolor = cproInstance.attr("data-color") ? cproInstance.attr("data-color") : "d82e67"
-			var cprocompleteperc = cprocomplete/100
-			cproInstance.circleProgress({
-				value: cprocompleteperc,
-				size: 60.0,
-				emptyFill: 'rgba(0, 0, 0, .1)',
-				fill: { color: '#'+cprocolor }
-			}).on('circle-animation-progress', function(event, progress) {
-				cproInstance.find('strong').html(parseInt(cprocomplete * progress, 10) + '<i>%</i>');
+				},
+				{ rootMargin: "-150px 0px 0px 0px", threshold: 0 }
+			);
+			appearEls.forEach(function (el) {
+				io.observe(el);
 			});
-		});
-	}
-	
-/* ==================================================
-   Init Functions
-================================================== */
-$(document).ready(function(){
-	BORNTOGIVE.scrollToTop();
-	BORNTOGIVE.accordion();
-	BORNTOGIVE.toggle();
-	BORNTOGIVE.toolTip();
-	BORNTOGIVE.TwitterWidget();
-	BORNTOGIVE.SwiperCarousel();
-	BORNTOGIVE.GLightbox();
-	BORNTOGIVE.SuperFish();
-	BORNTOGIVE.Counters();
-	BORNTOGIVE.IsoTope();
-	BORNTOGIVE.StickyHeader();
-	BORNTOGIVE.heroSwiper();
-	BORNTOGIVE.gallerySwiper();
-	BORNTOGIVE.pricingTable();
-	BORNTOGIVE.MobileMenu();
-	BORNTOGIVE.CProgress();
-	$('.selectpicker').selectpicker({container:'body'});
-	WWHGetter();
-	// apply matchHeight to each item container's items
-	$('.content').each(function() {
-		$(this).find('.carousel-fw .grid-item').find('.grid-item-content').matchHeight({
-			//property: 'min-height'
-		});
-		$(this).find('.featured-texts').find('.featured-text').matchHeight({
-			//property: 'min-height'
-		});
-	});
-});
-
-// DESIGN ELEMENTS //
-
-// Centering the dropdown menus
-$(".dd-menu li").mouseover(function() {
-	 var the_width = $(this).find("a").width();
-	 var child_width = $(this).find("ul").width();
-	 var width = ((child_width - the_width)/2);
-	 $(this).find("ul").css('left', -width);
-});
-
-// WINDOW RESIZE FUNCTIONS //
-$(window).resize(function(){
-	WWHGetter();
-});
-
-// Any Button Scroll to section
-$('.scrollto').on("click", function(){
-	$.scrollTo( this.hash, 800, { easing:'easeOutQuint' });
-	return false;
-});
-
-// FITVIDS
-$(".fw-video, .post-media").fitVids();
-
-//Donation Modal
-$('.predefined-amount input[name=total-amount]:checked').parent('label').addClass("selected");
-$('.predefined-amount input[name=total-amount]').on('click',function() {
-	$('.predefined-amount input[name=total-amount]:not(:checked)').parent('label').removeClass("selected");
-	$(this).parent('label').addClass("selected");
-});
-
-
-//Donation Modal2
-$('.predefined-amount2 input[name=subscription]:checked').parent('label').addClass("selected");
-$('.predefined-amount2 input[name=subscription]').on('click',function() {
-	$('.predefined-amount2 input[name=subscription]:not(:checked)').parent('label').removeClass("selected");
-	$(this).parent('label').addClass("selected");
-});
-
-$(window).load(function(){
-	$(".format-image").each(function(){
-		$(this).find(".media-box").append("<span class='zoom'><span class='icon'><i class='fa fa-search'></i></span></span>");
-	});
-	$(".format-standard").each(function(){
-		$(this).find(".media-box").append("<span class='zoom'><span class='icon'><i class='fa fa-plus'></i></span></span>");
-	});
-	$(".format-video").each(function(){
-		$(this).find(".media-box").append("<span class='zoom'><span class='icon'><i class='fa fa-play'></i></span></span>");
-	});
-	$(".format-link").each(function(){
-		$(this).find(".media-box").append("<span class='zoom'><span class='icon'><i class='fa fa-link'></i></span></span>");
-	});
-	$(".additional-images .owl-carousel .item-video").each(function(){
-		$(this).append("<span class='icon'><i class='fa fa-play'></i></span>");
-	});
-	BORNTOGIVE.StickyHeader();
-	$('.carousel-wrapper').css('background','none');
-	
-});
-
-// Icon Append
-$('.basic-link').prepend(' <i class="fa fa-angle-right"></i>');
-$('.basic-link.backward').prepend(' <i class="fa fa-angle-left"></i> ');
-$('ul.checks li').prepend('<i class="fa fa-check"></i> ');
-$('ul.angles li, .widget_categories ul li a, .widget_archive ul li a, .widget_recent_entries ul li a, .widget_recent_comments ul li a, .widget_links ul li a, .widget_meta ul li a').prepend('<i class="fa fa-caret-right"></i> ');
-$('ul.chevrons li').prepend('<i class="fa fa-chevron-right"></i> ');
-$('ul.carets li, ul.inline li').prepend('<i class="fa fa-caret-right"></i> ');
-$('a.external').prepend('<i class="fa fa-external-link"></i> ');
-
-// Animation Appear
-var AppDel;
-function AppDelFunction($appd) {
-	$appd.addClass("appear-animation");
-	if(!$("html").hasClass("no-csstransitions") && $(window).width() > 767) {
-		$appd.appear(function() {
-			var delay = ($appd.attr("data-appear-animation-delay") ? $appd.attr("data-appear-animation-delay") : 1);
-			if(delay > 1) $appd.css("animation-delay", delay + "ms");
-			$appd.addClass($appd.attr("data-appear-animation"));
-			setTimeout(function() {
-				$appd.addClass("appear-animation-visible");
-			}, delay);
-			clearTimeout();
-		}, {accX: 0, accY: -150});
-	} else {
-		$appd.addClass("appear-animation-visible");
-	}
-}
-function AppDelStopFunction() {
-	clearTimeout(AppDel);
-}
-$("[data-appear-animation]").each(function() {
-	var $this = $(this);
-	AppDelFunction($this);
-	AppDelStopFunction();
-});
-// Animation Progress Bars
-
-var AppAni;
-function AppAniFunction($anim) {
-	$anim.appear(function() {
-		var delay = ($anim.attr("data-appear-animation-delay") ? $anim.attr("data-appear-animation-delay") : 1);
-		if(delay > 1) $anim.css("animation-delay", delay + "ms");
-		$anim.addClass($anim.attr("data-appear-animation"));
-		setTimeout(function() {
-			$anim.animate({
-				width: $anim.attr("data-appear-progress-animation")
-			}, 1500, "easeOutQuad", function() {
-				$anim.find(".progress-bar-tooltip").animate({
-					opacity: 1
-				}, 500, "easeOutQuad");
+		} else {
+			appearEls.forEach(function (el) {
+				el.classList.add("appear-animation", "appear-animation-visible");
 			});
-		}, delay);
-		clearTimeout();
-	}, {accX: 0, accY: -50});
-}
-function AppAniStopFunction() {
-	clearTimeout(AppAni);
-}
-$("[data-appear-progress-animation]").each(function() {
-	var $this = $(this);
-	AppAniFunction($this);
-	AppAniStopFunction();
-});
+		}
 
-// Parallax Jquery Callings removed (SOP §11) — the jQuery Parallax
-// plugin + this Modernizr.touch gate were deleted along with
-// js/helper-plugins.js's plugin registration; .parallax1-8 elements
-// now render via the CSS-only .parallax fallback in css/style.css
-// (background-attachment: fixed, static on touch/.page-banner).
+		var progressEls = document.querySelectorAll("[data-appear-progress-animation]");
+		if (progressEls.length && "IntersectionObserver" in window) {
+			var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+			var ioProgress = new IntersectionObserver(
+				function (entries, obs) {
+					entries.forEach(function (entry) {
+						if (!entry.isIntersecting) return;
+						var el = entry.target;
+						obs.unobserve(el);
+						var target = el.getAttribute("data-appear-progress-animation");
+						var delay = parseInt(el.getAttribute("data-appear-animation-delay"), 10) || 1;
+						setTimeout(
+							function () {
+								if (!reducedMotion) el.style.transition = "width 1.5s ease-out";
+								el.style.width = target;
+								var tooltip = el.querySelector(".progress-bar-tooltip");
+								if (tooltip) {
+									tooltip.style.transition = reducedMotion ? "none" : "opacity 0.5s ease-out";
+									tooltip.style.opacity = "1";
+								}
+							},
+							reducedMotion ? 0 : delay
+						);
+					});
+				},
+				{ rootMargin: "-50px 0px 0px 0px", threshold: 0 }
+			);
+			progressEls.forEach(function (el) {
+				ioProgress.observe(el);
+			});
+		}
+	}
+	initAppearAnimations();
 
-// Window height/Width Getter Classes
-function WWHGetter(){
-	var wheighter = $(window).height();
-	var wwidth = $(window).width();
-	$(".wheighter").css("height",wheighter);
-	$(".wwidth").css("width",wwidth);
-}
-});
+	window.BORNTOGIVE = BORNTOGIVE;
+})();

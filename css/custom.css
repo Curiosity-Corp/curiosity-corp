@@ -470,3 +470,84 @@ p {
   aspect-ratio: 16 / 9;
   border: 0;
 }
+
+/* ==================================================
+   jQuery retirement (GitLab #19) — CSS-only replacements
+   ================================================== */
+
+/* Megamenu: keyboard-accessible dropdown, replacing Superfish's
+   focusin/focusout handlers. The existing `:hover` rule in
+   css/style.css only opens the dropdown for a mouse; :focus-within
+   gives keyboard users (tabbing through the mega-menu's links) the
+   same reveal with zero JS. */
+.dd-menu > li:focus-within > ul {
+  display: block;
+}
+
+/* Caret icon after each top-level nav label. Every top-level item on
+   this site's nav is `.megamenu` (verified: no non-mega multi-level
+   dropdowns exist), so a single static rule replaces the DOM-injected
+   <i class="fa fa-caret-down"> that BORNTOGIVE.SuperFish() used to
+   append via jQuery. */
+.dd-menu > li.megamenu > a::after {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  content: "\f0d7";
+  font-size: 10px;
+  margin-left: 6px;
+}
+
+/* FitVids replacement: the one remaining raw (non-facade) video
+   iframe (cause/devdojo.html) and any future .post-media/.fw-video
+   iframe get a native intrinsic-ratio box instead of the old
+   padding-top-hack wrapper FitVids built at runtime. */
+.post-media iframe,
+.fw-video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+/* Native <select> replacing bootstrap-select/selectpicker. Matches
+   the visual weight of the .form-control text inputs these selects
+   sit next to. */
+.form-select.selectpicker-replacement,
+select.form-select {
+  font-weight: 400;
+}
+
+/* Circle progress (stat circles on causes.html / causes-grid.html):
+   vanilla SVG replacing jquery-circle-progress's <canvas>. */
+.cProgress {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+.cProgress svg {
+  width: 60px;
+  height: 60px;
+  transform: rotate(-90deg);
+}
+.cProgress circle {
+  fill: none;
+  stroke-width: 4;
+}
+.cProgress circle.cProgress-track {
+  stroke: rgba(0, 0, 0, 0.1);
+}
+.cProgress circle.cProgress-fill {
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.2s ease;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cProgress circle.cProgress-fill {
+    transition-duration: 0.01ms;
+  }
+}
+.cProgress strong {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
