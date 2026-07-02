@@ -220,6 +220,33 @@ h4a {
   box-shadow: 0 0 0 4px #217c91;
 }
 
+/* Skip-to-content link (a11y wave) — the markup
+   (`<a class="skip-link" href="#main-content">`, first element in
+   <body> on every page) had no matching CSS anywhere in the
+   codebase, so it rendered as a plain inline link, always visible.
+   Fixed positioning moves it off-screen by default; it only enters
+   the viewport on keyboard focus. `position: fixed` (not `absolute`)
+   because it sits before any positioned ancestor, so it must anchor
+   to the viewport itself, not the initial containing block. */
+.skip-link {
+  position: fixed;
+  top: -60px;
+  left: 0;
+  z-index: 10500;
+  padding: 12px 20px;
+  background: #217c91;
+  color: #fff;
+  font-family: "Lato", "Lato Fallback", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 6px 0;
+  transition: top 0.15s ease;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  top: 0;
+}
+
 /* Fluid heading wrap — evens out ragged line lengths and kills
    orphaned single words on headings; body copy gets the softer
    orphan/widow-avoidance variant. Both are progressive enhancement:
