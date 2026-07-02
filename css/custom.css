@@ -488,13 +488,18 @@ p {
    this site's nav is `.megamenu` (verified: no non-mega multi-level
    dropdowns exist), so a single static rule replaces the DOM-injected
    <i class="fa fa-caret-down"> that BORNTOGIVE.SuperFish() used to
-   append via jQuery. */
+   append via jQuery. Drawn as a CSS border-triangle (GitLab #20 icon
+   consolidation) instead of an icon-font glyph, so it needs no font file. */
 .dd-menu > li.megamenu > a::after {
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  content: "\f0d7";
-  font-size: 10px;
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
   margin-left: 6px;
+  vertical-align: middle;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
 }
 
 /* FitVids replacement: the one remaining raw (non-facade) video
@@ -550,4 +555,36 @@ select.form-select {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* ==================================================
+   SVG icon sprite system (GitLab #20)
+   Replaces the dual Font Awesome + outlined-iconset icon-font setup.
+   Every icon usage is now <svg class="icon"><use href="{depth}images/
+   icons.svg#id"></use></svg>, referencing the single sprite at
+   images/icons.svg. Sized like the font icons it replaces (1em square,
+   scaling with any inherited fa-1x..fa-10x font-size utility class) and
+   colored via currentColor so it still follows the surrounding text
+   color the way the icon font's `color` property used to.
+   ================================================== */
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  overflow: visible;
+  fill: currentColor;
+  vertical-align: -0.125em;
+}
+
+/* Size-scale utility classes carried over from the old icon-font system
+   (only the sizes actually used on .icon elements survive the removal
+   of the Font Awesome CSS block below). */
+.fa-3x {
+  font-size: 3em;
+}
+.fa-4x {
+  font-size: 4em;
+}
+.fa-5x {
+  font-size: 5em;
 }
