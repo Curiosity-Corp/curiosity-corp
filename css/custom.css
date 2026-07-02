@@ -342,6 +342,21 @@ p {
   --swiper-pagination-bullet-horizontal-gap: 8px;
 }
 
+/* Target size (WCAG 2.2 SC 2.5.8, SOP §8) continued: axe's real failing
+   neighbor here isn't the adjacent bullet (that pairwise gap already
+   clears 24px offset above) -- it's the card content the pagination row
+   floats over. Swiper positions .swiper-pagination `position:absolute;
+   bottom:8px` *inside* its own .swiper container, and card-grid carousels
+   (wrapped in .carousel-wrapper, e.g. the multi-item "Latest News" slider)
+   size that container to fit their content exactly, so the dot row
+   overlaps the bottom few px of the last card link. The full-bleed hero
+   slider doesn't use .carousel-wrapper and isn't affected. Reserve real
+   space below the slide content so the dots sit clear of it instead of on
+   top of it. */
+.carousel-wrapper .swiper {
+  padding-bottom: 24px;
+}
+
 /* SOP 11-animation: non-compositor transitions in style.css replaced
    with transform/opacity equivalents — same visual result, animates
    only properties the compositor can handle off the main thread.
