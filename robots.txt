@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+Disallow: /info/
+
+Sitemap: https://curiositycorp.org/sitemap.xml
+
+# AI answer-engine crawlers — allowed for citation/discoverability
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Bulk-scraping bots not tied to a citing answer engine — blocked
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /

@@ -1,0 +1,28 @@
+# Curiosity Research Corporation
+
+> Curiosity Research Corporation is a research institute with a 501(c)(3) application pending IRS determination, studying the psychology of curiosity in humans and machines to engineer the pedagogy of the next century.
+
+## Key pages
+- [Home](https://curiositycorp.org/): Overview of the mission, research charter, and current programs.
+- [We Teach the Future](https://curiositycorp.org/about/future.html): Original literacy for AI, aerospace, physics, and computational thinking, taught by working practitioners.
+- [Pedagogy as Original Research](https://curiositycorp.org/about/pedagogy.html): The research process behind the S.P.A.R.K. framework and the Dream Quest learning journey, extended to AI and machine learners.
+- [Our Team](https://curiositycorp.org/about/team.html): The practitioners, board members, and contributors behind the organization's pedagogy work.
+- [Our Causes](https://curiositycorp.org/cause/index.html): The program portfolio — including Developer Dojo, iBlossom, INSTAR Lab, and Ignite Curiosity — each a distinct mechanism for igniting curiosity into frontier education.
+- [Curiosity Consortium](https://curiositycorp.org/consortium/index.html): The umbrella of programs and partnerships uniting original pedagogy with the frontier disciplines it teaches.
+- [Our Mission](https://curiositycorp.org/impact/mission.html): The governing vision — make the world more curious — and the research charter covering human and machine learners alike.
+- [Our Impact](https://curiositycorp.org/impact/index.html): How impact is measured, including named programs and auditable evidence infrastructure (the DreamTrack portfolio system).
+- [Partner with Us](https://curiositycorp.org/partner/index.html): Institutional partnerships with K-12 schools, universities, corporations, and intergovernmental bodies.
+- [Get Involved](https://curiositycorp.org/get-involved/index.html): Ways to donate, volunteer, advocate, fundraise, or start a Curiosity Chapter.
+- [Give](https://curiositycorp.org/get-involved/give.html): Fund the S.P.A.R.K. framework, Curiosity Coaches, and the DreamTrack portfolio system.
+- [Contact](https://curiositycorp.org/get-involved/contact.html): Reach the team — donors, grant officers, partners, press, and prospective volunteers.
+- [News & Insights](https://curiositycorp.org/news/index.html): Thought leadership on frontier pedagogy and the workforce pipeline the organization is building.
+- [Convenings & Briefings](https://curiositycorp.org/events/index.html): Frontier-pedagogy briefings, program showcases, and partner convenings.
+
+## Organization facts
+- Legal name: Curiosity Research Corporation (also referred to as Curiosity Corporation).
+- Tax status: 501(c)(3) tax-exempt application pending IRS determination — not yet a determined/approved tax-exempt organization. EIN 33-3478603.
+- Address: 200 Henrietta St, Ravenswood, WV 26164, USA.
+- Phone: +1 929-229-2917.
+- Focus: research into the psychology of curiosity and the pedagogy that sparks it, for human learners and for AI/machine learning systems.
+- Named frameworks and programs: S.P.A.R.K., the Dream Quest learning journey, the DreamTrack portfolio system, Curiosity Coaches, Curiosity Campus, Curiosity Community, Curiosity Chapters, Curiosity Cottages, Curiosity Compass, Curiosity Classroom (an open-source LMS), the Curiosity Consortium, Developer Dojo, iBlossom, INSTAR Lab, and Ignite Curiosity.
+- Regions of active work: Appalachia (Mid-Ohio Valley), with Curiosity Chapters in Asia, Africa, and Rural America.
