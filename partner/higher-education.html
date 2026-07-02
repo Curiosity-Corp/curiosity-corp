@@ -24,14 +24,13 @@
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="../css/style.css" rel="stylesheet" type="text/css">
 <link href="../vendor/glightbox/glightbox.min.css" rel="stylesheet" type="text/css">
-<script src="../vendor/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="../vendor/sweetalert2/sweetalert2.all.min.js" defer></script>
 <!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="../css/ie.css" media="screen" /><![endif]-->
 <link href="../css/custom.css" rel="stylesheet" type="text/css"><!-- CUSTOM STYLESHEET FOR STYLING -->
 <!-- Color Style -->
 <link href="../colors/color1.css" rel="stylesheet" type="text/css">
 <!-- SCRIPTS
   ================================================== -->
-<script src="../js/modernizr.js"></script><!-- Modernizr -->
 <link rel="icon" href="../images/favicon/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="../images/favicon/apple-touch-icon.png">
 <link rel="manifest" href="../site.webmanifest">
@@ -712,24 +711,29 @@
 
 
 <!-- Mailchimp Newsletter Script -->
-<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='MMERGE6';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='text';fnames[8]='MMERGE8';ftypes[8]='text';fnames[9]='MMERGE9';ftypes[9]='text';fnames[10]='MMERGE10';ftypes[10]='text';fnames[11]='MMERGE11';ftypes[11]='text';fnames[12]='MMERGE12';ftypes[12]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+<script type='text/javascript' src='https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js' defer></script><script type='text/javascript'>document.addEventListener('DOMContentLoaded', function () {
+(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='MMERGE6';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='text';fnames[8]='MMERGE8';ftypes[8]='text';fnames[9]='MMERGE9';ftypes[9]='text';fnames[10]='MMERGE10';ftypes[10]='text';fnames[11]='MMERGE11';ftypes[11]='text';fnames[12]='MMERGE12';ftypes[12]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
+});</script>
 
-<script src="../js/jquery-3.7.1.min.js"></script> <!-- Jquery Library Call -->
-<script src="../js/jquery-migrate-3.6.0.min.js"></script> <!-- Jquery Migrate Shim -->
-<script src="../vendor/glightbox/glightbox.min.js"></script> <!-- GLightbox -->
-<script src="../js/ui-plugins.js"></script> <!-- UI Plugins -->
-<script src="../js/helper-plugins.js"></script> <!-- Helper Plugins -->
-<script src="../js/bootstrap.js"></script> <!-- UI -->
-<script src="../js/init.js"></script> <!-- All Scripts -->
-<script src="../js/circle-progress.js"></script> <!-- Circle Progress Bars -->
+<script src="../js/jquery-3.7.1.min.js" defer></script> <!-- Jquery Library Call -->
+<script src="../js/jquery-migrate-3.6.0.min.js" defer></script> <!-- Jquery Migrate Shim -->
+<script src="../vendor/glightbox/glightbox.min.js" defer></script> <!-- GLightbox -->
+<script src="../js/ui-plugins.js" defer></script> <!-- UI Plugins -->
+<script src="../js/helper-plugins.js" defer></script> <!-- Helper Plugins -->
+<script src="../js/bootstrap.js" defer></script> <!-- UI -->
+<script src="../js/init.js" defer></script> <!-- All Scripts -->
+<script src="../js/circle-progress.js" defer></script> <!-- Circle Progress Bars -->
 
   
-<script src="../js/jquery.validate.js"></script>
-<script>
-    $("#request").validate();
-</script>
+<script src="../js/jquery.validate.js" defer></script>
+<script>document.addEventListener('DOMContentLoaded', function () {
 
-<script>
+    $("#request").validate();
+
+});</script>
+
+<script>document.addEventListener('DOMContentLoaded', function () {
+
     $("#request").submit(function(event){
     if (!$("#request").validate().form()) {
     return false; //doesn't validate
@@ -771,7 +775,8 @@
     }); //form is validated do your work
     }
 });
-</script>
+
+});</script>
 
 
 </body>
