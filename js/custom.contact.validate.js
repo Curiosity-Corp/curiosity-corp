@@ -142,37 +142,33 @@ function showSuccess() {
     grecaptcha.ready(function () {
         grecaptcha.execute("6LcHIYcUAAAAAPnqH0iBwnDeFma0mWAMJKJHAoEO").then(function (token) {
             document.querySelector('input[name=token]').value = token;
-            let a = $('form#contactform');
-            console.log(a.serialize())
-            $.ajax({
-                type: a.attr('method'),
-                url: a.attr('action'),
-                data: a.serialize(),
-                success: function (data, textStatus, xhr) {
-                    console.log(xhr.status)
-                    if (xhr.status === 200) {
-                        Swal.fire({
-                            title: "Thank You!",
-                            icon: "success",
-                            confirmButtonText: 'Ok'
-                        });
-                        resetForm();
-                    } else {
-                        Swal.fire({
-                            title: "Some Error Occurred!",
-                            icon: "error",
-                            confirmButtonText: 'Ok'
-                        });
-                    }
-                },
-                error: function (data) {
+            var formEl = document.querySelector('form#contactform');
+            var body = new URLSearchParams(new FormData(formEl));
+            fetch(formEl.getAttribute('action'), {
+                method: formEl.getAttribute('method') || 'POST',
+                body: body
+            }).then(function (response) {
+                if (response.status === 200) {
                     Swal.fire({
-                        title: "An unexpected Error Occurred!",
+                        title: "Thank You!",
+                        icon: "success",
+                        confirmButtonText: 'Ok'
+                    });
+                    resetForm();
+                } else {
+                    Swal.fire({
+                        title: "Some Error Occurred!",
                         icon: "error",
                         confirmButtonText: 'Ok'
-                    })
-                },
-            })
+                    });
+                }
+            }).catch(function () {
+                Swal.fire({
+                    title: "An unexpected Error Occurred!",
+                    icon: "error",
+                    confirmButtonText: 'Ok'
+                });
+            });
         });
     });
 }

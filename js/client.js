@@ -23,7 +23,8 @@ function updateForm(control) {
   address = document.getElementById('address').value;
   city = document.getElementById('city').value;
   state = document.getElementById('state').value;
-  totalamount = parseInt($("input[name=total-amount]:checked").val());
+  var checkedAmount = document.querySelector("input[name=total-amount]:checked");
+  totalamount = parseInt(checkedAmount ? checkedAmount.value : totalamount, 10);
   subscription = document.getElementById("subscription").checked;
   membership = document.getElementById("membership").checked;
   console.log("Subscription is " + subscription);
@@ -43,11 +44,11 @@ if(subscription == false){
     billing_details: {name: cardholderName.value}
   });
   if (error) {
-  $("#card-errors").fadeIn();
+  errorElement.style.display = 'block';
   console.log(error.message);
   errorElement.textContent = error.message;
   } else {
-  $("#card-errors").fadeOut();
+  errorElement.style.display = 'none';
   console.log("Send Payment Stringify to Server");
   var fullbody = JSON.stringify({cardholderName: cardholderName.value, totalamount : totalamount, subscription : subscription, email : email, tel : tel, address: address, city : city, state : state, membership : membership, payment_method_id: paymentMethod.id});
   console.log(fullbody);
@@ -67,14 +68,14 @@ else{
   // FOR MONTHLY DONATION SUBSCRIPTION
   console.log("Monthly Payment Subscription");
   errorElement.textContent = "We will offer monthly donations in the future. Thank you!";
-  $("#card-errors").fadeIn();
+  document.getElementById("card-errors").style.display = "block";
 }
 });
 
 
 const handleServerResponse = async (response) => {
   if (response.error) {
-    $("#card-errors").fadeIn();
+    document.getElementById("card-errors").style.display = "block";
     console.log(response.error.message);
     errorElement.textContent = response.error.message;
   } else if (response.requires_action) {
@@ -83,7 +84,7 @@ const handleServerResponse = async (response) => {
 
     if (errorAction) {
     console.log(errorAction.message);
-    $("#card-errors").fadeIn();
+    document.getElementById("card-errors").style.display = "block";
     errorElement.textContent = errorAction.message;
     } else {
       console.log("Send Payment (again) Stringify to Server");
