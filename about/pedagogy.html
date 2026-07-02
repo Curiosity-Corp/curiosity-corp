@@ -597,17 +597,17 @@
                         </div>
                         <div class="widget sidebar-widget widget_search">
                             <form action="https://taolearning.us3.list-manage.com/subscribe/post?u=b9ba2bf94a52e703daf076861&amp;id=cb8a7b1c52" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                                <label>Subscribe to our Newsletter</label>
+                                <label for="mce-EMAIL">Subscribe to our Newsletter</label>
                                 <div class="input-group">
-                                    <input type="email" name="EMAIL" class="required email form-control" id="mce-EMAIL" placeholder="Email Address">
+                                    <input type="email" name="EMAIL" class="required email form-control" id="mce-EMAIL" placeholder="Email Address" autocomplete="email" required aria-required="true">
                                     <span class="input-group-btn">
-                                        <button class="btn btn-primary" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe"><i class="fa fa-newspaper"></i></button>
+                                        <button class="btn btn-primary" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" aria-label="Subscribe"><i class="fa fa-newspaper" aria-hidden="true"></i></button>
                                     </span>
                                 </div>
                                 <div class="row">
                                     <div id="mce-responses" class="clear">
-                                        <div class="response" id="mce-error-response" style="display:none"></div>
-                                        <div class="response" id="mce-success-response" style="display:none"></div>
+                                        <div class="response" id="mce-error-response" role="alert" style="display:none"></div>
+                                        <div class="response" id="mce-success-response" role="status" style="display:none"></div>
                                     </div> 
                                     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b9ba2bf94a52e703daf076861_cb8a7b1c52" tabindex="-1" value=""></div>
                                 </div>
@@ -758,10 +758,7 @@
   	</div>
 </div>
 
-<!-- Mailchimp Newsletter Script -->
-<script type='text/javascript' src='https://s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js' defer></script><script type='text/javascript'>document.addEventListener('DOMContentLoaded', function () {
-(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='MMERGE6';ftypes[6]='text';fnames[7]='MMERGE7';ftypes[7]='text';fnames[8]='MMERGE8';ftypes[8]='text';fnames[9]='MMERGE9';ftypes[9]='text';fnames[10]='MMERGE10';ftypes[10]='text';fnames[11]='MMERGE11';ftypes[11]='text';fnames[12]='MMERGE12';ftypes[12]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
-});</script>
+<script src="../js/newsletter.js" defer></script> <!-- Vanilla newsletter signup (self-hosted, no third-party jQuery bundle) -->
 <script src="../vendor/glightbox/glightbox.min.js" defer></script> <!-- GLightbox -->
 <script src="../vendor/swiper/swiper-bundle.min.js" defer></script> <!-- Swiper -->
 <script src="../js/bootstrap.js" defer></script> <!-- UI -->
