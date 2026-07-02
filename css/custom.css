@@ -386,12 +386,19 @@ p {
 }
 
 /* lite-embed.js facade — click-to-load YouTube replacement. Fills the same
-   width/height the iframe it replaces used, so no CLS on activation. */
+   width/height the iframe it replaces used, so no CLS on activation. Markup
+   is a native <button>, so reset the browser's default button chrome. */
 .yt-facade {
   position: relative;
   display: block;
   width: 100%;
   max-width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  text-align: left;
+  appearance: none;
   cursor: pointer;
   background: #000;
   overflow: hidden;

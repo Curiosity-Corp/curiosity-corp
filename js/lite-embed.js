@@ -1,7 +1,9 @@
 /* lite-embed.js — click-to-load facade for embedded YouTube videos.
    Renders a static thumbnail + play button; the real <iframe> is only
    created on click/Enter/Space, so the YouTube iframe/JS payload is
-   never fetched unless a visitor actually presses play. */
+   never fetched unless a visitor actually presses play. The facade is a
+   native <button>, so Enter/Space activation is handled by the browser --
+   only the click event needs a listener here. */
 (function () {
 	"use strict";
 
@@ -27,21 +29,12 @@
 		iframe.focus();
 	}
 
-	function onKeydown(e) {
-		if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
-			e.preventDefault();
-			activate(e.currentTarget);
-		}
-	}
-
 	function init() {
 		var facades = document.querySelectorAll(".yt-facade");
 		for (var i = 0; i < facades.length; i++) {
-			var facade = facades[i];
-			facade.addEventListener("click", function (e) {
+			facades[i].addEventListener("click", function (e) {
 				activate(e.currentTarget);
 			});
-			facade.addEventListener("keydown", onKeydown);
 		}
 	}
 
