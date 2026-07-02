@@ -296,3 +296,31 @@ p {
 .demo-h1 {
   font-size: 42px;
 }
+
+/* SOP 11-animation: non-compositor transitions in style.css replaced
+   with transform/opacity equivalents — same visual result, animates
+   only properties the compositor can handle off the main thread.
+   Both win by source order (custom.css loads after style.css). */
+
+/* was `transition: width 0.3s ease` growing 30px -> 50px on hover;
+   width itself is now fixed at the "grown" size and the shrink is a
+   scaleX() the compositor can animate for free. */
+.icon-box.ibox-center:not(.ibox-bg) h3:after {
+  width: 50px !important;
+  transition: transform 0.3s ease !important;
+  transform: scaleX(0.6);
+  transform-origin: center;
+}
+.icon-box.ibox-center:not(.ibox-bg):hover h3:after {
+  transform: scaleX(1);
+}
+
+/* was `transition: box-shadow 0.2s linear` on .pricing-column with no
+   corresponding hover/state rule anywhere in the stylesheet that ever
+   changes its box-shadow value — the transition never fires and is a
+   pure Lighthouse non-composited-animations false-positive. Removing
+   it changes nothing visually; if a shadow-reveal state is added
+   later, use the opacity-crossfade-pseudo-element pattern instead. */
+.pricing-column {
+  transition: none;
+}

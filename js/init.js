@@ -45,39 +45,60 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 	Scroll Functions
 ================================================== */
 	BORNTOGIVE.scrollToTop = function(){
-			var windowWidth = $(window).width(),
-			didScroll = false;
-	
 		var $arrow = $('#back-to-top');
 		var $header = $('.site-header');
-	
+
 		$arrow.on('click',function(e) {
 			$('body,html').animate({ scrollTop: "0" }, 750, 'easeOutExpo' );
 			e.preventDefault();
 		})
-	
-		$(window).scroll(function() {
-			didScroll = true;
-		});
-	
-		setInterval(function() {
-			if( didScroll ) {
-				didScroll = false;
-	
-				if( $(window).scrollTop() > 200 ) {
-					$arrow.css("right",10);
-				} else {
-					$arrow.css("right","-40px");
+
+		// SOP §2/§11: replaces the old $(window).scroll() + didScroll
+		// flag polled via setInterval(250) with IntersectionObserver,
+		// which runs off the main thread's layout-thrash path instead
+		// of firing a handler on every scroll tick. Two 1px sentinels
+		// are inserted at the exact scroll offsets the old thresholds
+		// used (90px for the sticky header, 200px for the back-to-top
+		// button) so the visible behavior is unchanged.
+		if (!('IntersectionObserver' in window)) {
+			// Fallback for browsers without IntersectionObserver: a
+			// passive, rAF-throttled scroll listener (still no
+			// unthrottled per-tick handler, unlike the old code).
+			var ticking = false;
+			var updateScrollState = function() {
+				var y = window.pageYOffset || document.documentElement.scrollTop;
+				$arrow.css("right", y > 200 ? 10 : "-40px");
+				$header.toggleClass("sticky", y > 90);
+				ticking = false;
+			};
+			window.addEventListener('scroll', function() {
+				if (!ticking) {
+					window.requestAnimationFrame(updateScrollState);
+					ticking = true;
 				}
-				
-				
-				if( $(window).scrollTop() > 90 ) {
-					$header.addClass("sticky");
-				} else {
-					$header.removeClass("sticky");
-				}
-			}
-		}, 250);
+			}, { passive: true });
+			updateScrollState();
+			return;
+		}
+
+		function makeSentinel(offsetTop) {
+			var el = document.createElement('div');
+			el.setAttribute('aria-hidden', 'true');
+			el.style.cssText = 'position:absolute;left:0;width:1px;height:1px;pointer-events:none;visibility:hidden;top:' + offsetTop + 'px;';
+			document.body.appendChild(el);
+			return el;
+		}
+
+		var headerSentinel = makeSentinel(90);
+		new IntersectionObserver(function(entries) {
+			$header.toggleClass("sticky", !entries[entries.length - 1].isIntersecting);
+		}).observe(headerSentinel);
+
+		var backToTopSentinel = makeSentinel(200);
+		new IntersectionObserver(function(entries) {
+			var visible = !entries[entries.length - 1].isIntersecting;
+			$arrow.css("right", visible ? 10 : "-40px");
+		}).observe(backToTopSentinel);
 	}
 /* ==================================================
    Accordion
@@ -147,13 +168,16 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
    Hero Swiper Slider
 ================================================== */
 	BORNTOGIVE.heroSwiper = function() {
+		// SOP §11: autoplay must itself respect prefers-reduced-motion,
+		// not just the CSS transition-duration override.
+		var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		$('.hero-slider.swiper').each(function(){
 				new Swiper(this, {
 					effect: "fade",
 					fadeEffect: { crossFade: true },
 					loop: true,
 					speed: 600,
-					autoplay: {
+					autoplay: reducedMotion ? false : {
 						delay: 5000,
 						disableOnInteraction: false,
 						pauseOnMouseEnter: true
@@ -169,12 +193,13 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
    Gallery Swiper (single-item slideshow embedded in a grid cell)
 ================================================== */
 	BORNTOGIVE.gallerySwiper = function() {
+		var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		$('.gallery-slider.swiper').each(function(){
 				var carouselInstance = $(this);
 				new Swiper(this, {
 					loop: true,
 					speed: 600,
-					autoplay: {
+					autoplay: reducedMotion ? false : {
 						delay: 5000,
 						disableOnInteraction: false,
 						pauseOnMouseEnter: true
@@ -190,6 +215,7 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
    Swiper Carousel (generic, reads the same data-* attrs as OwlCarousel)
 ================================================== */
 	BORNTOGIVE.SwiperCarousel = function() {
+		var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 		$('.swiper.carousel-fw').each(function(){
 				var carouselInstance = $(this);
 				var carouselColumns = carouselInstance.attr("data-columns") ? carouselInstance.attr("data-columns") : "1"
@@ -203,7 +229,7 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 
 				var autoplayAttr = carouselInstance.attr("data-autoplay");
 				var autoplayDelay = 0;
-				if(autoplayAttr){
+				if(autoplayAttr && !reducedMotion){
 					var parsedDelay = parseInt(autoplayAttr, 10);
 					autoplayDelay = (parsedDelay > 0) ? parsedDelay : 5000;
 				}
@@ -221,7 +247,10 @@ var BORNTOGIVE = window.BORNTOGIVE || {};
 
 				if(autoplayDelay > 0){
 					swiperConfig.loop = true;
-					swiperConfig.autoplay = { delay: autoplayDelay, disableOnInteraction: false };
+					// SOP §11: this generic carousel previously had no
+					// pauseOnMouseEnter at all (unlike hero/gallery) —
+					// add it so hovering pauses autoplay here too.
+					swiperConfig.autoplay = { delay: autoplayDelay, disableOnInteraction: false, pauseOnMouseEnter: true };
 				}
 				if(carouselPagination && carouselInstance.find('.swiper-pagination').length){
 					swiperConfig.pagination = { el: carouselInstance.find('.swiper-pagination').get(0), clickable: true };
@@ -564,21 +593,11 @@ $("[data-appear-progress-animation]").each(function() {
 	AppAniStopFunction();
 });
 
-// Parallax Jquery Callings
-if(!Modernizr.touch) {
-	parallaxInit();
-}
-function parallaxInit() {
-	$('.parallax1').parallax("50%", 0.1);
-	$('.parallax2').parallax("50%", 0.1);
-	$('.parallax3').parallax("50%", 0.1);
-	$('.parallax4').parallax("50%", 0.1);
-	$('.parallax5').parallax("50%", 0.1);
-	$('.parallax6').parallax("50%", 0.1);
-	$('.parallax7').parallax("50%", 0.1);
-	$('.parallax8').parallax("50%", 0.1);
-	/*add as necessary*/
-}
+// Parallax Jquery Callings removed (SOP §11) — the jQuery Parallax
+// plugin + this Modernizr.touch gate were deleted along with
+// js/helper-plugins.js's plugin registration; .parallax1-8 elements
+// now render via the CSS-only .parallax fallback in css/style.css
+// (background-attachment: fixed, static on touch/.page-banner).
 
 // Window height/Width Getter Classes
 function WWHGetter(){
