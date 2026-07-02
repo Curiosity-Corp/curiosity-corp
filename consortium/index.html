@@ -907,7 +907,7 @@
             
             <div class="parallax parallax5 parallax-light text-align-center padding-tb100" style="background-image:url(../images/parallax6.avif)">
             	<h2>“You may have tangible wealth untold. Caskets of jewels and coffers of gold.<br> Richer than I you can never be — I had a mother who read to me.” – Strickland Gillilan</h2>
-                <a href="#" class="parallax-icon-link"><i class="fa fa-5x fa-play-circle-o"></i></a>
+                <a href="#" class="parallax-icon-link" aria-hidden="true" tabindex="-1"><i class="fa fa-5x fa-play-circle-o"></i></a>
             </div>
             
             <div class="padding-tb75 lgray-bg">
@@ -1076,6 +1076,7 @@
                             <div class="d-flex align-items-center gap-2 bt-switch-group">
                                 <span class="small text-muted">One-Time</span>
                                 <div class="form-check form-switch mb-0">
+                                    <label for="subscription" class="sr-only">Make this a monthly donation</label>
                                     <input class="form-check-input" type="checkbox" role="switch" name="subscription" id="subscription" onchange="updateForm(this);">
                                 </div>
                                 <span class="small text-muted">Monthly</span>
@@ -1088,9 +1089,12 @@
        			<div class="row">
                     <div class="col-md-6 col-sm-6 donation-form-infocol">
                         <h4>Personal info</h4>
-                        <input type="text" class="form-control" placeholder="Full Name" name="name" id="cardholder-name">
-                        <input type="email" class="form-control" placeholder="Email Address" name="email" id="email">
-                        <input type="tel" class="form-control" placeholder="Phone Number" name="tel" id="tel">
+                        <label for="cardholder-name" class="sr-only">Full Name</label>
+                                        <input type="text" class="form-control" placeholder="Full Name" name="name" id="cardholder-name" autocomplete="name" required aria-required="true">
+                        <label for="email" class="sr-only">Email Address</label>
+                                        <input type="email" class="form-control" placeholder="Email Address" name="email" id="email" autocomplete="email" required aria-required="true">
+                        <label for="tel" class="sr-only">Phone Number</label>
+                                        <input type="tel" class="form-control" placeholder="Phone Number" name="tel" id="tel" autocomplete="tel" inputmode="tel">
                         <div>
                             <input id="membership" class="checkbox-style" name="membership" onchange="updateForm(this);" type="checkbox">
                             <label for="membership" class="checkbox-style-1-label checkbox-small" style="font-weight:normal;">Register as a Member</label>
@@ -1099,13 +1103,16 @@
                 	<div class="col-md-6 col-sm-6 donation-form-infocol">
                         <h4>Billing Details</h4>
                         <div class="form-control"  id="card-element"></div>
-                        <input type="text" class="form-control" placeholder="Address" name="Address" id="address">
+                        <label for="address" class="sr-only">Address</label>
+                                        <input type="text" class="form-control" placeholder="Address" name="Address" id="address" autocomplete="address-line1">
        					<div class="row">
                 			<div class="col-md-8 col-sm-8 col-8">
-                        		<input type="text" class="form-control" placeholder="City" name="city" id="city">
+                        		<label for="city" class="sr-only">City</label>
+                                                <input type="text" class="form-control" placeholder="City" name="city" id="city" autocomplete="address-level2">
                             </div>
                 			<div class="col-md-4 col-sm-4 col-4">
-                        		<input type="text" class="form-control" placeholder="State" name="state" id="state">
+                        		<label for="state" class="sr-only">State</label>
+                                                <input type="text" class="form-control" placeholder="State" name="state" id="state" autocomplete="address-level1">
                             </div>
                     	</div>
                     </div>

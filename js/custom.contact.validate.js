@@ -63,14 +63,16 @@ function showErrors(form, errors) {
 
 function showErrorsForInput(input, errors) {
     var formGroup = closestParent(input, "mb-3")
-    resetFormGroup(formGroup);
+    resetFormGroup(formGroup, input);
     if (errors) {
         formGroup.classList.add("has-error");
-        errors.forEach(function (error) {
-            addError(formGroup, error);
+        input.setAttribute("aria-invalid", "true");
+        errors.forEach(function (error, index) {
+            addError(formGroup, error, input, index);
         });
     } else {
         formGroup.classList.add("has-success");
+        input.removeAttribute("aria-invalid");
     }
 }
 
@@ -87,21 +89,34 @@ function closestParent(child, className) {
 }
 
 // function to remove errors from the form
-function resetFormGroup(formGroup) {
+function resetFormGroup(formGroup, input) {
     formGroup.classList.remove("has-error");
     formGroup.classList.remove("has-success");
     formGroup.querySelectorAll(".custom-error").forEach(function (el) {
         el.remove();
     });
+    if (input) {
+        input.removeAttribute("aria-invalid");
+        input.removeAttribute("aria-describedby");
+    }
 }
 
 //logic to add error into the form
-function addError(formGroup, error) {
+function addError(formGroup, error, input, index) {
     let errorMessage = document.createElement('small');
     // errorMessage.style.position = 'absolute';
     errorMessage.style.color = '#ea205a';
     errorMessage.innerText = error;
     errorMessage.classList.add('custom-error');
+    // role="alert" so a screen reader announces the message as it's
+    // inserted, and aria-describedby ties it to the field that failed
+    // (jQuery-Validation-style wiring, applied by hand since this form
+    // uses the standalone validate.js library instead).
+    errorMessage.setAttribute('role', 'alert');
+    var errorId = (input.id || input.name) + '-error-' + index;
+    errorMessage.id = errorId;
+    var describedBy = input.getAttribute('aria-describedby');
+    input.setAttribute('aria-describedby', describedBy ? describedBy + ' ' + errorId : errorId);
     let isSelect = formGroup.querySelector('.tg-select');
     if (isSelect) {
         errorMessage.classList.add('select')

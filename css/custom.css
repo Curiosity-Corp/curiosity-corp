@@ -325,6 +325,27 @@ p {
   }
 }
 
+/* ==================================================
+   Target size (WCAG 2.2 SC 2.5.8, SOP §8): Swiper's vendored
+   pagination bullets are an 8x8px visual dot with only a 4px
+   horizontal margin between them -- well under the 24x24px minimum
+   hit area. Expand the actual clickable/tappable area via an
+   invisible ::before centered on each bullet, without changing the
+   8px dot's appearance.
+================================================== */
+.swiper-pagination-bullet {
+  position: relative;
+}
+.swiper-pagination-bullet::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  transform: translate(-50%, -50%);
+}
+
 /* SOP 11-animation: non-compositor transitions in style.css replaced
    with transform/opacity equivalents — same visual result, animates
    only properties the compositor can handle off the main thread.

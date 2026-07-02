@@ -491,16 +491,20 @@
                         	<div class="row">
                                 <div class="col-md-5">
                                     <div class="mb-3">
-                                        <input type="text" id="fname" name="firstName"  class="form-control input-lg" placeholder="First name*">
+                                        <label for="fname" class="sr-only">First name</label>
+                                        <input type="text" id="fname" name="firstName"  class="form-control input-lg" placeholder="First name*" autocomplete="given-name" required aria-required="true">
                                     </div>
                                     <div class="mb-3">
-                                        <input type="text" id="lname" name="lastName"  class="form-control input-lg" placeholder="Last name*">
+                                        <label for="lname" class="sr-only">Last name</label>
+                                        <input type="text" id="lname" name="lastName"  class="form-control input-lg" placeholder="Last name*" autocomplete="family-name" required aria-required="true">
                                     </div>
                                     <div class="mb-3">
-                                        <input type="email" id="email" name="email"  class="form-control input-lg" placeholder="Email*">
+                                        <label for="email" class="sr-only">Email</label>
+                                        <input type="email" id="email" name="email"  class="form-control input-lg" placeholder="Email*" autocomplete="email" required aria-required="true">
                                     </div>
                                     <div class="mb-3">
-                                        <input type="text" id="phone" name="phone" class="form-control input-lg" placeholder="Phone">
+                                        <label for="phone" class="sr-only">Phone</label>
+                                        <input type="text" id="phone" name="phone" class="form-control input-lg" placeholder="Phone" autocomplete="tel" inputmode="tel">
                                     </div>
                                 </div>
                                 <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
@@ -513,6 +517,7 @@
 
                                 <div class="col-md-7">
                                     <div class="mb-3">
+                                        <label for="comments" class="sr-only">Message</label>
                                         <textarea cols="6" rows="8" id="comments" name="comments" class="form-control input-lg" placeholder="Message"></textarea>
                                     </div>
                                     <input id="submit" name="submit" type="submit" class="btn btn-primary btn-lg float-end" value="Submit now!">
@@ -610,7 +615,7 @@
 <script src="../js/bootstrap.js" defer></script> <!-- UI -->
 <script src="../js/init.js" defer></script> <!-- All Scripts -->
 <script src="../js/circle-progress.js" defer></script> <!-- Circle Progress Bars -->
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false" defer></script> <!-- Google maps api -->
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false" defer></script> <!-- Google maps api -->
 <script src="../vendor/sweetalert2/sweetalert2.all.min.js" defer></script>
 <script src="../js/validate.min.js" defer></script>
 <script src='../js/custom.contact.validate.js' defer></script>
