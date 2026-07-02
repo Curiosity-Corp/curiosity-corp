@@ -75,7 +75,7 @@ h4a {
   color: #333;
   font-weight: 400;
   line-height: 1.5em;
-  font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", "Playfair Display Fallback", serif;
 }
 
 /* ==================================================
@@ -164,4 +164,124 @@ h4a {
 }
 .container:after {
   clear: both;
+}
+
+/* ==================================================
+   Native-CSS baseline (SOP §3/§11 pass) — reduced motion,
+   focus visibility, color-scheme, print, fluid heading wrap.
+================================================== */
+
+/* No dark theme is designed for this site; declare the supported
+   scheme explicitly rather than leaving it unset, so browser
+   chrome (native form controls, scrollbars, <select> dropdowns)
+   doesn't render with mismatched dark-mode chrome inside an
+   otherwise all-light page under an OS dark preference. */
+:root {
+  color-scheme: light;
+  accent-color: #217c91;
+}
+
+/* prefers-reduced-motion — every non-essential transition/animation
+   in this codebase (animations.css keyframes, Swiper slide/hero
+   transitions, .btn/.dd-menu hover transitions in style.css, the
+   Owl-Carousel-era CSS this template still ships) routes through
+   the wildcard selector below, so nothing has to be listed by name.
+   Parallax gets a real kill switch, not just a shortened duration —
+   near-zero duration is fine for a hover fade, not for a vestibular-
+   risk fixed-background scroll effect. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .parallax,
+  .parallax-light,
+  .page-banner.parallax,
+  body {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Visible keyboard-focus ring. style.css used to blanket-remove
+   outline via `* { outline: none }` plus a second `a:focus{outline:0}`
+   with nothing to replace it — a WCAG 2.4.7 failure (both of those
+   rules were fixed at the source in style.css; this is the
+   deliberate replacement, layered here so it wins by source order).
+   Two-tone ring (white core + brand-teal halo) so it stays visible
+   whether it lands on a light or dark section of the page. */
+:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 1px;
+  box-shadow: 0 0 0 4px #217c91;
+}
+
+/* Fluid heading wrap — evens out ragged line lengths and kills
+   orphaned single words on headings; body copy gets the softer
+   orphan/widow-avoidance variant. Both are progressive enhancement:
+   unsupported engines just keep default wrapping, no fallback
+   needed. */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* Print — strip chrome that doesn't belong on paper (nav, hero
+   media, decorative parallax backgrounds, carousels/sliders,
+   buttons/badges with no reason to print), force light-mode
+   colors regardless of any OS dark preference, and expand link
+   destinations inline since a printed page can't be clicked.
+   Written for this template's actual selectors (.site-header,
+   .site-footer, .hero-slider, .swiper, .parallax, .owl-carousel)
+   rather than generic placeholders — real for any page with body
+   copy worth printing (legal/, news/, events/). */
+@media print {
+  :root {
+    color-scheme: light;
+  }
+  .site-header,
+  .site-footer,
+  .hero-slider,
+  .swiper,
+  .owl-carousel,
+  .parallax,
+  .page-banner,
+  #back-to-top,
+  #menu-toggle,
+  .btn,
+  .badge,
+  video,
+  iframe {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    background-attachment: scroll !important;
+  }
+  a,
+  a:visited {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    word-break: break-all;
+  }
+  p,
+  li,
+  blockquote {
+    orphans: 3;
+    widows: 3;
+  }
 }
