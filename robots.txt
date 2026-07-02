@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /info/
 
 Sitemap: https://curiositycorp.org/sitemap.xml
 
