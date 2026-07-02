@@ -29,7 +29,6 @@ Last reviewed: 2026-07-02.
 | SweetAlert2 | 11.26.25 | MIT | `vendor/sweetalert2/sweetalert2.all.min.js` |
 | Swiper | 11.2.10 | MIT | `vendor/swiper/swiper-bundle.min.js`, `.min.css` |
 | Isotope (PACKAGED) | 3.0.5 | **GPLv3 (open-source use) OR Metafizzy Commercial License (commercial use) — flag for business owner** | `vendor/isotope/isotope.pkgd.min.js`. Isotope's license banner requires a paid commercial license unless the using project is itself free/open-source. Curiosity Corp is a nonprofit but the site is a commercial-style production property; **confirm whether a Metafizzy commercial license was purchased**, or replace Isotope with a permissively-licensed masonry/filter library (e.g. `masonry-layout` MIT core, or a native CSS grid filter) if not. |
-| Klaro (no-CSS build) | 0.7.21 | **BSD-3-Clause** (self-hosted `vendor/klaro/klaro-no-css.js`, full text in `vendor/klaro/LICENSE`) | Note: this corrects an earlier assumption that Klaro was MIT-licensed — the actual upstream license is BSD-3-Clause (Copyright KIProtect GmbH). |
 
 ## Fonts
 
