@@ -384,3 +384,55 @@ p {
 .pricing-column {
   transition: none;
 }
+
+/* lite-embed.js facade — click-to-load YouTube replacement. Fills the same
+   width/height the iframe it replaces used, so no CLS on activation. */
+.yt-facade {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  cursor: pointer;
+  background: #000;
+  overflow: hidden;
+}
+.yt-facade picture,
+.yt-facade img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.yt-facade-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68px;
+  height: 48px;
+  margin: -24px 0 0 -34px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 16%;
+  transition: background-color 0.2s ease;
+}
+.yt-facade-play::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -11px 0 0 -6px;
+  border-style: solid;
+  border-width: 11px 0 11px 19px;
+  border-color: transparent transparent transparent #fff;
+}
+.yt-facade:hover .yt-facade-play,
+.yt-facade:focus-visible .yt-facade-play {
+  background-color: #f00;
+}
+.yt-facade:focus-visible {
+  outline: 2px solid #217c91;
+  outline-offset: 2px;
+}
+.yt-facade-iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
