@@ -1,5 +1,16 @@
 const stripe = Stripe('pk_live_AT18iGVWTZZk5wOtQqlfhOm0');
-const fetchlink = 'https://stripedonate.azurewebsites.net/api/StripeHttpTrigger?code=/xlyHNsnNnqie7yQTDf0fVgPAGaC/D259rKok9dNWRraEIX8MhX5yg==';
+const fetchlink = 'https://p.taolearning.org/api/StripeHttpTrigger';
+
+function idempotencyKey() {
+  return `curiositycorp-${globalThis.crypto.randomUUID()}`;
+}
+
+function paymentHeaders() {
+  return {
+    'Content-Type': 'application/json',
+    'Idempotency-Key': idempotencyKey()
+  };
+}
 
 const elements = stripe.elements();
 const cardElement = elements.create('card');
@@ -55,7 +66,7 @@ if(subscription == false){
 
   const response = await fetch(fetchlink, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: paymentHeaders(),
     body: fullbody
   });
 
@@ -76,8 +87,11 @@ else{
 const handleServerResponse = async (response) => {
   if (response.error) {
     document.getElementById("card-errors").style.display = "block";
-    console.log(response.error.message);
-    errorElement.textContent = response.error.message;
+    const message = typeof response.error === 'string'
+      ? response.error
+      : response.error.message || 'Payment could not be completed.';
+    console.log(message);
+    errorElement.textContent = message;
   } else if (response.requires_action) {
     const { error: errorAction, paymentIntent } =
     await stripe.handleCardAction(response.payment_intent_client_secret);
@@ -91,7 +105,7 @@ const handleServerResponse = async (response) => {
 
       const serverResponse = await fetch(fetchlink, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: paymentHeaders(),
         body: JSON.stringify({ payment_intent_id: paymentIntent.id })
       });
       
