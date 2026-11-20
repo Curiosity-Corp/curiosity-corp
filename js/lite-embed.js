@@ -1,9 +1,19 @@
-/* lite-embed.js — click-to-load facade for embedded YouTube videos.
-   Renders a static thumbnail + play button; the real <iframe> is only
-   created on click/Enter/Space, so the YouTube iframe/JS payload is
-   never fetched unless a visitor actually presses play. The facade is a
-   native <button>, so Enter/Space activation is handled by the browser --
-   only the click event needs a listener here. */
+/* lite-embed.js — click-to-load facades for embedded iframes (YouTube
+   videos, the contact-page map). Renders a static placeholder; the real
+   <iframe> is only created on click/Enter/Space, so the third-party
+   iframe payload is never fetched unless a visitor asks for it. The
+   facade is a native <button>, so Enter/Space activation is handled by
+   the browser -- only the click event needs a listener here.
+
+   Facade attributes:
+     data-src           iframe URL (required)
+     data-title         iframe title, for screen readers
+     data-allow         iframe allow list (default: YouTube's set)
+     data-width/height  iframe size attributes (default 560x315)
+     data-iframe-class  iframe class (default "yt-facade-iframe")
+     data-replace       present: the iframe replaces the button instead of
+                        being placed inside it (an interactive map must not
+                        live inside a <button>) */
 (function () {
 	"use strict";
 
@@ -20,17 +30,23 @@
 				"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
 		);
 		iframe.setAttribute("allowfullscreen", "");
+		iframe.setAttribute("loading", "lazy");
+		iframe.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
 		iframe.setAttribute("width", facade.getAttribute("data-width") || "560");
 		iframe.setAttribute("height", facade.getAttribute("data-height") || "315");
-		iframe.className = "yt-facade-iframe";
+		iframe.className = facade.getAttribute("data-iframe-class") || "yt-facade-iframe";
 
-		facade.innerHTML = "";
-		facade.appendChild(iframe);
+		if (facade.hasAttribute("data-replace")) {
+			facade.parentNode.replaceChild(iframe, facade);
+		} else {
+			facade.innerHTML = "";
+			facade.appendChild(iframe);
+		}
 		iframe.focus();
 	}
 
 	function init() {
-		var facades = document.querySelectorAll(".yt-facade");
+		var facades = document.querySelectorAll(".yt-facade, .map-facade");
 		for (var i = 0; i < facades.length; i++) {
 			facades[i].addEventListener("click", function (e) {
 				activate(e.currentTarget);
