@@ -9,7 +9,8 @@
  * page handler and stops it.
  *
  * Contract (tao-ninja/formfunnel): POST application/x-www-form-urlencoded to
- * /api/form with every form field plus token (reCAPTCHA v3, minted with the
+ * /api/form (the form's own https action if it names one, else ENDPOINT;
+ * newsletter forms use forms.curiositycorp.org) with every form field plus token (reCAPTCHA v3, minted with the
  * formType as its action) and formType. 200 "Human" means the Logic App
  * accepted it; 400 means the token failed, scored too low or was minted for
  * another action; 5xx means it could not be delivered.
@@ -58,6 +59,22 @@
     });
   }
 
+  // A form whose action is an https formfunnel URL (path /api/form) posts
+  // there, so a form can move to its own site's hostname; any other form
+  // posts to ENDPOINT.
+  function endpointFor(form) {
+    var action = form.getAttribute('action');
+    if (action) {
+      try {
+        var url = new URL(action, window.location.href);
+        if (url.protocol === 'https:' && url.pathname === '/api/form') return url.href;
+      } catch (err) {
+        console.error('formfunnel: ignoring unparsable form action', err);
+      }
+    }
+    return ENDPOINT;
+  }
+
   function notify(form, ok) {
     var title = ok
       ? form.getAttribute('data-formfunnel-success-title') || DEFAULTS.successTitle
@@ -103,7 +120,7 @@
         var body = new URLSearchParams(new FormData(form));
         body.set('token', token);
         body.set('formType', formType);
-        return fetch(ENDPOINT, { method: 'POST', body: body, mode: 'cors', credentials: 'omit' });
+        return fetch(endpointFor(form), { method: 'POST', body: body, mode: 'cors', credentials: 'omit' });
       })
       .then(function (res) {
         if (res.ok) {
