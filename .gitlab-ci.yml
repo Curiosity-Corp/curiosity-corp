@@ -1,0 +1,11 @@
+# main holds only the README that points to the site on gh-pages (see README.md).
+# validate-only gives MRs into main a pipeline; the site's own pipeline lives on gh-pages.
+include:
+  - project: 'DroidOpsInc/launch-sequence'
+    ref: main
+    file: '/pipelines/validate-only.yml'
+
+variables:
+  PREFLIGHT_REQUIRED_TOOLS: "grep"
+  # The README must keep pointing agents at the gh-pages branch.
+  PREFLIGHT_COMMANDS: "grep -q 'gh-pages' README.md"
