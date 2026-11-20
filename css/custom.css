@@ -150,7 +150,7 @@ h4a {
    .container (part of its clearfix mixin). Bootstrap 5 dropped
    this since BS4/5 assume floats are self-contained inside a
    flex .row. Several pages here float custom-grid content
-   (e.g. .grid-holder/.isotope blog grids) directly inside a
+   content directly inside a
    bare .container with no .row wrapper, relying on that BS3
    behavior — without it the container collapses to zero extra
    height and the next section (often .site-footer) renders on
@@ -667,4 +667,72 @@ select.form-select {
 }
 .core-focus li {
   margin-bottom: 10px;
+}
+
+/* ==================================================
+   Filterable card/gallery grids (GitLab #21)
+   CSS Grid replaces the GPLv3 masonry library the theme
+   shipped with (see LICENSES.md). Applies to
+   ul.sort-destination.filter-grid (filtered by
+   js/grid-filter.js) and ul.grid-holder.filter-grid
+   (unfiltered blog/news grids).
+
+   Column count follows the Bootstrap col-* classes the items
+   already carry, so the markup keeps one source of truth:
+     col-6 -> 2 columns on phones, col-sm-6 -> 2 from 576px,
+     col-md-6/4/3 -> 2/3/4 from 768px.
+   Items without col-6 stay one column on phones. Rows
+   size to their tallest item (align-items: start keeps
+   shorter cards at their natural height); nothing is
+   absolutely positioned, so items can never overlap.
+================================================== */
+.filter-grid {
+  --filter-grid-cols: 1;
+  display: grid;
+  grid-template-columns: repeat(var(--filter-grid-cols), minmax(0, 1fr));
+  gap: 30px;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.filter-grid:has(> .col-6) {
+  --filter-grid-cols: 2;
+  gap: 15px;
+}
+@media (min-width: 576px) {
+  .filter-grid:has(> .col-sm-6) {
+    --filter-grid-cols: 2;
+    gap: 30px;
+  }
+}
+@media (min-width: 768px) {
+  .filter-grid:has(> .col-md-6) {
+    --filter-grid-cols: 2;
+  }
+  .filter-grid:has(> .col-md-4) {
+    --filter-grid-cols: 3;
+  }
+  .filter-grid:has(> .col-md-3) {
+    --filter-grid-cols: 4;
+  }
+}
+/* The grid owns width and spacing: neutralise the Bootstrap
+   column widths, the theme's floats and per-item margins. */
+.filter-grid > .grid-item {
+  width: auto;
+  max-width: none;
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+.filter-grid > .grid-item[hidden] {
+  display: none;
+}
+/* .grid-holder was a floated, 105%-wide box tuned for absolute
+   positioning; as a grid it sits in the container normally. */
+.grid-holder.filter-grid {
+  width: auto;
+  margin-left: 0;
+  float: none;
 }
