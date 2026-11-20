@@ -588,3 +588,27 @@ select.form-select {
 .fa-5x {
   font-size: 5em;
 }
+
+/* Core focuses block (home page #core-focuses, curiosity-corp#25). */
+.core-focus {
+  margin-bottom: 30px;
+}
+.core-focus img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.core-focus h3 {
+  margin-bottom: 5px;
+}
+.core-focus .meta-data {
+  display: block;
+  margin-bottom: 15px;
+}
+.core-focus ul {
+  padding-left: 1.2em;
+}
+.core-focus li {
+  margin-bottom: 10px;
+}

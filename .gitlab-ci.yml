@@ -1,0 +1,29 @@
+# curiositycorp.org pipeline (launch-sequence static-site composition).
+#
+# The site is plain HTML served from the gh-pages branch. Deploy path:
+#   merge to GitLab gh-pages
+#   -> git-mirror-sync (DroidOpsInc/nebula tools/git-mirror-sync, `sync.orgs` covers Curiosity-Corp)
+#      pushes gh-pages to github.com/Curiosity-Corp/curiosity-corp
+#   -> GitHub Actions (.github/workflows/pages.yml) publishes it to GitHub Pages
+#   -> Cloudflare (proxied DNS) serves curiositycorp.org.
+# This pipeline therefore pushes nothing to GitHub itself: GITHUB_MIRROR_EXTERNAL makes the
+# launch-sequence mirror job say so instead of needing a token. The GitLab Pages job only runs on a
+# protected `demo` branch, which this repo does not have.
+#
+# Merge requests run `lint`, which fails on any new dead local link (scripts/check_links.py).
+
+workflow:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+    - if: '$CI_COMMIT_BRANCH == "gh-pages"'
+
+include:
+  - project: 'DroidOpsInc/launch-sequence'
+    ref: main
+    file: '/pipelines/static-site.yml'
+
+variables:
+  GITHUB_REPO: "Curiosity-Corp/curiosity-corp"
+  GITHUB_MIRROR_EXTERNAL: "true"
+  PREFLIGHT_REQUIRED_TOOLS: "python3"
+  PREFLIGHT_COMMANDS: "python3 -I scripts/check_links.py"
