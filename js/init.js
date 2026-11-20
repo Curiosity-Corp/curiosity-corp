@@ -317,91 +317,6 @@
 	};
 
 	/* ==================================================
-	   IsoTope Portfolio
-	   Rewritten onto Isotope's own vanilla constructor/instance API
-	   (`new Isotope()` / `.arrange()`) instead of the jQuery-Bridget
-	   `.isotope()` method jQuery-Bridget bolts onto $.fn — Isotope's
-	   packaged bundle only needs jQuery for that bridge, and the core
-	   library is jQuery-free (SOP §19 / stretch issue #21 notes).
-	================================================== */
-	BORNTOGIVE.IsoTope = function () {
-		if (typeof Isotope !== "function") return;
-
-		// Matches the original's timing exactly: Isotope instantiation
-		// (and the initial filter click that lays the grid out) waited
-		// for `window.load` — i.e. images finished loading — rather than
-		// DOMContentLoaded, since masonry needs real image heights to
-		// compute correct positions.
-		window.addEventListener(
-			"load",
-			function () {
-				document.querySelectorAll("ul.sort-source").forEach(function (source) {
-					var sortId = source.getAttribute("data-sort-id");
-					var destination = document.querySelector('ul.sort-destination[data-sort-id="' + sortId + '"]');
-					if (!destination) return;
-
-					var iso = new Isotope(destination, {
-						itemSelector: ".grid-item",
-						layoutMode: "masonry",
-					});
-
-					function applyFilter(filter) {
-						source.querySelectorAll("li.active").forEach(function (li) {
-							li.classList.remove("active");
-						});
-						var match = source.querySelector('li[data-option-value="' + filter + '"]');
-						if (match) match.classList.add("active");
-						iso.arrange({ filter: filter === "*" ? "*" : filter });
-					}
-
-					source.querySelectorAll("a").forEach(function (link) {
-						link.addEventListener("click", function (e) {
-							e.preventDefault();
-							var filter = link.parentElement.getAttribute("data-option-value");
-							applyFilter(filter);
-							if (window.location.hash !== "" || filter.replace(".", "") !== "*") {
-								window.location.hash = filter.replace(".", "");
-							}
-						});
-					});
-
-					window.addEventListener("hashchange", function () {
-						var hashFilter = "." + location.hash.replace("#", "");
-						var hash = hashFilter === "." || hashFilter === ".*" ? "*" : hashFilter;
-						applyFilter(hash);
-					});
-
-					var initialFilter = "." + (location.hash.replace("#", "") || "*");
-					var initialMatch = source.querySelector('li[data-option-value="' + initialFilter + '"] a');
-					if (initialMatch) {
-						initialMatch.click();
-					} else {
-						var first = source.querySelector("li:first-child a");
-						if (first) first.click();
-					}
-				});
-
-				var isotopeGrid = document.querySelector(".isotope-grid");
-				if (isotopeGrid) {
-					new Isotope(isotopeGrid, { itemSelector: ".grid-item", layoutMode: "masonry" });
-				}
-
-				var gridHolder = document.querySelector(".grid-holder");
-				if (gridHolder) {
-					var blogIso = new Isotope(gridHolder, { itemSelector: ".grid-item" });
-					window.addEventListener(
-						"resize",
-						debounce(function () {
-							blogIso.layout();
-						}, 150)
-					);
-				}
-			},
-			{ once: true }
-		);
-	};
-
-	/* ==================================================
 	   Pricing Tables — batches all height reads before any
 	   writes (SOP §5/§11: avoid layout thrash).
 	================================================== */
@@ -471,18 +386,6 @@
 	/* ==================================================
 	   Init Functions
 	================================================== */
-	function debounce(fn, wait) {
-		var timeout;
-		return function () {
-			var args = arguments;
-			var context = this;
-			clearTimeout(timeout);
-			timeout = setTimeout(function () {
-				fn.apply(context, args);
-			}, wait);
-		};
-	}
-
 	function ready(fn) {
 		if (document.readyState === "loading") {
 			document.addEventListener("DOMContentLoaded", fn);
@@ -498,7 +401,6 @@
 		BORNTOGIVE.toolTip();
 		BORNTOGIVE.SwiperCarousel();
 		BORNTOGIVE.GLightbox();
-		BORNTOGIVE.IsoTope();
 		BORNTOGIVE.heroSwiper();
 		BORNTOGIVE.gallerySwiper();
 		BORNTOGIVE.pricingTable();
