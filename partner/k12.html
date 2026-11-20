@@ -555,11 +555,11 @@
                         <div class="spacer-10"></div>
                         <div class="card card-body widget widget_donations">
                             <h4>Ask About a Partnership</h4>
-                            <form method="POST" action="https://door.taolearning.org/api/form" data-formfunnel="inquiry" id="request" class="form-contact"  data-toggle="validator" novalidate="true"> 
+                            <form method="POST" action="https://door.taolearning.org/api/form" data-formfunnel="inquiry" id="request" class="form-contact" novalidate> 
 
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6 col-6">
-                                        <input type="text" placeholder="First Name" name="firstname" class="form-control">
+                                        <input type="text" placeholder="First Name" name="firstname" class="form-control" required autocomplete="given-name">
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-6">
                                         <input type="text" placeholder="Last  Name" name="lastname" class="form-control">
@@ -567,7 +567,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6 col-6">
-                                        <input type="email" placeholder="Email" name="email" class="form-control">
+                                        <input type="email" placeholder="Email" name="email" class="form-control" required autocomplete="email">
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-6">
                                         <input type="tel" placeholder="Phone Number" name="tel" class="form-control">
@@ -707,7 +707,6 @@
 <script src="../js/circle-progress.js" defer></script> <!-- Circle Progress Bars -->
 
   
-<script src="../js/custom.request.js" defer></script>
 
 <script src="../js/copyright-year.js" defer></script>
 <script src="../js/formfunnel-inquiry.js"></script>

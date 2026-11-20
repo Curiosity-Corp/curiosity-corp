@@ -2,9 +2,13 @@
  * Partnership/inquiry forms -> formfunnel (reCAPTCHA v3 gate) -> TLI_Interest.
  *
  * Any <form data-formfunnel="<formType>"> is handled here. The listener runs
- * in the capture phase on document, so it takes the submit before the page's
- * own jQuery handler (which used to post straight to a Logic App URL) and
- * stops it.
+ * in the capture phase on document, so it owns the submit outright: nothing
+ * bound on the form itself sees it.
+ *
+ * Validation is native HTML constraint validation (#19 retired the jQuery
+ * Validation plugin): the form carries `novalidate` so the browser does not
+ * block the submit event, and isValid() calls reportValidity(), which checks
+ * `required`/`type=email` and shows the browser's own messages.
  *
  * Contract (tao-ninja/formfunnel): POST application/x-www-form-urlencoded to
  * /api/form with every form field plus token (reCAPTCHA v3) and formType.
@@ -56,11 +60,7 @@
   }
 
   function isValid(form) {
-    var $ = window.jQuery;
-    if ($ && $.fn && typeof $.fn.validate === 'function') {
-      return $(form).validate().form();
-    }
-    return typeof form.reportValidity !== 'function' || form.reportValidity();
+    return form.reportValidity();
   }
 
   function submit(form, formType) {
