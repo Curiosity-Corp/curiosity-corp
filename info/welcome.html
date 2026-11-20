@@ -592,8 +592,22 @@
                         </div>
                         <div class="widget sidebar-widget widget_search">
                             <h4>Newsletter</h4>
-                            <p>Want news from Curiosity Corp? Send us a note and we will add you to our mailing list.</p>
-                            <a href="../get-involved/contact.html#contactform" class="btn btn-primary btn-rounded btn-block">Ask to join our mailing list</a>
+                            <p>The Curiosity Dispatch: research, stories and ways to help, about once a month.</p>
+                            <form class="newsletter-form" method="post" action="https://door.taolearning.org/api/form" data-formfunnel="newsletter" data-formfunnel-success-title="Check your inbox" data-formfunnel-success-text="We sent you an email. Click the link in it to confirm your subscription; until you do, we will not send you the Dispatch." data-formfunnel-error-text="We could not sign you up just now. Please try again in a moment, or use our contact form.">
+                                <input type="hidden" name="op" value="subscribe">
+                                <input type="hidden" name="source" value="info/welcome.html">
+                                <label for="newsletter-email" class="visually-hidden">Email address</label>
+                                <div class="input-group">
+                                    <input type="email" id="newsletter-email" name="email" class="form-control" placeholder="Your email address" autocomplete="email" required>
+                                    <button type="submit" class="btn btn-primary" aria-label="Subscribe"><svg class="icon" aria-hidden="true"><use href="../images/icons.svg#fa-s-newspaper"></use></svg></button>
+                                </div>
+                                <div class="form-check newsletter-consent">
+                                    <input type="checkbox" id="newsletter-consent" name="consent" value="yes" class="form-check-input" required>
+                                    <label for="newsletter-consent" class="form-check-label small">Email me the Curiosity Dispatch. I can unsubscribe at any time; see our <a href="../legal/privacy-policy.html#newsletter">Privacy Policy</a>.</label>
+                                </div>
+                                <div class="newsletter-hp" aria-hidden="true"><label for="newsletter-gotcha">Leave this empty</label><input type="text" id="newsletter-gotcha" name="_gotcha" tabindex="-1" autocomplete="off"></div>
+                            </form>
+                            <noscript><p class="small">Sign-up needs JavaScript. <a href="../get-involved/contact.html#contactform">Ask to join through our contact form</a> instead.</p></noscript>
                         </div>
                     </div>
                 </div>
@@ -750,5 +764,6 @@
 <script src="../js/circle-progress.js" defer></script> <!-- Circle Progress Bars -->
 <script src="../js/client.js" defer></script> <!-- Krashnik Stripe Integration -->
 <script src="../js/copyright-year.js" defer></script>
+<script src="../js/formfunnel.js"></script>
 </body>
 </html>

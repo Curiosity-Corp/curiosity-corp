@@ -668,3 +668,31 @@ select.form-select {
 .core-focus li {
   margin-bottom: 10px;
 }
+
+/* Newsletter sign-up (sidebar widget) and get-involved/newsletter.html */
+.newsletter-form .input-group {
+  margin-bottom: 10px;
+}
+.newsletter-form .btn .icon {
+  width: 1em;
+  height: 1em;
+}
+.newsletter-consent {
+  margin-bottom: 10px;
+}
+.newsletter-consent .form-check-label {
+  line-height: 1.4;
+}
+/* Honeypot: off screen for people, still a field for naive bots. */
+.newsletter-hp {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.newsletter-manage {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}

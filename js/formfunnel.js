@@ -1,20 +1,35 @@
 /*
- * Partnership/inquiry forms -> formfunnel (reCAPTCHA v3 gate) -> TLI_Interest.
+ * Site forms -> formfunnel (reCAPTCHA v3 gate) -> the Logic App for the form's type.
  *
- * Any <form data-formfunnel="<formType>"> is handled here. The listener runs
- * in the capture phase on document, so it takes the submit before the page's
- * own jQuery handler (which used to post straight to a Logic App URL) and
- * stops it.
+ * Any <form data-formfunnel="<formType>"> is handled here: partnership
+ * inquiries (formType "inquiry" -> TLI_Interest) and the Curiosity Dispatch
+ * newsletter (formType "newsletter": sign-up on the pages that carry the
+ * widget, confirm/unsubscribe on get-involved/newsletter.html). The listener
+ * runs in the capture phase on document, so it takes the submit before any
+ * page handler and stops it.
  *
  * Contract (tao-ninja/formfunnel): POST application/x-www-form-urlencoded to
- * /api/form with every form field plus token (reCAPTCHA v3) and formType.
- * 200 "Human" means accepted; 400 means the token failed or scored too low.
+ * /api/form with every form field plus token (reCAPTCHA v3, minted with the
+ * formType as its action) and formType. 200 "Human" means the Logic App
+ * accepted it; 400 means the token failed, scored too low or was minted for
+ * another action; 5xx means it could not be delivered.
+ *
+ * Optional attributes on the form set the message shown afterwards:
+ *   data-formfunnel-success-title / data-formfunnel-success-text
+ *   data-formfunnel-error-text
+ * Text only (no HTML); defaults fit the partnership forms.
  */
 (function () {
   'use strict';
 
   var ENDPOINT = 'https://door.taolearning.org/api/form';
   var SITE_KEY = '6LcHIYcUAAAAAPnqH0iBwnDeFma0mWAMJKJHAoEO';
+
+  var DEFAULTS = {
+    successTitle: 'Request Sent',
+    successText: 'Please check your email for a response from us.',
+    errorText: 'We could not send your request. Please try again in a moment.'
+  };
 
   function loadRecaptcha() {
     if (window.grecaptcha || document.querySelector('script[data-formfunnel-recaptcha]')) return;
@@ -43,16 +58,26 @@
     });
   }
 
-  function notify(ok) {
-    var title = ok ? '<strong>Request Sent</strong>' : '<strong>Something went wrong</strong>';
-    var html = ok
-      ? 'Please check your email for a response from us.'
-      : 'We could not send your request. Please try again in a moment.';
-    if (typeof window.Swal === 'function') {
-      window.Swal({ title: title, type: ok ? 'success' : 'error', html: html, showCloseButton: true });
+  function notify(form, ok) {
+    var title = ok
+      ? form.getAttribute('data-formfunnel-success-title') || DEFAULTS.successTitle
+      : 'Something went wrong';
+    var text = ok
+      ? form.getAttribute('data-formfunnel-success-text') || DEFAULTS.successText
+      : form.getAttribute('data-formfunnel-error-text') || DEFAULTS.errorText;
+    // vendor/sweetalert2 is v11: Swal.fire with `icon`; titleText and text
+    // are set as plain text, never parsed as HTML.
+    if (window.Swal && typeof window.Swal.fire === 'function') {
+      window.Swal.fire({
+        titleText: title,
+        text: text,
+        icon: ok ? 'success' : 'error',
+        showCloseButton: true
+      });
     } else {
-      window.alert(html.replace(/<[^>]+>/g, ' '));
+      window.alert(title + '\n\n' + text);
     }
+    form.dispatchEvent(new CustomEvent('formfunnel:done', { detail: { ok: ok } }));
   }
 
   function isValid(form) {
@@ -83,15 +108,15 @@
       .then(function (res) {
         if (res.ok) {
           form.reset();
-          notify(true);
+          notify(form, true);
         } else {
           console.error('formfunnel rejected the submission: HTTP ' + res.status);
-          notify(false);
+          notify(form, false);
         }
       })
       .catch(function (err) {
         console.error('formfunnel submission failed:', err);
-        notify(false);
+        notify(form, false);
       })
       .then(function () {
         form.removeAttribute('data-formfunnel-busy');
