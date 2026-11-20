@@ -11,7 +11,6 @@ consortium/index.html -> single-event.html
 legal/payment-terms.html -> index.html
 legal/privacy-policy.html -> index.html
 legal/refund-policy.html -> index.html
-legal/shortcodes.html -> index.html
 legal/tos.html -> index.html
 legal/typography.html -> index.html
 media/gallery-2cols.html -> index.html
