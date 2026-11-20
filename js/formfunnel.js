@@ -10,8 +10,10 @@
  *
  * Contract (tao-ninja/formfunnel): POST application/x-www-form-urlencoded to
  * /api/form (the form's own https action if it names one, else ENDPOINT;
- * newsletter forms use forms.curiositycorp.org) with every form field plus token (reCAPTCHA v3, minted with the
- * formType as its action) and formType. 200 "Human" means the Logic App
+ * newsletter forms use forms.curiositycorp.org) with every form field plus
+ * token (reCAPTCHA v3, minted for the form's data-formfunnel-action, else
+ * for its formType; formfunnel's <formType>ExpectedAction pins it) and
+ * formType. 200 "Human" means the Logic App
  * accepted it; 400 means the token failed, scored too low or was minted for
  * another action; 5xx means it could not be delivered.
  *
@@ -115,7 +117,7 @@
     form.setAttribute('data-formfunnel-busy', '1');
     if (button) button.disabled = true;
 
-    getToken(formType)
+    getToken(form.getAttribute('data-formfunnel-action') || formType)
       .then(function (token) {
         var body = new URLSearchParams(new FormData(form));
         body.set('token', token);
