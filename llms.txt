@@ -25,4 +25,5 @@
 - Phone: +1 929-229-2917.
 - Focus: research into the psychology of curiosity and the pedagogy that sparks it, for human learners and for AI/machine learning systems.
 - Named frameworks and programs: S.P.A.R.K., the Dream Quest learning journey, the DreamTrack portfolio system, Curiosity Coaches, Curiosity Campus, Curiosity Community, Curiosity Chapters, Curiosity Cottages, Curiosity Compass, Curiosity Classroom (an open-source LMS), the Curiosity Consortium, Developer Dojo, iBlossom, INSTAR Lab, and Ignite Curiosity.
+- Core focuses: robotics (machines that work beside people) and biotechnology (biology that can be engineered responsibly). Robotics clubs, challenges and mentors, and community bio groups and biodesign challenges, are being prepared; no dates or partners are announced. Training tracks are on DeveloperDojo (https://developerdojo.org/library/tracks/).
 - Regions of active work: Appalachia (Mid-Ohio Valley), with Curiosity Chapters in Asia, Africa, and Rural America.
